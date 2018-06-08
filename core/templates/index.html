@@ -1,23 +1,67 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
-    <script src="{% static 'js/jquery-mask/src/jquery.mask.js' %}"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'js/jquery-mask/src/jquery.mask.js' %}"></script>
     <title>Virtu Consultoria</title>
 </head>
+
 <body>
-    <h1>Virtù</h1>
-    <hr>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Enviar">
-    </form>
+    <div id="main">
+        <nav id="navbar"></nav>
+        <div id="banner"></div>
+        <div id="servicos">
+            <div class="titulo"></div>
+        </div>
+        <div id="sobre-nos">
+            <div class="titulo"></div>
+            <div id="mvv">
+                <div class="mvv-flex">
+                    <img class="mvv-img" src="{% static 'icons/Missão.svg' %}">
+                    <h3 class="mvv-titulo">Missão</h3>
+                    <hr class="mvv-linha">
+                    <p class="mvv-texto">Texto contendo a missão da empresa, texto contendo a visão da empresa, texto contendo a visão da empresa,
+                        texto contendo a visão da empresa, texto.</p>
+                </div>
+                <div class="mvv-flex" id="mvv-visao">
+                    <img class="mvv-img" src="{% static 'icons/Visão.svg' %}">
+                    <h3 class="mvv-titulo">Visão</h3>
+                    <hr class="mvv-linha">
+                    <p class="mvv-texto">Texto contendo a visão da empresa, Texto contendo a visão da empresa, texto contendo a visão da empresa.
+                        texto contendo a visão da empresa, texto contendo.</p>
+                </div>
+                <div class="mvv-flex">
+                    <img class="mvv-img" src="{% static 'icons/Valor.svg' %}">
+                    <h3 class="mvv-titulo">Valores</h3>
+                    <hr class="mvv-linha">
+                    <p class="mvv-texto">Texto contendo os valores da empresa, texto contendo os valores da empresa, texto contendo os valores
+                        da empresa, texto contendo os valores da empresa.</p>
+                </div>
+            </div>
+            <div id="nossa-historia"></div>
+        </div>
+        <div id="depoimentos">
+            <div class="titulo"></div>
+        </div>
+        <div id="contatos">
+            <div class="titulo"></div>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+        <div id="footer"></div>
+    </div>
     <script src="{% static 'js/main.js' %}"></script>
 </body>
+
 </html>

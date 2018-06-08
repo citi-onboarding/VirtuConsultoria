@@ -4,15 +4,13 @@ from .forms import emailForm
 from django.core.mail import send_mail
 
 def index(request):
-    # if this is a POST request we need to process the form data
+    # Trata os dados vindos do form caso a página tenha sido acionada pelo form
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
+        # Guarda os dados do form na variável form
         form = emailForm(request.POST)
-        # check whether it's valid:
+        # Caso o form seja válido
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
+            # Guarda cada um dos campos do form em suas respectivas variáveis
             nome = form.cleaned_data['nome']
             telefone = form.cleaned_data['telefone']
             email = form.cleaned_data['email']
@@ -20,17 +18,18 @@ def index(request):
             conheceu = form.cleaned_data['conheceu']
             mensagem = form.cleaned_data['mensagem']
 
+            # Gera o corpo do Email como uma string
             fullContent = 'Nome:{}\nTelefone: {}\nEmail: {}\nComo conheceu: {}\nMensagem: {}'.format(nome, telefone, email, conheceu, mensagem)   
 
             send_mail(
-                assunto,    #Subject
-                fullContent,  #Message
-                'friendlybot4ever@gmail.com',   #email sender
-                ['friendlybot4ever@gmail.com'], #email receiver
+                assunto,    # Assunto do email
+                fullContent,  # Corpo do email
+                'friendlybot4ever@gmail.com',   # email de envio
+                ['friendlybot4ever@gmail.com'], #email de destino
                 fail_silently=False,
             )
 
-    # if a GET (or any other method) we'll create a blank form
+    # Caso a página tenha sido acessada via URL gera um form em branco
     else:
         form = emailForm()
 
