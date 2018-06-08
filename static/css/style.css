@@ -20,11 +20,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 100vw;
 }
 
 #sobre-nos{
     background-color: var(--corSecaoSobrenos);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
 
 #mvv {
@@ -33,8 +38,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    padding-left: 10%;
-    padding-right: 10%;
+    width: 80%;
 }
 
 .mvv-flex {
@@ -68,13 +72,48 @@ body {
     width: 40%;
 }
 
-.mvv-texto { 
+.mvv-descricao { 
     text-align: center;
     height: 120px;
     width: 80%;
     color: var(--corFonte);
 }
 
+#nossa-historia {
+    display: flex;
+    flex-direction: row; 
+    width: 80%;
+}
+
+#nossa-historia-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 49%;
+}
+
+#nossa-historia-titulo{
+    color: var(--corTitulo);
+    font-size: 1.4rem;
+}
+
+#nossa-historia-descricao{
+    width: 85%;
+    color: var(--corFonte);
+}
+
+#nossa-historia-img{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 49%;
+}
+
+#nossa-historia-img > img{
+    height: 260px;
+    width: auto;
+}
 
 hr {
     height: 1px;
@@ -102,16 +141,23 @@ p {
 
 @media(max-width: 1000px){
     #mvv {
-        padding-left: 5%;
-        padding-right: 5%;
+        width: 90%;
+    }
+
+    #nossa-historia {
+        width: 90%;
     }
 
     .mvv-flex {
         height: 270px;
     }
 
-    .mvv-texto {
+    .mvv-descricao {
         height: 130px;
+    }
+
+    #nossa-historia-img > img{
+        height: 240px;
     }
 }
 
@@ -134,7 +180,7 @@ p {
         width: 80%;
     }
 
-    .mvv-texto{
+    .mvv-descricao{
         width: 100%;
     }
 
