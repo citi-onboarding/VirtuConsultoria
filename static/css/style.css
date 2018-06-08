@@ -4,21 +4,141 @@
     --corFonte: #777777;
     --corCinzaVirtu: #A8A9AD;
     --corLinhasVerticais: #EDEDED;
-    --corLinhasHorizontais: #DDDDDD;
+    --corLinhasHorizontais: #ECECEC;
     --corFonteContato: #FFFFFF;
+    --corSecaoSobrenos: #F8F8F8;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
-#main{
+#main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--corVermelho);
-    width: 80vw;
-    height: 100px;
+    width: 100%;
+}
+
+#sobre-nos{
+    background-color: var(--corSecaoSobrenos);
+}
+
+#mvv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.mvv-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 260px;
+    width: 33%;
+}
+
+#mvv-visao{
+    border-left: 1px solid var(--corLinhasVerticais);
+    border-right: 1px solid var(--corLinhasVerticais);
+}
+
+.mvv-img {
+    height: 50px;
+    width: 50px;
+    padding-top: 10px;
+}
+
+.mvv-titulo{
+    color: var(--corVermelho);
+    font-size: 1.5rem;
+}
+
+.mvv-linha{
+    background: var(--corLinhasHorizontais);
+    height: 1px;
+    width: 40%;
+}
+
+.mvv-texto { 
+    text-align: center;
+    height: 120px;
+    width: 80%;
+    color: var(--corFonte);
+}
+
+
+hr {
+    height: 1px;
+    border-style: none;
+    background: black;
+}
+
+h3 {
+    margin: 0;
+    font-weight: 400;
+}
+
+h1 {
+    margin: 0;
+    font-weight: 400;
+}
+
+p {
+    margin: 0;
+}
+
+@media(max-width:1200px){
+    
+}
+
+@media(max-width: 1000px){
+    #mvv {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .mvv-flex {
+        height: 270px;
+    }
+
+    .mvv-texto {
+        height: 130px;
+    }
+}
+
+@media(max-width: 900px){
+    #mvv{
+        justify-content: center;
+    }
+
+    .mvv-flex {
+        width: 270px; 
+    }
+
+    #mvv-visao{
+        border-right: 0;
+    }
+}
+
+@media(max-width: 600px){
+    .mvv-flex{
+        width: 80%;
+    }
+
+    .mvv-texto{
+        width: 100%;
+    }
+
+    #mvv-visao{
+        border: 0;
+    }
 }
