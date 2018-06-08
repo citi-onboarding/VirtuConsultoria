@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .forms import emailForm
 from django.core.mail import send_mail
 
-def get_name(request):
+def index(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -13,14 +13,17 @@ def get_name(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            subject = form.cleaned_data['subject']
-            yourEmail = form.cleaned_data['yourEmail']
-            content = form.cleaned_data['content']
+            nome = form.cleaned_data['nome']
+            telefone = form.cleaned_data['telefone']
+            email = form.cleaned_data['email']
+            assunto = form.cleaned_data['assunto']
+            conheceu = form.cleaned_data['conheceu']
+            mensagem = form.cleaned_data['mensagem']
 
-            fullContent = 'Email:\n{}\nConteúdo:\n{}'.format(subject, yourEmail, content)
+            fullContent = 'Nome:{}\nTelefone: {}\nEmail: {}\nComo conheceu: {}\nMensagem: {}'.format(nome, telefone, email, conheceu, mensagem)   
 
             send_mail(
-                subject,    #Subject
+                assunto,    #Subject
                 fullContent,  #Message
                 'friendlybot4ever@gmail.com',   #email sender
                 ['friendlybot4ever@gmail.com'], #email receiver
@@ -32,9 +35,3 @@ def get_name(request):
         form = emailForm()
 
     return render(request, 'index.html', {'form': form})
-
-def test(request):
-    return HttpResponse('test')
-
-def ok(request):
-    return HttpResponse('ok')
