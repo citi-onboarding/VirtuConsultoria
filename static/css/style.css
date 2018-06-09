@@ -1,10 +1,10 @@
 :root {
     --corVermelho: #BF3B3A;
     --corTitulo: #1B1B1B;
+    --corTituloLinha: #B8B8B8;
     --corFonte: #777777;
     --corCinzaVirtu: #A8A9AD;
-    --corLinhasVerticais: #EDEDED;
-    --corLinhasHorizontais: #ECECEC;
+    --corLinhas: #ECECEC;
     --corFonteContato: #FFFFFF;
     --corSecaoSobrenos: #F8F8F8;
 }
@@ -23,7 +23,130 @@ body {
     width: 100vw;
 }
 
+.titulo-linha{
+    background: var(--corTituloLinha);
+}
+
+#carrossel{
+    width: 80vw;
+    margin: 0 auto;
+}
+
+#servico{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 500px;
+}
+
+.card-flex{
+    transition: all 0.1s linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 500px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 auto;
+}
+
+.card-flex:hover {
+    transition: all 0.1s linear;
+    transform: scale(1.1);
+}
+
+.card-img{
+    background-image: url("/static/image/Documentação.jpg");
+    height: 300px;
+    width: 300px;
+    background-size: 325px;
+}
+
+.card-conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    height: 200px;
+    width: 80%;
+}
+
+.card-titulo{
+    font-size: 1.5rem;
+}
+
+.card-linha{
+    width: 100%;
+    height: 1px;
+    border-style: none;
+    background: var(--corLinhas);
+}
+
+.card-descricao{
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0;
+    color: var(--corFonte);
+}
+
+.card.slick-slide.slick-active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 560px;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.card.slick-slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 560px;
+    width: 305px;
+    margin: 0 auto;
+}
+
+.dots-css li button {
+    background-color: #A8A9AD;
+    height: 2px;
+    padding: 0;
+    margin-top: 17px;
+    width: 24px;
+}
+
+.slick-active button:before {
+    background-color: var(--corVermelho);
+    width: 24px;
+    color: transparent !important;
+    opacity: 1 !important;
+}
+
+.slick-dots li button:before {
+    width: 24px;
+    color: transparent !important;
+    height: 4px;
+    margin-top: 16px;
+}
+
+.slick-slide {
+    outline: none !important;
+}
+
 #sobre-nos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--corSecaoSobrenos);
     display: flex;
     flex-direction: column;
@@ -51,8 +174,8 @@ body {
 }
 
 #mvv-visao{
-    border-left: 1px solid var(--corLinhasVerticais);
-    border-right: 1px solid var(--corLinhasVerticais);
+    border-left: 1px solid var(--corLinhas);
+    border-right: 1px solid var(--corLinhas);
 }
 
 .mvv-img {
@@ -67,7 +190,7 @@ body {
 }
 
 .mvv-linha{
-    background: var(--corLinhasHorizontais);
+    background: var(--corLinhas);
     height: 1px;
     width: 40%;
 }
@@ -132,6 +255,7 @@ h3 {
 h1 {
     margin: 0;
     font-weight: 400;
+    font-size: 1.8rem;
 }
 
 p {
@@ -139,7 +263,29 @@ p {
 }
 
 @media(max-width:1200px){
-    
+    .card-flex {
+        width: 250px;
+        height: 400px;
+    }
+
+    .card-descricao {
+        font-size: 0.6rem;
+    }
+
+    .card-img {
+        height: 300px;
+        width: 250px;
+        background-size: 300px;
+    }
+
+    .card.slick-slide.slick-active{
+        height: 450px;
+    }
+
+    .card.slick-slide{
+        height: 450px;
+        
+    }
 }
 
 @media(max-width: 1000px){
