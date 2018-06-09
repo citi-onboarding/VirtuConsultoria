@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -18,11 +20,89 @@
     <div id="main">
         <nav id="navbar"></nav>
         <div id="banner"></div>
-        <div id="servicos">
-            <div class="titulo"></div>
+        <div id="servico">
+            <div class="titulo">
+                <h1>Serviços</h1>
+                <hr class='titulo-linha'>
+            </div>
+            <div id="carrossel">
+                <div class="card">
+                    <div class="card-flex">
+                        <div class="card-img"></div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">Documentação</h3>
+                            <hr class="card-linha">
+                            <p class="card-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum. Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-flex">
+                        <div class="card-img"></div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">Documentação</h3>
+                            <hr class="card-linha">
+                            <p class="card-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum. Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-flex">
+                        <div class="card-img"></div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">Documentação</h3>
+                            <hr class="card-linha">
+                            <p class="card-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum. Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-flex">
+                        <div class="card-img"></div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">Documentação</h3>
+                            <hr class="card-linha">
+                            <p class="card-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum. Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-flex">
+                        <div class="card-img"></div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">Documentação</h3>
+                            <hr class="card-linha">
+                            <p class="card-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum. Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-flex">
+                        <div class="card-img"></div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">Documentação</h3>
+                            <hr class="card-linha">
+                            <p class="card-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum. Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-flex">
+                        <div class="card-img"></div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">Documentação</h3>
+                            <hr class="card-linha">
+                            <p class="card-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum. Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="sobre-nos">
-            <div class="titulo"></div>
+            <div class="titulo">
+                <h1>Sobre nós</h1>
+                <hr class='titulo-linha'>
+            </div>
             <div id="mvv">
                 <div class="mvv-flex">
                     <img class="mvv-img" src="{% static 'icons/Missão.svg' %}">
@@ -45,7 +125,7 @@
             </div>
             <div id="nossa-historia">
                 <div id="nossa-historia-texto">
-                    <h3 id="nossa-historia-titulo">Sobre Nós</h3>
+                    <h3 id="nossa-historia-titulo">Nossa História</h3>
                     <p id="nossa-historia-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus obortis condimentum. Aliquam nonummy uctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fam ac turpis egestas. Nulla at risus. Quisqu purus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum."</p>
                 </div>
                 <div id="nossa-historia-img">
@@ -67,6 +147,38 @@
         <div id="footer"></div>
     </div>
     <script src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('#carrossel').slick({
+                infinite: false,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows: true,
+                dots: true,
+                focusOnSelect: false,
+                dotsClass: 'slick-dots dots-css',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 720,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
 </body>
 
 </html>

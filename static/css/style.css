@@ -1,10 +1,10 @@
 :root {
     --corVermelho: #BF3B3A;
     --corTitulo: #1B1B1B;
+    --corTituloLinha: #B8B8B8;
     --corFonte: #777777;
     --corCinzaVirtu: #A8A9AD;
-    --corLinhasVerticais: #EDEDED;
-    --corLinhasHorizontais: #ECECEC;
+    --corLinhas: #ECECEC;
     --corFonteContato: #FFFFFF;
     --corSecaoSobrenos: #F8F8F8;
 }
@@ -23,7 +23,168 @@ body {
     width: 100vw;
 }
 
+.titulo {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.titulo-linha{
+    background: var(--corTituloLinha);
+    width: 100px;
+}
+
+#carrossel{
+    width: 80vw;
+    margin: 0 auto;
+}
+
+#servico{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 460px;
+}
+
+.card-flex{
+    transition: all 0.1s linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 460px;
+    box-shadow: 0 1px 1px 0 #ECECEC, 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 auto;
+}
+
+.card-flex:hover {
+    transition: all 0.1s linear;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.card-img{
+    background-image: url("/static/image/Documentação.jpg");
+    height: 300px;
+    width: 250px;
+    background-size: 300px;
+}
+
+.card-conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    height: 200px;
+    width: 80%;
+}
+
+.card-titulo{
+    font-size: 1.5rem;
+
+}
+
+.card-linha{
+    width: 100%;
+    height: 1px;
+    border-style: none;
+    background: var(--corLinhas);
+}
+
+.card-descricao{
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0;
+    color: var(--corFonte);
+    padding-bottom: 15px;
+}
+
+
+.slick-list.draggable{
+    width: 70vw;
+    margin: 0 auto;
+}
+
+.card.slick-slide.slick-active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.card.slick-slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    width: 305px;
+    margin: 0 auto;
+}
+
+.slick-next.slick-arrow::before, .slick-prev.slick-arrow::before{
+    color: transparent;
+    width: 40px;
+    height: 40px;
+}
+
+.slick-prev.slick-arrow{
+    width: 40px;
+    height: 40px;
+    background: url("/static/icons/Seta.svg");
+    background-size: 40px;
+    margin-left: 10px;
+}
+
+.slick-next.slick-arrow{
+    width: 40px;
+    height: 40px;
+    background: url("/static/icons/Next.svg");
+    background-size: 40px;
+    margin-right: 10px;
+}
+
+.dots-css li button {
+    background-color: #A8A9AD;
+    height: 2px;
+    padding: 0;
+    margin-top: 17px;
+    width: 24px;
+}
+
+.slick-active button:before {
+    background-color: var(--corVermelho);
+    width: 24px;
+    color: transparent !important;
+    opacity: 1 !important;
+}
+
+.slick-dots li button:before {
+    width: 24px;
+    color: transparent !important;
+    height: 4px;
+    margin-top: 16px;
+}
+
+.slick-slide {
+    outline: none !important;
+}
+
 #sobre-nos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--corSecaoSobrenos);
     display: flex;
     flex-direction: column;
@@ -51,8 +212,8 @@ body {
 }
 
 #mvv-visao{
-    border-left: 1px solid var(--corLinhasVerticais);
-    border-right: 1px solid var(--corLinhasVerticais);
+    border-left: 1px solid var(--corLinhas);
+    border-right: 1px solid var(--corLinhas);
 }
 
 .mvv-img {
@@ -67,7 +228,7 @@ body {
 }
 
 .mvv-linha{
-    background: var(--corLinhasHorizontais);
+    background: var(--corLinhas);
     height: 1px;
     width: 40%;
 }
@@ -121,7 +282,6 @@ body {
 hr {
     height: 1px;
     border-style: none;
-    background: black;
 }
 
 h3 {
@@ -132,6 +292,7 @@ h3 {
 h1 {
     margin: 0;
     font-weight: 400;
+    font-size: 1.8rem;
 }
 
 p {
@@ -139,10 +300,36 @@ p {
 }
 
 @media(max-width:1200px){
-    
+    .card-flex {
+        width: 225px;
+        height: 400px;
+    }
+
+    .card-descricao {
+        font-size: 0.7rem;
+    }
+
+    .card-img {
+        height: 300px;
+        width: 225px;
+        background-size: 280px;
+    }
+
+    .card.slick-slide.slick-active{
+        height: 450px;
+    }
+
+    .card.slick-slide{
+        height: 450px;
+        
+    }
 }
 
 @media(max-width: 1000px){
+    #carrossel{
+        width: 90vw;
+    }
+
     #mvv {
         width: 90%;
     }
@@ -208,6 +395,7 @@ p {
 }
 
 @media(max-width: 600px){
+
     .mvv-flex{
         width: 80%;
     }
@@ -219,4 +407,29 @@ p {
     #mvv-visao{
         border: 0;
     }
+}
+
+@media(max-width: 350px){
+
+    .card-flex {
+        width: 220px;
+        height: 395px;
+    }
+
+    .card-descricao {
+        font-size: 0.7rem;
+    }
+
+    .card-img {
+        height: 300px;
+        width: 220px;
+        background-size: 280px;
+    }
+
+    .card-flex:hover {
+        transition: none;
+        cursor: pointer;
+        transform: none;
+    }
+
 }
