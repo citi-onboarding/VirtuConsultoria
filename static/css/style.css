@@ -81,8 +81,10 @@ body {
 
 #nossa-historia {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 80%;
+    padding-top: 60px;
 }
 
 #nossa-historia-texto{
@@ -96,6 +98,7 @@ body {
 #nossa-historia-titulo{
     color: var(--corTitulo);
     font-size: 1.4rem;
+    padding-bottom: 20px;
 }
 
 #nossa-historia-descricao{
@@ -172,6 +175,35 @@ p {
 
     #mvv-visao{
         border-right: 0;
+    }
+}
+
+@media(max-width: 850px){
+
+    #nossa-historia {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+    }
+
+    #nossa-historia-texto {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    #nossa-historia-descricao {
+        text-align: center;
+    }
+
+    #nossa-historia-img {
+        width: 100vw;
+        height: auto;
+        padding: 0;
+    }
+
+    #nossa-historia-img > img {
+        width: 100vw;
+        height: auto;
     }
 }
 
