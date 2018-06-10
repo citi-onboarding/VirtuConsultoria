@@ -28,4 +28,56 @@ $(document).ready(function () { // ações realizadas via jquery
             }
         ]
     });
+
+    popularServicos();
 });
+
+let numDeServicos = 7;
+let conteudoServicos = [
+    {
+        titulo: 'Documentação',
+        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        imagem: '/static/image/Documentação.jpg'
+    },
+    {
+        titulo: 'Pesquisa',
+        descricao: 'Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        imagem: '/static/image/Documentação.jpg'
+    },
+    {
+        titulo: 'Reunião',
+        descricao: 'Lorem Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        imagem: '/static/image/Documentação.jpg'
+    },
+    {
+        titulo: 'Consultoria',
+        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        imagem: '/static/image/Documentação.jpg'
+    },
+    {
+        titulo: 'Pesquisa',
+        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        imagem: '/static/image/Documentação.jpg'
+    },
+    {
+        titulo: 'Pesquisa',
+        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        imagem: '/static/image/Documentação.jpg'
+    },
+    {
+        titulo: 'Pesquisa',
+        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
+        imagem: '/static/image/Documentação.jpg'
+    },
+];
+
+function popularServicos(){
+    if(conteudoServicos.length !== 0){
+        for(i=0; i<numDeServicos; i++){
+            $('#carrossel').find('.card-flex').find('h3')[i].innerText = conteudoServicos[i].titulo;
+            $('#carrossel').find('.card-flex').find('p')[i].innerText = conteudoServicos[i].descricao;
+            $('#carrossel').find('.card-flex').find('.card-img')[i].style.backgroundImage = 'url('+conteudoServicos[i].imagem+')';
+        }
+    }
+
+}
