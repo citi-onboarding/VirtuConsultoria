@@ -37,6 +37,7 @@ body {
 #carrossel{
     width: 80vw;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 #servico{
