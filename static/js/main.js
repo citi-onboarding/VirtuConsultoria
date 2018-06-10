@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('#id_telefone').mask('(00) 0 0000-0000');
 
-    $('option:first').attr("disabled", "disabled");
-    
+    $('option:first').hide();
+
     $('#carrossel').slick({
         infinite: false,
         slidesToShow: 3,

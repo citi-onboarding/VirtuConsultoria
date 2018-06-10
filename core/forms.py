@@ -4,8 +4,9 @@ class emailForm(forms.Form):
     
     comoConheceuOpcoes = (
         ('Selecione', 'Selecione'),
+        ('Redes sociais', 'Redes sociais'),
         ('Indicação', 'Indicação'),
-        ('Mídias Sociais', 'Mídias Sociais'),
+        ('Pesquisa', 'Pesquisa'),
         ('Outros', 'Outros'),
     )
 
