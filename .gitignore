@@ -1,4 +1,7 @@
-/__pycache__
-/migrations/__pycache__
-/mysite/__pycache__
-/.vscode
+# Arquivos e pastas ignorados
+
+core/__pycache__/
+migrations/__pycache__/
+mysite/__pycache__/
+.vscode/
+*.pyc
