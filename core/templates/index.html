@@ -96,7 +96,43 @@
                 <input type="submit" value="Enviar">
             </form>
         </div>
-        <div id="footer"></div>
+        <div id="footer">
+            <div id="footer-flex">
+                <div id="footer-img">
+                    <img src="{% static 'image/Logo - Banner.png' %}">
+                </div>
+                <div id="footer-redes-sociais">
+                    <div class="footer-redes-sociais-flex" id="facebook">
+                        <img src="{% static 'icons/Facebook - logo.svg' %}">
+                        <div class="footer-redes-sociais-descricao">
+                            <h5>Facebook</h5>
+                            <p>/VirtuPolitica</p>
+                        </div>
+                    </div>
+                    <div class="footer-redes-sociais-flex">
+                        <img src="{% static 'icons/instagram - logo.svg' %}">
+                        <div class="footer-redes-sociais-descricao">
+                            <h5>Instagram</h5>
+                            <p>@VirtuPolitica</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer-contatos">
+                    <div class="footer-contatos-flex">
+                        <img src="{% static 'icons/telefone.svg' %}">
+                        <h5>(81) 9999-9999</h5>
+                    </div>
+                    <div class="footer-contatos-flex">
+                        <img src="{% static 'icons/email.svg' %}">
+                        <h5>VirtuConsultoria@gmail.com</h5>
+                    </div>
+                    <div class="footer-contatos-flex">
+                        <img src="{% static 'icons/map.svg' %}">
+                        <h5>Rua Manuel Medeiro Dois Irmãos Recife, Pernambuco.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="{% static 'js/main.js' %}"></script>
 </body>
