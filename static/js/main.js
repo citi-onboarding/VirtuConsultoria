@@ -3,6 +3,37 @@ $(document).ready(function () { // ações realizadas via jquery
 
     $('option:first').hide(); // Esconde a opção Selecione no input "Como conheceu a Virtù"
 
+    const conteudoServicos = $.getJSON("static/js/servicos.json", function(json){
+        pegarHttp(popularServicos, json);
+    });
+});
+
+const numMaxServicos = 7;
+let conteudoServicos;
+
+function criarServicos(ordemServicos, flag) {
+    let card =
+        '<div class="card">' +
+        '<div class="card-flex">' +
+        '<div class="card-img"></div>' +
+        '<div class="card-conteudo">' +
+        '<h3 class="card-titulo">Documentação</h3>' +
+        '<hr class="card-linha">' +
+        '<p class="card-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+
+    let copiaCard = card;
+    let numDeServicos = 7;
+    if (flag) numDeServicos = ordemServicos.length;
+    for (i = 0; i < numDeServicos - 1; i++) {
+        card += copiaCard;
+    }
+
+    $('#carrossel').html(card);
+    substituirServicos(ordemServicos);
+
     $('#carrossel').slick({
         infinite: false, // o carrosel não volta pro começo quando acaba
         slidesToShow: 3, // mostra 3 cards por vez
@@ -28,10 +59,9 @@ $(document).ready(function () { // ações realizadas via jquery
             }
         ]
     });
-    pegaHttp(popularServicos);
-});
+}
 
-function pegaHttp(successo) { // função standard de request http
+function pegarHttp(successo, json) { // função standard de request http
     var http = new XMLHttpRequest();
     // a parte 'alt=json' eh da API do google que transforma a planilha num JSON
     var url = 'https://spreadsheets.google.com/feeds/list/1OdQ52u7NODWOC8b7CELRd6IU9dVBCSUr3Aamv4ze39k/od6/public/values?alt=json';
@@ -47,81 +77,51 @@ function pegaHttp(successo) { // função standard de request http
         }
     }
 
+    conteudoServicos  = json;
     http.send(); // envia o request
 }
-
-const numDeServicos = 7;
-let conteudoServicos = [
-    {
-        titulo: 'Documentação',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
-        imagem: '/static/image/Documentação.jpg'
-    },
-    {
-        titulo: 'Pesquisa',
-        descricao: 'Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
-        imagem: '/static/image/Documentação.jpg'
-    },
-    {
-        titulo: 'Reunião1',
-        descricao: 'Lorem Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
-        imagem: '/static/image/Documentação.jpg'
-    },
-    {
-        titulo: 'Consultoria',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
-        imagem: '/static/image/Documentação.jpg'
-    },
-    {
-        titulo: 'Pesquisa',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
-        imagem: '/static/image/Documentação.jpg'
-    },
-    {
-        titulo: 'Pesquisa',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
-        imagem: '/static/image/Documentação.jpg'
-    },
-    {
-        titulo: 'Pesquisa',
-        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.',
-        imagem: '/static/image/Documentação.jpg'
-    },
-];
-
 
 function popularServicos(resposta) {
     let ordemServicos = [];
     let dados = JSON.parse(resposta).feed.entry;
     let j = 0;
+
     for (dado in dados) {
         ordemServicos.push(parseInt(dados[j]['gsx$servicos']['$t']) - 1);
         j++;
     }
-    if (validaSheet(ordemServicos) && ordemServicos.length <= 7) {
-        for (i = 0; i < ordemServicos.length; i++) {
-            $('#carrossel').find('.card-flex').find('h3')[i].innerText = conteudoServicos[ordemServicos[i]].titulo;
-            $('#carrossel').find('.card-flex').find('p')[i].innerText = conteudoServicos[ordemServicos[i]].descricao;
-            $('#carrossel').find('.card-flex').find('.card-img')[i].style.backgroundImage = 'url(' + conteudoServicos[ordemServicos[i]].imagem + ')';
-        }
+
+    if (validarSheet(ordemServicos) && ordemServicos.length <= numMaxServicos) {
+        substituirServicos(ordemServicos);
     }
 }
 
-function validaSheet(ordemServicos) {
+function validarSheet(ordemServicos) {
+    console.log(ordemServicos);
     let temp = [];
     let flag = 1;
     let padrao = [0, 1, 2, 3, 4, 5, 6]
-    for(i = 0; i < ordemServicos.length; i++){
-        if(padrao.indexOf(ordemServicos[i]) === -1){
+
+    for (i = 0; i < ordemServicos.length; i++) {
+        if (padrao.indexOf(ordemServicos[i]) === -1) {
             flag = 0;
         }
-        if(temp.indexOf(ordemServicos[i]) === -1){
+        if (temp.indexOf(ordemServicos[i]) === -1) {
             temp.push(ordemServicos[i]);
         }
-        else{
+        else {
             flag = 0;
         }
     }
-    console.log(temp);
+
+    criarServicos(ordemServicos, flag);
     return flag;
+}
+
+function substituirServicos(ordemServicos) {
+    for (i = 0; i < ordemServicos.length; i++) {
+        $('#carrossel').find('.card-flex').find('h3')[i].innerText = conteudoServicos[ordemServicos[i]].titulo;
+        $('#carrossel').find('.card-flex').find('p')[i].innerText = conteudoServicos[ordemServicos[i]].descricao;
+        $('#carrossel').find('.card-flex').find('.card-img')[i].style.backgroundImage = 'url(' + conteudoServicos[ordemServicos[i]].imagem + ')';
+    }
 }
