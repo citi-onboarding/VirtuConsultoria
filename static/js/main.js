@@ -9,20 +9,11 @@ $(document).ready(function () { // ações realizadas via jquery
 });
 
 const numMaxServicos = 7;
+const padrao = [0, 1, 2, 3, 4, 5, 6]
 let conteudoServicos;
 
 function criarServicos(ordemServicos, flag) {
-    let card =
-        '<div class="card">' +
-        '<div class="card-flex">' +
-        '<div class="card-img"></div>' +
-        '<div class="card-conteudo">' +
-        '<h3 class="card-titulo">Documentação</h3>' +
-        '<hr class="card-linha">' +
-        '<p class="card-descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>' +
-        '</div>' +
-        '</div>' +
-        '</div>';
+    let card = '<div class="card"><div class="card-flex"><div class="card-img"></div><div class="card-conteudo"><h3 class="card-titulo"></h3><hr class="card-linha"><p class="card-descricao"></p></div></div></div>';
 
     let copiaCard = card;
     let numDeServicos = 7;
@@ -32,7 +23,7 @@ function criarServicos(ordemServicos, flag) {
     }
 
     $('#carrossel').html(card);
-    substituirServicos(ordemServicos);
+    substituirServicos(flag ? ordemServicos : padrao);
 
     $('#carrossel').slick({
         infinite: false, // o carrosel não volta pro começo quando acaba
@@ -91,6 +82,8 @@ function popularServicos(resposta) {
         j++;
     }
 
+    // ordemServicos = [0, 1, 2, 3, 9];
+
     if (validarSheet(ordemServicos) && ordemServicos.length <= numMaxServicos) {
         substituirServicos(ordemServicos);
     }
@@ -100,7 +93,6 @@ function validarSheet(ordemServicos) {
     console.log(ordemServicos);
     let temp = [];
     let flag = 1;
-    let padrao = [0, 1, 2, 3, 4, 5, 6]
 
     for (i = 0; i < ordemServicos.length; i++) {
         if (padrao.indexOf(ordemServicos[i]) === -1) {
