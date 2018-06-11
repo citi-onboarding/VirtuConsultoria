@@ -24,136 +24,129 @@ body {
 }
 
 .titulo {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;  /*Deixar o titulo um pouco afastado da div anterior*/
+    padding-bottom: 20px; /*Deixar o titulo um pouco afastado do conteúdo da div que ele está*/
 }
 
 
-.titulo-linha{
+.titulo-linha {
     background: var(--corTituloLinha);
-    width: 100px;
+    width: 100px; /*Tamanho padrão da linha sublinhada*/
 }
 
-#carrossel{
-    width: 80vw;
-    margin: 0 auto;
-    margin-bottom: 50px;
-}
-
-#servico{
+#servico {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
 }
 
-.card{
+#carrossel {
+    width: 80vw;    
+    margin-bottom: 50px; /*Margem abaixo do carrossel para comportar os botões, pois caso contrário eles ficam ultrapassando a div*/
+}
+
+.card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-    height: 460px;
+    align-items: center; /*Importante para deixar o card centralizado*/
+    justify-content: center; /*Importante para deixar o card centralizado*/
+    height: 460px; 
 }
 
-.card-flex{
-    transition: all 0.1s linear;
+.card-flex {
+    transition: all 0.1s linear; /*Transição na hora que o hover é desativado*/
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 250px;
     height: 460px;
-    box-shadow: 0 1px 1px 0 #ECECEC, 0 1px 5px 0 rgba(0, 0, 0, 0.19);
-    margin: 0 auto;
+    box-shadow: 0 1px 1px 0 #ECECEC, 0 1px 5px 0 rgba(0, 0, 0, 0.19); /*Sombra do card*/
+    margin: 0 auto; 
 }
 
 .card-flex:hover {
-    transition: all 0.1s linear;
-    cursor: pointer;
-    transform: scale(1.1);
+    transition: all 0.1s linear; /*Tempo e tipo da transição ao ativar o hover */
+    cursor: pointer; /*Transformar o cursor em ponteiro pois futuramente o card irá ser clicável*/
+    transform: scale(1.1); /*Aumentar o tamanho caso o cursor esteja em cima*/
 }
 
-.card-img{
+.card-img {
     background-image: url("/static/image/Documentação.jpg");
-    height: 300px;
-    width: 250px;
-    background-size: 300px;
+    height: 300px; /*Tamanho da imagem de fundo*/
+    width: 250px; /*Tamanho da imagem de fundo*/
+    background-size: 300px; /*Escala na qual ela irá aparecer*/
 }
 
-.card-conteudo{
+.card-conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 10px;
-    height: 200px;
+    padding: 10px; 
+    height: 200px; 
     width: 80%;
 }
 
-.card-titulo{
+.card-titulo {
     font-size: 1.5rem;
-
 }
 
-.card-linha{
+.card-linha {
     width: 100%;
     height: 1px;
-    border-style: none;
+    border-style: none; /*Tirar o estilo do hr para que fique uma linha realmente*/
     background: var(--corLinhas);
 }
 
-.card-descricao{
+.card-descricao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     font-size: 0.8rem;
     text-align: center;
-    margin: 0;
+    margin: 0; /* Tirar a margem padrão da tag p */
     color: var(--corFonte);
-    padding-bottom: 15px;
+    padding-bottom: 15px; /* Dar uma margem para o texto se afastar do fundo do card, seguindo o mockup */
 }
 
 
-.slick-list.draggable{
-    width: 70vw;
+.slick-list.draggable {
+    width: 70vw; /* Margem menor que as outras para as setas ficarem dentro da margem */
+    margin: 0 auto; 
+}
+
+.card.slick-slide{ 
+    display: flex; /* Alinhar card no centro */
+    flex-direction: column; /* Alinhar card no centro */
+    align-items: center; /* Alinhar card no centro */
+    height: 520px; /* Tamanho maior que o card para dar espaço durante o aumento do scale (com o hover) */
+    width: 305px; /* Tamanho maior que o card para dar espaço durante o aumento do scale (com o hover) */
     margin: 0 auto;
 }
 
-.card.slick-slide.slick-active{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 520px;
-    width: 350px;
-    margin: 0 auto;
-}
-
-.card.slick-slide{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 520px;
-    width: 305px;
-    margin: 0 auto;
-}
-
-.slick-next.slick-arrow::before, .slick-prev.slick-arrow::before{
-    color: transparent;
-    width: 40px;
-    height: 40px;
+.slick-next.slick-arrow::before, .slick-prev.slick-arrow::before{ 
+    color: transparent; /* Deixar o botão padrão transparente */
+    width: 40px; /* Aumentar a área clicável do botão */
+    height: 40px; /* Aumentar a área clicável do botão */
 }
 
 .slick-prev.slick-arrow{
-    width: 40px;
+    width: 40px; 
     height: 40px;
-    background: url("/static/icons/Seta.svg");
-    background-size: 40px;
-    margin-left: 10px;
+    background: url("/static/icons/Seta.svg"); /* Ícone da seta anterior */
+    background-size: 40px; /* Disposição do background igual o tamanho do botão */
+    margin-left: 10px; /* Deixar o botão mais próximo a margem */
 }
 
 .slick-next.slick-arrow{
     width: 40px;
     height: 40px;
-    background: url("/static/icons/Next.svg");
-    background-size: 40px;
-    margin-right: 10px;
+    background: url("/static/icons/Next.svg"); /* Ícone da próxima seta */
+    background-size: 40px; /* Disposição do background igual o tamanho do botão */
+    margin-right: 10px; /* Deixar o botão mais próximo a margem */
 }
 
 .dots-css li button {
@@ -182,39 +175,36 @@ body {
     outline: none !important;
 }
 
-#sobre-nos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--corSecaoSobrenos);
+#sobre-nos {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    background-color: var(--corSecaoSobrenos);
+    width: 100vw; /* Necessário para aplicar a background-color na seção inteira */
 }
 
 #mvv {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: space-between; 
+    flex-wrap: wrap; /* Quebrar itens, responsividade */
     align-items: center;
-    width: 80%;
+    width: 80%; /* Necessário pois a div pai não segue a margem padrão (80vw) devido a cor de fundo */
 }
 
 .mvv-flex {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 260px;
-    width: 33%;
+    height: 260px; 
+    width: 33%; /* Para comportar as 3 divs dentro da classe e tornar elas responsivas */
 }
 
 #mvv-visao{
-    border-left: 1px solid var(--corLinhas);
-    border-right: 1px solid var(--corLinhas);
+    border-left: 1px solid var(--corLinhas); /* Barra lateral esquerda */
+    border-right: 1px solid var(--corLinhas); /* Barra lateral direita */
 }
 
 .mvv-img {
@@ -223,12 +213,12 @@ body {
     padding-top: 10px;
 }
 
-.mvv-titulo{
+.mvv-titulo {
     color: var(--corVermelho);
     font-size: 1.5rem;
 }
 
-.mvv-linha{
+.mvv-linha {
     background: var(--corLinhas);
     height: 1px;
     width: 40%;
@@ -236,7 +226,7 @@ body {
 
 .mvv-descricao { 
     text-align: center;
-    height: 120px;
+    height: 120px; /* Padronizar o tamanho do texto */
     width: 80%;
     color: var(--corFonte);
 }
@@ -244,125 +234,130 @@ body {
 #nossa-historia {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 80%;
-    padding-top: 60px;
+    flex-wrap: wrap; /* Quebrar a formação de linha, responsividade */
+    width: 80%; /* Necessário pois a div pai não segue a margem padrão (80vw) devido a cor de fundo */
+    padding-top: 60px; /* Separar as divs nossa história da div mvv */
+    padding-bottom: 50px;
 }
 
-#nossa-historia-texto{
+#nossa-historia-texto {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 49%;
+    width: 49%; /* Conteúdo ocupa metade da div e muda de acordo com o tamanho da div, responsividade */
 }
 
-#nossa-historia-titulo{
+#nossa-historia-titulo {
     color: var(--corTitulo);
     font-size: 1.4rem;
-    padding-bottom: 20px;
+    padding-bottom: 20px; /* Separar o nome "nossa história" do texto */
 }
 
-#nossa-historia-descricao{
+#nossa-historia-descricao {
     width: 85%;
     color: var(--corFonte);
 }
 
-#nossa-historia-img{
+#nossa-historia-img {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 49%;
+    width: 49%; /* Conteúdo ocupa metade da div e muda de acordo com o tamanho da div, responsividade */
 }
 
-#nossa-historia-img > img{
-    height: 260px;
-    width: auto;
+#nossa-historia-img > img {
+    height: 260px; 
+    width: auto; /* Largura acompanha o tamanho */
 }
 
 hr {
     height: 1px;
-    border-style: none;
+    border-style: none; /* Retirar o style padrão do hr para se parecer uma linha simples */
 }
 
 h3 {
-    margin: 0;
+    margin: 0; /* Tirar margem padrão do h3 */
     font-weight: 400;
 }
 
 h1 {
-    margin: 0;
+    margin: 0; /* Tirar margem padrão do h1 */
     font-weight: 400;
     font-size: 1.8rem;
 }
 
 p {
-    margin: 0;
+    margin: 0; /* Tirar margem padrão do p */
 }
 
 @media(max-width:1200px){
     .card-flex {
-        width: 225px;
-        height: 400px;
+        width: 225px; /* Diminuir a largura para se adequar a página */
+        height: 400px; /* Diminuir a altura para se adequar a página */
     }
 
     .card-descricao {
-        font-size: 0.7rem;
+        font-size: 0.7rem; 
     }
 
     .card-img {
-        height: 300px;
-        width: 225px;
-        background-size: 280px;
+        height: 300px; /* Diminuir a altura para se adequar a página */
+        width: 225px; /* Diminuir a largura para se adequar a página */
+        background-size: 280px; 
     }
 
     .card.slick-slide.slick-active{
-        height: 450px;
+        height: 450px; /* Diminuir a altura para se adequar a página */
     }
 
     .card.slick-slide{
-        height: 450px;
+        height: 450px; /* Diminuir a altura para se adequar a página */
         
     }
 }
 
 @media(max-width: 1000px){
-    #carrossel{
-        width: 90vw;
+    #carrossel {
+        width: 90vw; /* Diminui a margem da página partir deste tamanho */
+    }
+
+    .slick-next.slick-arrow{
+        margin-right: 20px; /* Aumentar a margem direita para se adequar a nova margem do site */
+    }
+
+    .slick-prev.slick-arrow{
+        margin-left: 20px; /* Aumentar a margem direita para se adequar a nova margem do site */
     }
 
     #mvv {
-        width: 90%;
+        width: 90%; /* Diminui a margem da página partir deste tamanho */
     }
 
     #nossa-historia {
-        width: 90%;
+        width: 90%; /* Diminui a margem da página partir deste tamanho */
     }
 
     .mvv-flex {
-        height: 270px;
+        height: 270px; /* Aumenta um pouco o tamanho devido ao texto que perde espaço lateral */
     }
 
     .mvv-descricao {
-        height: 130px;
+        height: 130px; /* Aumenta um pouco o tamanho devido ao texto que perde espaço lateral */
     }
 
-    #nossa-historia-img > img{
-        height: 240px;
+    #nossa-historia-img > img {
+        height: 240px; /* Diminui o tamanho da imagem para se adequar ao tamanho da página */
     }
 }
 
 @media(max-width: 900px){
-    #mvv{
-        justify-content: center;
+    #mvv {
+        justify-content: center; /* Centralizar o conteúdo pois o card de valores desce */
     }
 
-    .mvv-flex {
-        width: 270px; 
-    }
-
-    #mvv-visao{
-        border-right: 0;
+    #mvv-visao {
+        border-right: 0; /* Tirar a borda lateral pois a partir deste ponto o card de valores desce */
     }
 }
 
@@ -371,65 +366,61 @@ p {
     #nossa-historia {
         flex-direction: column;
         align-items: center;
-        padding-top: 30px;
+        padding-top: 30px; /* Diminuir o padding de cima pois agrora a disposição do texto mudou */
+        padding-bottom: 0; /* Tirar o padding de baixo pois agora a disposição da imagem mudou */
     }
 
     #nossa-historia-texto {
-        width: 100%;
-        padding-bottom: 20px;
+        width: 100%; /* Mudando a disposição do conteúdo */
+        padding-bottom: 20px; /* Separando nossa história texto de nossa história img */
     }
 
     #nossa-historia-descricao {
-        text-align: center;
+        text-align: center; 
     }
 
     #nossa-historia-img {
-        width: 100vw;
-        height: auto;
-        padding: 0;
+        width: 100vw; /* Preparando div para mudança de disposição da imagem */
+        height: auto; /* Preparando div para mudança de disposição da imagem */
+        padding: 0; 
     }
 
     #nossa-historia-img > img {
-        width: 100vw;
-        height: auto;
+        width: 100vw; /* Mudando disposição da imagem */
+        height: auto; /* Mudando disposição da imagem */
     }
 }
 
 @media(max-width: 600px){
 
     .mvv-flex{
-        width: 80%;
+        width: 80%; /* Deixar a largura do mvv-flex mudar de acordo com a largura da página */
     }
 
     .mvv-descricao{
-        width: 100%;
+        width: 100%; /* largura do texto muda de acordo com a largura da página */
     }
 
     #mvv-visao{
-        border: 0;
+        border: 0; /* Tirar qualquer borda do mvv visão pois a disposição é agora em coluna */
     }
 }
 
 @media(max-width: 350px){
 
     .card-flex {
-        width: 220px;
-        height: 395px;
-    }
-
-    .card-descricao {
-        font-size: 0.7rem;
+        width: 220px; /* Diminuir card para se adequar a esta resolução */
+        height: 395px; /* Diminuir card para se adequar a esta resolução */
     }
 
     .card-img {
-        height: 300px;
-        width: 220px;
+        height: 300px; /* Diminuir imagem para se adequar ao novo tamanho do card */
+        width: 220px; /* Diminuir imagem para se adequar ao novo tamanho do card */
         background-size: 280px;
     }
 
     .card-flex:hover {
-        transition: none;
-        cursor: pointer;
+        transition: none; 
         transform: none;
     }
 
