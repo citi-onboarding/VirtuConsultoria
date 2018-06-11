@@ -369,8 +369,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 250px;
-    width: auto;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -607,6 +605,11 @@ a {
     #footer-flex {
         flex-direction: column;
         justify-content: center;
+    }
+
+    #footer-img > img {
+        width: 150px;
+        height: auto;
     }
 
     #footer-redes-sociais {

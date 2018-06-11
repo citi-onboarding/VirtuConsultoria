@@ -171,3 +171,6 @@ function validarSheet(ordemServicos) {
     return flag; // retorna se houve erro
 }
 
+function website(link){
+    window.open(link);
+}
