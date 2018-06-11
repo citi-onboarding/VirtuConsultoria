@@ -23,6 +23,54 @@ body {
     width: 100vw;
 }
 
+#navbar {
+    display: flex;
+    z-index:5;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    position: fixed !important;
+    top:0;
+    width: 100%;
+}
+
+#navbar-flex {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    top:0;
+    width: 90%;
+}
+
+#navbar-flex > img {
+    height: 250px;
+    width: auto;
+}
+
+#navbar-flex > ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#navbar-flex > ul > li {
+    padding-left: 15px;
+    padding-right: 15px; 
+    text-align: center;
+    color: var(--corCinzaVirtu);
+}
+
+#banner {
+    height: 500px;
+    width: 100vw;
+}
+
 .titulo {
     display: flex;
     flex-direction: column;
@@ -30,7 +78,6 @@ body {
     padding-top: 50px;  /*Deixar o titulo um pouco afastado da div anterior*/
     padding-bottom: 20px; /*Deixar o titulo um pouco afastado do conteúdo da div que ele está*/
 }
-
 
 .titulo-linha {
     background: var(--corTituloLinha);

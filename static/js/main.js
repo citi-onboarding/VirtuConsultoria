@@ -32,6 +32,23 @@ $(document).ready(function () { // ações realizadas via jquery
     popularServicos();
 });
 
+$(function(){
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if(scroll >= 100){
+            document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
+            document.getElementById('logovirtu').style.height = "70px";
+            document.getElementById('logovirtu').style.padding = "10px";
+            document.getElementById('logovirtu').style.transitionDuration = "500ms";
+            document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+            document.getElementById('navbar').style.transitionDuration = "500ms";
+        } else {
+            document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
+            document.getElementById('logovirtu').style.height = "250px";
+            document.getElementById('navbar').style.backgroundColor = "transparent";
+        }
+    });
+});
 let numDeServicos = 7;
 let conteudoServicos = [
     {
