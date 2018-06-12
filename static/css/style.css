@@ -7,6 +7,7 @@
     --corLinhas: #ECECEC;
     --corFonteContato: #FFFFFF;
     --corSecaoSobrenos: #F8F8F8;
+    overflow-x:hidden;
 }
 
 body {
@@ -35,6 +36,83 @@ body {
 .titulo-linha {
     background: var(--corTituloLinha);
     width: 100px; /*Tamanho padrão da linha sublinhada*/
+}
+
+.banner-fundo{
+    background-image:url('/static/image/Banner.gif');
+    background-size: 100%;
+    -webkit-clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
+    clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
+    width: 100vw;
+    height: 48vw;
+ 
+}
+
+.banner-coluna1{
+    width: 100%;
+    height: 22vw;
+    justify-content: center;
+    display: flex;
+  
+}
+
+.banner-coluna2{
+
+    width: 100%;
+    height: 10vw;
+    justify-content: center;
+    display: flex;
+
+}
+
+.banner-coluna3{
+    width: 100%;
+    height: 16vw;
+    justify-content: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-coluna3 > a {
+    height: 60px;
+}
+
+.banner-botao{
+
+    width: 220px;
+    height: 45px;
+    background-color: #BF3B3A;
+    display: flex;
+    opacity: 0.9;
+    color:white;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+    vertical-align: 30px;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+.textobotao{
+    font-size: 18px;
+    display: flex;
+    padding: 16px;
+    color:white;
+    opacity: 1;
+}
+
+.banner-seta{
+
+    height: 60px;
+    width: 60px;
+    transform: rotate(90deg);
+    align-self:center; 
+    display: flex;
+    color: white;
+    fill: white;
+    cursor: pointer;
+
 }
 
 #servico {
@@ -291,6 +369,13 @@ p {
     margin: 0; /* Tirar margem padrão do p */
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
 @media(max-width:1200px){
     .card-flex {
         width: 225px; /* Diminuir a largura para se adequar a página */
@@ -359,6 +444,36 @@ p {
     #mvv-visao {
         border-right: 0; /* Tirar a borda lateral pois a partir deste ponto o card de valores desce */
     }
+
+    .banner-fundo{
+        
+        height: 65vw;
+        background-size: 120%;
+        -webkit-clip-path: polygon(100% 0, 100% 92%, 44% 92%, 50% 100%, 56% 92%, 0 92%, 0 0);
+         clip-path: polygon(100% 0, 100% 92%, 44% 92%, 50% 100%, 56% 92%, 0 92%, 0 0);
+    }
+    .banner-coluna1 {
+        height: 29.5vw;
+    }
+
+    .banner-coluna2 {
+        height: 15vw;
+    }
+
+    .banner-coluna3 {
+        height: 22.5vw;
+    }
+
+    .banner-botao{
+        width: 207px;
+        height: 45px;
+        
+    }
+
+    .textobotao{
+        padding-top: 14px;
+    }
+
 }
 
 @media(max-width: 850px){
@@ -404,6 +519,62 @@ p {
     #mvv-visao{
         border: 0; /* Tirar qualquer borda do mvv visão pois a disposição é agora em coluna */
     }
+
+    .banner-fundo{
+        
+        height: 85vw;
+        background-size: 150%;
+        background-position: center;
+        
+        -webkit-clip-path: polygon(100% 0, 100% 92%, 43% 92%, 50% 100%, 57% 92%, 0 92%, 0 0);
+                clip-path: polygon(100% 0, 100% 92%, 43% 92%, 50% 100%, 57% 92%, 0 92%, 0 0);
+    
+    }
+
+    .banner-coluna1{
+
+        height: 35vw;
+
+    }
+
+    .banner-coluna2{
+
+        height: 17vw;
+
+    }
+
+    .banner-coluna3{
+        height: 40vw;
+
+    }
+}
+
+@media(max-width: 470px){
+
+    .banner-fundo{
+        height: 120vw;
+        background-position: center;
+        background-size: 200%;
+        -webkit-clip-path: polygon(100% 0, 100% 92%, 40% 92%, 50% 100%, 60% 92%, 0 92%, 0 0);
+        clip-path: polygon(100% 0, 100% 92%, 40% 92%, 50% 100%, 60% 92%, 0 92%, 0 0);
+    }
+
+    .banner-coluna1{
+        height: 58vw;
+    }
+
+    .banner-coluna2{
+        height: 24vw;
+
+    }
+
+    .banner-coluna3{
+        height: 43vw;
+    }
+
+    .banner-seta:hover{
+        margin-top:0px;
+    }
 }
 
 @media(max-width: 350px){
@@ -425,3 +596,4 @@ p {
     }
 
 }
+
