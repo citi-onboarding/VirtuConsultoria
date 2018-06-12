@@ -7,6 +7,7 @@
     --corLinhas: #ECECEC;
     --corFonteContato: #FFFFFF;
     --corSecaoSobrenos: #F8F8F8;
+    overflow-x:hidden;
 }
 
 body {
@@ -37,19 +38,17 @@ body {
     width: 100px; /*Tamanho padrão da linha sublinhada*/
 }
 
-
-.fundo{
-
-    background-image: url('teste.jpg');
+.banner-fundo{
+    background-image:url('/static/image/Banner.gif');
     background-size: 100%;
-    -webkit-clip-path: polygon(100% 0, 100% 90%, 46% 90%, 50% 100%, 54% 90%, 0 90%, 0 0);
-    clip-path: polygon(100% 0, 100% 90%, 46% 90%, 50% 100%, 54% 90%, 0 90%, 0 0);
+    -webkit-clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
+    clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
     width: 100vw;
     height: 48vw;
  
 }
 
-.colunabanner1{
+.banner-coluna1{
     width: 100%;
     height: 22vw;
     justify-content: center;
@@ -57,7 +56,7 @@ body {
   
 }
 
-.colunabanner2{
+.banner-coluna2{
 
     width: 100%;
     height: 10vw;
@@ -66,30 +65,33 @@ body {
 
 }
 
-.colunabanner3{
-
+.banner-coluna3{
     width: 100%;
     height: 16vw;
     justify-content: center; 
     display: flex;
-
-
+    flex-direction: column;
+    align-items: center;
 }
 
-.botaobanner{
+.banner-coluna3 > a {
+    height: 60px;
+}
 
-    width: 230px;
-    height: 50px;
+.banner-botao{
+
+    width: 220px;
+    height: 45px;
     background-color: #BF3B3A;
+    display: flex;
     opacity: 0.9;
     color:white;
     font-size: 1rem;
     justify-content: center;
-    display: flex;
+    align-items: center;
     vertical-align: 30px;
     border-radius: 3px;
     cursor:pointer;
-
 }
 
 .textobotao{
@@ -100,22 +102,17 @@ body {
     opacity: 1;
 }
 
-.setabanner{
+.banner-seta{
 
-    height: 65px;
-    width: 65px;
+    height: 60px;
+    width: 60px;
     transform: rotate(90deg);
     align-self:center; 
     display: flex;
     color: white;
     fill: white;
-    transition: 0.3s;
     cursor: pointer;
 
-}
-
-.setabanner:hover{
-    margin-top:90px;
 }
 
 #servico {
@@ -372,6 +369,13 @@ p {
     margin: 0; /* Tirar margem padrão do p */
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
 @media(max-width:1200px){
     .card-flex {
         width: 225px; /* Diminuir a largura para se adequar a página */
@@ -441,27 +445,26 @@ p {
         border-right: 0; /* Tirar a borda lateral pois a partir deste ponto o card de valores desce */
     }
 
-    .fundo{
+    .banner-fundo{
         
         height: 65vw;
         background-size: 120%;
-        -webkit-clip-path: polygon(100% 0, 100% 90%, 44% 90%, 50% 100%, 56% 90%, 0 90%, 0 0);
-         clip-path: polygon(100% 0, 100% 90%, 44% 90%, 50% 100%, 56% 90%, 0 90%, 0 0);
+        -webkit-clip-path: polygon(100% 0, 100% 92%, 44% 92%, 50% 100%, 56% 92%, 0 92%, 0 0);
+         clip-path: polygon(100% 0, 100% 92%, 44% 92%, 50% 100%, 56% 92%, 0 92%, 0 0);
     }
-    .colunabanner1{
+    .banner-coluna1 {
         height: 29.5vw;
     }
 
-    .colunabanner2{
+    .banner-coluna2 {
         height: 15vw;
     }
 
-    .colunabanner3{
+    .banner-coluna3 {
         height: 22.5vw;
-
     }
 
-    .botaobanner{
+    .banner-botao{
         width: 207px;
         height: 45px;
         
@@ -517,32 +520,60 @@ p {
         border: 0; /* Tirar qualquer borda do mvv visão pois a disposição é agora em coluna */
     }
 
-    .fundo{
+    .banner-fundo{
         
         height: 85vw;
-        background-size: 210%;
+        background-size: 150%;
         background-position: center;
         
-        -webkit-clip-path: polygon(100% 0, 100% 90%, 43% 90%, 50% 100%, 57% 90%, 0 90%, 0 0);
-                clip-path: polygon(100% 0, 100% 90%, 43% 90%, 50% 100%, 57% 90%, 0 90%, 0 0);
+        -webkit-clip-path: polygon(100% 0, 100% 92%, 43% 92%, 50% 100%, 57% 92%, 0 92%, 0 0);
+                clip-path: polygon(100% 0, 100% 92%, 43% 92%, 50% 100%, 57% 92%, 0 92%, 0 0);
     
     }
 
-    .colunabanner1{
+    .banner-coluna1{
 
         height: 35vw;
 
     }
 
-    .colunabanner2{
+    .banner-coluna2{
 
         height: 17vw;
 
     }
 
-    .colunabanner3{
+    .banner-coluna3{
         height: 40vw;
 
+    }
+}
+
+@media(max-width: 470px){
+
+    .banner-fundo{
+        height: 120vw;
+        background-position: center;
+        background-size: 200%;
+        -webkit-clip-path: polygon(100% 0, 100% 92%, 40% 92%, 50% 100%, 60% 92%, 0 92%, 0 0);
+        clip-path: polygon(100% 0, 100% 92%, 40% 92%, 50% 100%, 60% 92%, 0 92%, 0 0);
+    }
+
+    .banner-coluna1{
+        height: 58vw;
+    }
+
+    .banner-coluna2{
+        height: 24vw;
+
+    }
+
+    .banner-coluna3{
+        height: 43vw;
+    }
+
+    .banner-seta:hover{
+        margin-top:0px;
     }
 }
 
@@ -564,34 +595,5 @@ p {
         transform: none;
     }
 
-}
-
-@media(max-width: 470px){
-
-    .fundo{
-        
-        height: 120vw;
-        background-size: 250%;
-        background-position: center;
-        -webkit-clip-path: polygon(100% 0, 100% 90%, 40% 90%, 50% 100%, 60% 90%, 0 90%, 0 0);
-        clip-path: polygon(100% 0, 100% 90%, 40% 90%, 50% 100%, 60% 90%, 0 90%, 0 0);
-    }
-
-    .colunabanner1{
-        height: 58vw;
-    }
-
-    .colunabanner2{
-        height: 24vw;
-
-    }
-
-    .colunabanner3{
-        height: 43vw;
-    }
-
-    .setabanner:hover{
-        margin-top:0px;
-    }
 }
 
