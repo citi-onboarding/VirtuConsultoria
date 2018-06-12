@@ -36,13 +36,15 @@ $(function(){
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         var w =  $(window).width();
-        if(scroll >= 100 && w > 850){
+        if(scroll >= 50 && w > 850){
             document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
             document.getElementById('logovirtu').style.height = "70px";
             document.getElementById('logovirtu').style.paddingTop = "10px";
             document.getElementById('logovirtu').style.paddingBottom = "10px";
             document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+            document.getElementById('hamburguer-icon').style.display = "none";
         } else if(w > 850) {
+            document.getElementById('hamburguer-icon').style.display = "none";
             document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
             document.getElementById('logovirtu').style.height = "250px";
             document.getElementById('logovirtu').style.padding = "0";
@@ -55,17 +57,32 @@ $(function(){
             document.getElementById('hamburguer-icon').style.display = "block";
             document.getElementById('navbar-flex').style.justifyContent = "space-between";
             document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+            document.getElementById('hamburguer-opcoes').style.display = "none";
         } else {
             document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
             document.getElementById('logovirtu').style.height = "250px";
             document.getElementById('logovirtu').style.padding = "0";
             document.getElementById('navbar').style.backgroundColor = "transparent";
-            document.getElementById('hamburguer-icon').style.display = "none";
             document.getElementById('navbar-flex').style.justifyContent = "center";
-            document.getElementById('navbar').style.backgroundColor = "transparent";
+            document.getElementById('hamburguer-icon').style.display = "none";
         }
     });
 });
+
+$( window ).resize(function() {
+    var w =  $(window).width();
+    var scroll = $(window).scrollTop();
+    if(w > 850) {
+        document.getElementById('hamburguer-icon').style.display = "none";
+        document.getElementById('navbar-flex').style.justifyContent = "space-between";
+    } else if (scroll >= 50){
+        document.getElementById('hamburguer-icon').style.display = "block";
+        document.getElementById('navbar-flex').style.justifyContent = "space-between";
+    } else {
+        document.getElementById('navbar-flex').style.justifyContent = "center";
+    }
+});
+
 let numDeServicos = 7;
 let conteudoServicos = [
     {
@@ -128,8 +145,11 @@ $('a').on('click', function (event) {
     }
 });
 
-$(document).ready(function(){
-    $('#hamburguer-icon').on('click', function() {
-        $('nav ul').toggleClass('mostrar');
-    });
+$('#hamburguer-icon').on('click', function (event) {
+    if(document.getElementById('hamburguer-opcoes').style.display == "none"){
+        document.getElementById('hamburguer-opcoes').style.display = "block";
+
+    } else {
+        document.getElementById('hamburguer-opcoes').style.display = "none";
+    }
 });

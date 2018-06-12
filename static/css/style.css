@@ -56,6 +56,7 @@ body {
     color: var(--corCinzaVirtu);
     width: 40px;
     height: 40px;
+
 }
 
 #navbar .hamburguer-opcoes{
@@ -77,13 +78,13 @@ body {
     width: 100%;
 }
 
-#navbar-flex > ul > li {
+#navbar li {
     padding-left: 15px;
     padding-right: 15px; 
     text-align: center;
 }
 
-#navbar-flex > ul > li > a {
+#navbar a{
     text-decoration: none;
     list-style: none;
     color: var(--corCinzaVirtu);
@@ -92,6 +93,16 @@ body {
 
 #navbar-flex > ul > li > a:hover {
     color: var(--corVermelho);
+}
+
+#hamburguer-opcoes{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#hamburguer-opcoes > li{
+    padding: 10px;
 }
 
 #banner {
