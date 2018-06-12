@@ -441,6 +441,10 @@ a {
         justify-content: center; /* Centralizar o conteúdo pois o card de valores desce */
     }
 
+    .mvv-flex {
+        width: 270px; 
+    }
+
     #mvv-visao {
         border-right: 0; /* Tirar a borda lateral pois a partir deste ponto o card de valores desce */
     }
