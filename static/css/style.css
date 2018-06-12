@@ -418,7 +418,13 @@ body {
 }
 
 .footer-contatos-flex:hover {
+    cursor: auto;
+}
+
+#footer-facebook, #footer-instagram, #footer-map {
     cursor: pointer;
+    -webkit-user-select: none;
+    
 }
 
 .footer-contatos-flex > img {
