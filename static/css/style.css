@@ -44,7 +44,17 @@ body {
     width: 90%;
 }
 
-#navbar-flex > img {
+#hamburguer-icon{
+    display: none;
+    text-align: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: var(--corCinzaVirtu);
+    width: 80px;
+    height: 80px;
+}
+
+#logovirtu {
     height: 250px;
     width: auto;
 }
@@ -63,7 +73,17 @@ body {
     padding-left: 15px;
     padding-right: 15px; 
     text-align: center;
+}
+
+#navbar-flex > ul > li > a {
+    text-decoration: none;
+    list-style: none;
     color: var(--corCinzaVirtu);
+    transition-duration: 0.2s;
+}
+
+#navbar-flex > ul > li > a:hover {
+    color: var(--corVermelho);
 }
 
 #banner {
@@ -436,6 +456,26 @@ p {
         width: 100vw; /* Mudando disposição da imagem */
         height: auto; /* Mudando disposição da imagem */
     }
+    
+    #hamburguer-icon {
+        display: block;
+    }
+
+    nav ul {
+        color: var(--corTitulo);
+        max-height: 0px;
+    }
+
+    nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mostrar {
+        max-height: 20em;
+    }
+
 }
 
 @media(max-width: 600px){

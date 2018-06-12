@@ -98,3 +98,21 @@ function popularServicos(){
     }
 
 }
+
+$('a').on('click', function (event) {
+    if (this.hash !== '') {
+        event.preventDefault();
+        var hash = this.hash;
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top - 90
+        }, 500, function () {
+        });
+    }
+});
+
+$(document).ready(function(){
+    $('#hamburguer-icon').on('click', function() {
+        $('nav ul').toggleClass('mostrar');
+    });
+});
