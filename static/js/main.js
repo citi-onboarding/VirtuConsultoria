@@ -35,16 +35,33 @@ $(document).ready(function () { // ações realizadas via jquery
 $(function(){
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
-        if(scroll >= 100){
+        var w =  $(window).width();
+        if(scroll >= 100 && w > 850){
             document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
             document.getElementById('logovirtu').style.height = "70px";
-            document.getElementById('logovirtu').style.padding = "10px";
-            document.getElementById('logovirtu').style.transitionDuration = "500ms";
+            document.getElementById('logovirtu').style.paddingTop = "10px";
+            document.getElementById('logovirtu').style.paddingBottom = "10px";
             document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
-            document.getElementById('navbar').style.transitionDuration = "500ms";
+        } else if(w > 850) {
+            document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
+            document.getElementById('logovirtu').style.height = "250px";
+            document.getElementById('logovirtu').style.padding = "0";
+            document.getElementById('navbar').style.backgroundColor = "transparent";
+        } else if (scroll >= 50) {
+            document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
+            document.getElementById('logovirtu').style.height = "60px";
+            document.getElementById('logovirtu').style.paddingTop = "10px";
+            document.getElementById('logovirtu').style.paddingBottom = "10px";
+            document.getElementById('hamburguer-icon').style.display = "block";
+            document.getElementById('navbar-flex').style.justifyContent = "space-between";
+            document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
         } else {
             document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
             document.getElementById('logovirtu').style.height = "250px";
+            document.getElementById('logovirtu').style.padding = "0";
+            document.getElementById('navbar').style.backgroundColor = "transparent";
+            document.getElementById('hamburguer-icon').style.display = "none";
+            document.getElementById('navbar-flex').style.justifyContent = "center";
             document.getElementById('navbar').style.backgroundColor = "transparent";
         }
     });
