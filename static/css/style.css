@@ -424,7 +424,6 @@ body {
 #footer-facebook, #footer-instagram, #footer-map {
     cursor: pointer;
     -webkit-user-select: none;
-    
 }
 
 .footer-contatos-flex > img {
@@ -437,6 +436,31 @@ body {
     width: 185px;
 }
 
+#map {
+    height: 80%;
+    width: 100%;
+    display: none;
+}
+
+#footer-map:hover + #map{
+    display: block;
+}
+
+#footer-map:hover ~ .footer-contatos-flex{
+    display: none; 
+}
+
+#map:hover {
+    display: block;
+}
+
+#map:hover ~ .footer-contatos-flex{
+    display: none;
+}
+
+#map:hover div{
+    display: block;
+}
 
 hr {
     height: 1px;

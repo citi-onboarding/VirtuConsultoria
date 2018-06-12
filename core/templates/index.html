@@ -118,18 +118,34 @@
                     </div>
                 </div>
                 <div id="footer-contatos">
-                    <div class="footer-contatos-flex">
-                        <img src="{% static 'icons/telefone.svg' %}">
-                        <h5>(81) 9999-9999</h5>
-                    </div>
-                    <div class="footer-contatos-flex">
-                        <img src="{% static 'icons/email.svg' %}">
-                        <h5>VirtuConsultoria@gmail.com</h5>
-                    </div>
                     <div class="footer-contatos-flex" id="footer-map" onclick="website('https://www.google.com/maps/search/ufpe/@-8.0522667,-34.9548744,16z/data=!3m1!4b1')">
                         <img src="{% static 'icons/map.svg' %}">
                         <h5>Rua Manuel Medeiro Dois Irmãos Recife, Pernambuco.</h5>
                     </div>
+                    <div id="map" class="gmap"></div>
+                    <div class="footer-contatos-flex">
+                        <img src="{% static 'icons/telefone.svg' %}">
+                        <h5>(81) 9999-9999</h5>
+                    </div>
+                    <div class="footer-contatos-flex" id="footer-mail">
+                        <img src="{% static 'icons/email.svg' %}">
+                        <h5>VirtuConsultoria@gmail.com</h5>
+                    </div>
+                        <script>
+                            function initMap() {
+                                var uluru = {lat: -25.363, lng: 131.044};
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 4,
+                                center: uluru
+                                });
+                                var marker = new google.maps.Marker({
+                                position: uluru,
+                                map: map
+                                });
+                            }
+                        </script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuNBEV_fCeJxtczbPmrH5Sn9pV_9SYvc&callback=initMap"
+                        type="text/javascript"></script>
                 </div>
             </div>
         </div>
