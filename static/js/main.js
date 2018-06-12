@@ -18,6 +18,8 @@ $(document).ready(function () { // ações realizadas via jquery
         // função chamada após o término do request json
         pegarHttp(popularServicos);
     });
+
+    depoimentoSlick();
 });
 
 function pegarHttp(successo) { // função standard de request http
@@ -169,5 +171,17 @@ function validarSheet(ordemServicos) {
 
     criarServicos(ordemServicos, flag); // cria os serviços antes de substituí-los
     return flag; // retorna se houve erro
+}
+
+function depoimentoSlick(){
+    $('#carrossel-depoimentos').slick({ // gera o carrossel através da biblioteca slick
+        infinite: true, // o carrosel não volta pro começo quando acaba
+        slidesToShow: 1, // mostra 3 cards por vez
+        slidesToScroll: 1, // passa 3 cards por vez
+        dots: true, // bolinhas indicando em que slide o user está
+        arrows: false, // setas laterais escondidas
+        focusOnSelect: false, // realce feito com css
+        dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
+    });
 }
 

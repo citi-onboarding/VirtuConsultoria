@@ -28,14 +28,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;  /*Deixar o titulo um pouco afastado da div anterior*/
-    padding-bottom: 20px; /*Deixar o titulo um pouco afastado do conteúdo da div que ele está*/
+    padding-top: 50px;  /* Deixar o titulo um pouco afastado da div anterior */
+    padding-bottom: 20px; /* Deixar o titulo um pouco afastado do conteúdo da div que ele está */
 }
 
 
 .titulo-linha {
     background: var(--corTituloLinha);
-    width: 100px; /*Tamanho padrão da linha sublinhada*/
+    width: 100px; /* Tamanho padrão da linha sublinhada */
 }
 
 .banner-fundo{
@@ -123,39 +123,39 @@ body {
 
 #carrossel {
     width: 80vw;    
-    margin-bottom: 50px; /*Margem abaixo do carrossel para comportar os botões, pois caso contrário eles ficam ultrapassando a div*/
+    margin-bottom: 50px; /* Margem abaixo do carrossel para comportar os botões, pois caso contrário eles ficam ultrapassando a div */
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center; /*Importante para deixar o card centralizado*/
-    justify-content: center; /*Importante para deixar o card centralizado*/
+    align-items: center; /* Importante para deixar o card centralizado */
+    justify-content: center; /* Importante para deixar o card centralizado */
     height: 460px; 
 }
 
 .card-flex {
-    transition: all 0.1s linear; /*Transição na hora que o hover é desativado*/
+    transition: all 0.1s linear; /* Transição na hora que o hover é desativado */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 250px;
     height: 460px;
-    box-shadow: 0 1px 1px 0 #ECECEC, 0 1px 5px 0 rgba(0, 0, 0, 0.19); /*Sombra do card*/
+    box-shadow: 0 1px 1px 0 #ECECEC, 0 1px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
     margin: 0 auto; 
 }
 
 .card-flex:hover {
-    transition: all 0.1s linear; /*Tempo e tipo da transição ao ativar o hover */
-    cursor: pointer; /*Transformar o cursor em ponteiro pois futuramente o card irá ser clicável*/
-    transform: scale(1.1); /*Aumentar o tamanho caso o cursor esteja em cima*/
+    transition: all 0.1s linear; /* Tempo e tipo da transição ao ativar o hover */
+    cursor: pointer; /* Transformar o cursor em ponteiro pois futuramente o card irá ser clicável */
+    transform: scale(1.1); /* Aumentar o tamanho caso o cursor esteja em cima */
 }
 
 .card-img {
     background-image: url("/static/image/Documentação.jpg");
-    height: 300px; /*Tamanho da imagem de fundo*/
-    width: 250px; /*Tamanho da imagem de fundo*/
-    background-size: 300px; /*Escala na qual ela irá aparecer*/
+    height: 300px; /* Tamanho da imagem de fundo */
+    width: 250px; /* Tamanho da imagem de fundo */
+    background-size: 300px; /* Escala na qual ela irá aparecer */
 }
 
 .card-conteudo {
@@ -175,7 +175,7 @@ body {
 .card-linha {
     width: 100%;
     height: 1px;
-    border-style: none; /*Tirar o estilo do hr para que fique uma linha realmente*/
+    border-style: none; /* Tirar o estilo do hr para que fique uma linha realmente */
     background: var(--corLinhas);
 }
 
@@ -374,7 +374,25 @@ a {
     color: white;
 }
 
+#depoimentos {
+    width: 100%;   
+}
 
+#carrossel-depoimentos {
+    height: 350px;
+    width: 100%;
+}
+
+.card-depoimento {
+    height: 350px;
+    border: solid 2px white;
+    margin: 0 30px 0 30px;
+    background-color: gray;
+}
+
+#carrossel-depoimentos .slick-list {
+    padding:0 15% 0 15%;    
+}
 
 @media(max-width:1200px){
     .card-flex {
