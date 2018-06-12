@@ -171,3 +171,19 @@ function validarSheet(ordemServicos) {
     return flag; // retorna se houve erro
 }
 
+function website(link){
+    window.open(link);
+}
+
+function initMap() {
+    var uluru = {lat: -8.0517075, lng: -34.9540205};
+    var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: uluru
+    });
+    var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+    });
+}
+

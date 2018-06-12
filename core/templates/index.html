@@ -16,6 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
     <script src="{% static 'js/jquery-mask/src/jquery.mask.js' %}"></script>
+    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuNBEV_fCeJxtczbPmrH5Sn9pV_9SYvc&callback=initMap"></script>
     <title>Virtù Consultoria</title>
 </head>
 
@@ -96,7 +97,44 @@
                 <input type="submit" value="Enviar">
             </form>
         </div>
-        <div id="footer"></div>
+        <div id="footer">
+            <div id="footer-flex">
+                <div id="footer-img">
+                    <img src="{% static 'image/Logo - Banner.png' %}">
+                </div>
+                <div id="footer-redes-sociais">
+                    <div class="footer-redes-sociais-flex" id="footer-facebook" onclick="website('https://www.facebook.com/VirtuPolitica/')">
+                        <img src="{% static 'icons/Facebook - logo.svg' %}">
+                        <div class="footer-redes-sociais-descricao">
+                            <h5>Facebook</h5>
+                            <p>/VirtuPolitica</p>
+                        </div>
+                    </div>
+                    <div class="footer-redes-sociais-flex" id="footer-instagram" onclick="website('https://www.instagram.com/virtupolitica/')">
+                        <img src="{% static 'icons/instagram - logo.svg' %}">
+                        <div class="footer-redes-sociais-descricao">
+                            <h5>Instagram</h5>
+                            <p>@VirtuPolitica</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer-contatos">
+                    <div class="footer-contatos-flex" id="footer-map" onclick="website('https://www.google.com/maps/search/ufpe/@-8.0522667,-34.9548744,16z/data=!3m1!4b1')">
+                        <img src="{% static 'icons/map.svg' %}">
+                        <h5>Av. Professor Luiz Freire, Cidade Universitaria, CFCH, Recife - PE</h5>
+                    </div>
+                    <div id="map" class="gmap"></div>
+                    <div class="footer-contatos-flex">
+                        <img src="{% static 'icons/telefone.svg' %}">
+                        <h5>(81) 9999-9999</h5>
+                    </div>
+                    <div class="footer-contatos-flex" id="footer-mail">
+                        <img src="{% static 'icons/email.svg' %}">
+                        <h5>VirtuConsultoria@gmail.com</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="{% static 'js/main.js' %}"></script>
 </body>
