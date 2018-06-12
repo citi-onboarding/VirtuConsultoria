@@ -16,6 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
     <script src="{% static 'js/jquery-mask/src/jquery.mask.js' %}"></script>
+    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuNBEV_fCeJxtczbPmrH5Sn9pV_9SYvc&callback=initMap"></script>
     <title>Virtù Consultoria</title>
 </head>
 
@@ -131,21 +132,6 @@
                         <img src="{% static 'icons/email.svg' %}">
                         <h5>VirtuConsultoria@gmail.com</h5>
                     </div>
-                        <script>
-                            function initMap() {
-                                var uluru = {lat: -25.363, lng: 131.044};
-                                var map = new google.maps.Map(document.getElementById('map'), {
-                                zoom: 4,
-                                center: uluru
-                                });
-                                var marker = new google.maps.Marker({
-                                position: uluru,
-                                map: map
-                                });
-                            }
-                        </script>
-                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuNBEV_fCeJxtczbPmrH5Sn9pV_9SYvc&callback=initMap"
-                        type="text/javascript"></script>
                 </div>
             </div>
         </div>
