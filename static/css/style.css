@@ -381,6 +381,7 @@ a {
 #carrossel-depoimentos {
     height: 350px;
     width: 100%;
+    margin-top: 30px;
 }
 
 .card-depoimento {
@@ -390,7 +391,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 1px 1psx 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
+    box-shadow: 0 1px 1psx 0 #ECECEC, 0 20px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
 
 }
 
@@ -405,9 +406,32 @@ a {
     width: 450px; /* Tamanho da imagem de fundo */
 }
 
-.texto-depoimento {
-    height: 350px;
+.conteudo-depoimento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50%;
+}
+
+.texto-depoimento {
+    height: 330px;
+    width: 80%;
+    text-align: center;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.quotes-depoimento img {
+    height: 60px;
+    width: 35px;
+}
+
+.nome-depoimento {
+    color: var(--corVermelho);
+    font-weight: bolder;
 }
 
 @media(max-width:1200px){
