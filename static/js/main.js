@@ -147,7 +147,7 @@ function validarSheet(ordemServicos) {
     let temp = []; // array temporário para conferir repetições
 
     // flag que será retornada
-    let flag = 1; 
+    let flag = 1;
     // começa como true e soh altera pra false caso haja erro
 
     for (i = 0; i < ordemServicos.length; i++) { // passa pelo array vindo da planilha
@@ -173,7 +173,7 @@ function validarSheet(ordemServicos) {
     return flag; // retorna se houve erro
 }
 
-function depoimentoSlick(){
+function depoimentoSlick() {
     $('#carrossel-depoimentos').slick({ // gera o carrossel através da biblioteca slick
         infinite: true, // o carrosel não volta pro começo quando acaba
         slidesToShow: 1, // mostra 1 card por vez
@@ -182,6 +182,22 @@ function depoimentoSlick(){
         arrows: false, // setas laterais escondidas
         focusOnSelect: false, // realce feito com css
         dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
+    });
+}
+
+function website(link) {
+    window.open(link);
+}
+
+function initMap() {
+    var uluru = { lat: -8.0517075, lng: -34.9540205 };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: uluru
+    });
+    var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
     });
 }
 
