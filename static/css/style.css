@@ -63,9 +63,22 @@ body {
     display: none;
 }
 
+#navbar-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition-duration: 500ms;
+}
+
 #logovirtu {
-    height: 250px;
+    height: 130px;
     width: auto;
+    transition-duration: 500ms;
+}
+
+#sublogovirtu {
+    height: 65px;
+    width: 130px;
     transition-duration: 500ms;
 }
 

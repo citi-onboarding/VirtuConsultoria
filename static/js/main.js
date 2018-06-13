@@ -51,30 +51,30 @@ $(document).ready(function () { // ações realizadas via jquery
             var scroll = $(window).scrollTop();
             var w = $(window).width();
             if (scroll >= 50 && w > 850) {
-                document.getElementById('logovirtu').src = "static/image/Logo - navbar.png";
                 document.getElementById('logovirtu').style.height = "70px";
+                document.getElementById('sublogovirtu').style.display = "none";
                 document.getElementById('logovirtu').style.paddingTop = "10px";
                 document.getElementById('logovirtu').style.paddingBottom = "10px";
                 document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
                 document.getElementById('hamburguer-icon').style.display = "none";
             } else if (w > 850) {
                 document.getElementById('hamburguer-icon').style.display = "none";
-                document.getElementById('logovirtu').src = "static/image/Logo - Banner.png";
-                document.getElementById('logovirtu').style.height = "250px";
+                document.getElementById('sublogovirtu').style.display = "block";
+                document.getElementById('logovirtu').style.height = "130px";
                 document.getElementById('logovirtu').style.padding = "0";
                 document.getElementById('navbar').style.backgroundColor = "transparent";
             } else if (scroll >= 50) {
-                document.getElementById('logovirtu').src = "static/image/Logo - navbar.png";
                 document.getElementById('logovirtu').style.height = "60px";
                 document.getElementById('logovirtu').style.paddingTop = "10px";
                 document.getElementById('logovirtu').style.paddingBottom = "10px";
                 document.getElementById('hamburguer-icon').style.display = "block";
+                document.getElementById('sublogovirtu').style.display = "none";
                 document.getElementById('navbar-flex').style.justifyContent = "space-between";
                 document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
                 document.getElementById('hamburguer-opcoes').style.display = "none";
             } else {
-                document.getElementById('logovirtu').src = "static/image/Logo - Banner.png";
-                document.getElementById('logovirtu').style.height = "250px";
+                document.getElementById('logovirtu').style.height = "130px";
+                document.getElementById('sublogovirtu').style.display = "block";
                 document.getElementById('logovirtu').style.padding = "0";
                 document.getElementById('navbar').style.backgroundColor = "transparent";
                 document.getElementById('navbar-flex').style.justifyContent = "center";
@@ -89,6 +89,7 @@ $(document).ready(function () { // ações realizadas via jquery
         if (w > 850) {
             document.getElementById('hamburguer-icon').style.display = "none";
             document.getElementById('navbar-flex').style.justifyContent = "space-between";
+            document.getElementById('hamburguer-opcoes').style.display = "none";
         } else if (scroll >= 50) {
             document.getElementById('hamburguer-icon').style.display = "block";
             document.getElementById('navbar-flex').style.justifyContent = "space-between";
