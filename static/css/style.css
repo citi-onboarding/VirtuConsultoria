@@ -604,7 +604,9 @@ a {
     padding:0 15% 0 15%;    
 }
 
-.img-depoimento img{
+.img-depoimento {
+    background-image: url('/static/image/depoimentos.png');
+    background-size: auto;
     margin-bottom: -5px;
     height: 320px; /* Tamanho da imagem de fundo */
     width: 440px; /* Tamanho da imagem de fundo */
@@ -663,6 +665,62 @@ a {
         height: 450px; /* Diminuir a altura para se adequar a página */
         
     }
+
+    #carrossel-depoimentos {
+        height: 280px;
+    }
+
+    .card-depoimento {
+        height: 280px;
+    }
+    
+    .img-depoimento {
+        height: 280px; /* Tamanho da imagem de fundo */
+        width: 400px; /* Tamanho da imagem de fundo */
+    }
+
+    .texto-depoimento {
+        height: 260px;
+        font-size: 0.9rem;
+    }
+
+    .quotes-depoimento {
+        height: 55px;
+        width: 32px;
+    }
+
+    .nome-depoimento {
+        font-size: 0.95rem;
+    }
+}
+
+@media(max-width: 1100px){
+    #carrossel-depoimentos {
+        height: 270px;
+    }
+
+    .card-depoimento {
+        height: 270px;
+    }
+    
+    .img-depoimento {
+        height: 270px; /* Tamanho da imagem de fundo */
+        width: 390px; /* Tamanho da imagem de fundo */
+    }
+
+    .texto-depoimento {
+        height: 260px;
+        font-size: 0.85rem;
+    }
+
+    .quotes-depoimento {
+        height: 55px;
+        width: 32px;
+    }
+    
+    .nome-depoimento {
+        font-size: 0.9rem;
+    }
 }
 
 @media(max-width: 1000px){
@@ -700,6 +758,52 @@ a {
 
     #footer-flex{
         width: 90%;
+    }
+
+    #carrossel-depoimentos {
+        height: 255px;
+    }
+
+    .card-depoimento {
+        height: 255px;
+    }
+    
+    .img-depoimento {
+        height: 255px; /* Tamanho da imagem de fundo */
+        width: 370px; /* Tamanho da imagem de fundo */
+    }
+
+    .texto-depoimento {
+        height: 260px;
+        font-size: 0.80rem;
+    }
+    
+    .nome-depoimento {
+        font-size: 0.85rem;
+    }
+}
+
+@media(max-width: 930px){
+    #carrossel-depoimentos {
+        height: 240px;
+    }
+
+    .card-depoimento {
+        height: 240px;
+    }
+    
+    .img-depoimento {
+        height: 240px; /* Tamanho da imagem de fundo */
+        width: 350px; /* Tamanho da imagem de fundo */
+    }
+
+    .texto-depoimento {
+        height: 230px;
+        font-size: 0.75rem;
+    }
+    
+    .nome-depoimento {
+        font-size: 0.8rem;
     }
 }
 
@@ -745,6 +849,64 @@ a {
         padding-top: 14px;
     }
 
+}
+
+@media(max-width: 880px){
+    #carrossel-depoimentos {
+        height: 360px;
+    }
+    
+    .card-depoimento {
+        height: 360px;
+        margin: 0 30px 20px 30px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
+    
+    }
+    
+    #carrossel-depoimentos .slick-list {
+        padding:0 15% 0 15%;    
+    }
+    
+    .img-depoimento {
+        height: 200px; /* Tamanho da imagem de fundo */
+        width: 260px; /* Tamanho da imagem de fundo */
+    }
+    
+    .conteudo-depoimento {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+    }
+    
+    .texto-depoimento {
+        height: 300px;
+        width: 100%;
+        text-align: center;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+    
+    .quotes-depoimento img {
+        height: 60px;
+        width: 35px;
+    }
+    
+    .nome-depoimento {
+        color: var(--corVermelho);
+        font-weight: bolder;
+        font-size: 1.1rem;
+    }
+
+    .inner-texto-depoimento {
+        width: 260px;
+    }
 }
 
 @media(max-width: 850px){
@@ -897,6 +1059,18 @@ a {
 
     .banner-seta:hover{
         margin-top:0px;
+    }
+
+    .img-depoimento {
+        width: 100%; /* Tamanho da imagem de fundo */
+    }
+
+    .inner-texto-depoimento, .texto-depoimento, .conteudo-depoimento {
+        width: 100%;
+    }
+
+    .nome-depoimento {
+        font-size: 0.8rem;
     }
 }
 
