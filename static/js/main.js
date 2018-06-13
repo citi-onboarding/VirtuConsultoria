@@ -41,6 +41,59 @@ $(document).ready(function () { // ações realizadas via jquery
             document.getElementById('hamburguer-opcoes').style.display = "none";
         }
     });
+
+    $(function(){
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            var w =  $(window).width();
+            if(scroll >= 50 && w > 850){
+                document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
+                document.getElementById('logovirtu').style.height = "70px";
+                document.getElementById('logovirtu').style.paddingTop = "10px";
+                document.getElementById('logovirtu').style.paddingBottom = "10px";
+                document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+                document.getElementById('hamburguer-icon').style.display = "none";
+            } else if(w > 850) {
+                document.getElementById('hamburguer-icon').style.display = "none";
+                document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
+                document.getElementById('logovirtu').style.height = "250px";
+                document.getElementById('logovirtu').style.padding = "0";
+                document.getElementById('navbar').style.backgroundColor = "transparent";
+            } else if (scroll >= 50) {
+                document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
+                document.getElementById('logovirtu').style.height = "60px";
+                document.getElementById('logovirtu').style.paddingTop = "10px";
+                document.getElementById('logovirtu').style.paddingBottom = "10px";
+                document.getElementById('hamburguer-icon').style.display = "block";
+                document.getElementById('navbar-flex').style.justifyContent = "space-between";
+                document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+                document.getElementById('hamburguer-opcoes').style.display = "none";
+            } else {
+                document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
+                document.getElementById('logovirtu').style.height = "250px";
+                document.getElementById('logovirtu').style.padding = "0";
+                document.getElementById('navbar').style.backgroundColor = "transparent";
+                document.getElementById('navbar-flex').style.justifyContent = "center";
+                document.getElementById('hamburguer-icon').style.display = "none";
+            }
+        });
+    });
+
+    $( window ).resize(function() {
+        var w =  $(window).width();
+        var scroll = $(window).scrollTop();
+        if(w > 850) {
+            document.getElementById('hamburguer-icon').style.display = "none";
+            document.getElementById('navbar-flex').style.justifyContent = "space-between";
+        } else if (scroll >= 50){
+            document.getElementById('hamburguer-icon').style.display = "block";
+            document.getElementById('navbar-flex').style.justifyContent = "space-between";
+        } else {
+            document.getElementById('navbar-flex').style.justifyContent = "center";
+        }
+    });
+
+    
 });
 
 function pegarHttp(successo) { // função standard de request http
@@ -168,7 +221,7 @@ function validarSheet(ordemServicos) {
     let temp = []; // array temporário para conferir repetições
 
     // flag que será retornada
-    let flag = 1;
+    let flag = 1; 
     // começa como true e soh altera pra false caso haja erro
 
     for (i = 0; i < ordemServicos.length; i++) { // passa pelo array vindo da planilha
@@ -189,74 +242,12 @@ function validarSheet(ordemServicos) {
             flag = 0;
         }
     }
-}
-
-
-$(function(){
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        var w =  $(window).width();
-        if(scroll >= 50 && w > 850){
-            document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
-            document.getElementById('logovirtu').style.height = "70px";
-            document.getElementById('logovirtu').style.paddingTop = "10px";
-            document.getElementById('logovirtu').style.paddingBottom = "10px";
-            document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
-            document.getElementById('hamburguer-icon').style.display = "none";
-        } else if(w > 850) {
-            document.getElementById('hamburguer-icon').style.display = "none";
-            document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
-            document.getElementById('logovirtu').style.height = "250px";
-            document.getElementById('logovirtu').style.padding = "0";
-            document.getElementById('navbar').style.backgroundColor = "transparent";
-        } else if (scroll >= 50) {
-            document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
-            document.getElementById('logovirtu').style.height = "60px";
-            document.getElementById('logovirtu').style.paddingTop = "10px";
-            document.getElementById('logovirtu').style.paddingBottom = "10px";
-            document.getElementById('hamburguer-icon').style.display = "block";
-            document.getElementById('navbar-flex').style.justifyContent = "space-between";
-            document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
-            document.getElementById('hamburguer-opcoes').style.display = "none";
-        } else {
-            document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
-            document.getElementById('logovirtu').style.height = "250px";
-            document.getElementById('logovirtu').style.padding = "0";
-            document.getElementById('navbar').style.backgroundColor = "transparent";
-            document.getElementById('navbar-flex').style.justifyContent = "center";
-            document.getElementById('hamburguer-icon').style.display = "none";
-        }
-    });
-});
-
-$( window ).resize(function() {
-    var w =  $(window).width();
-    var scroll = $(window).scrollTop();
-    if(w > 850) {
-        document.getElementById('hamburguer-icon').style.display = "none";
-        document.getElementById('navbar-flex').style.justifyContent = "space-between";
-    } else if (scroll >= 50){
-        document.getElementById('hamburguer-icon').style.display = "block";
-        document.getElementById('navbar-flex').style.justifyContent = "space-between";
-    } else {
-        document.getElementById('navbar-flex').style.justifyContent = "center";
-    }
-});
-
-function popularServicos(){
-    if(conteudoServicos.length !== 0){
-        for(i=0; i<numDeServicos; i++){
-            $('#carrossel').find('.card-flex').find('h3')[i].innerText = conteudoServicos[i].titulo;
-            $('#carrossel').find('.card-flex').find('p')[i].innerText = conteudoServicos[i].descricao;
-            $('#carrossel').find('.card-flex').find('.card-img')[i].style.backgroundImage = 'url('+conteudoServicos[i].imagem+')';
-        }
-    }
 
     criarServicos(ordemServicos, flag); // cria os serviços antes de substituí-los
     return flag; // retorna se houve erro
 }
 
-function depoimentoSlick() {
+function depoimentoSlick(){
     $('#carrossel-depoimentos').slick({ // gera o carrossel através da biblioteca slick
         infinite: true, // o carrosel não volta pro começo quando acaba
         slidesToShow: 1, // mostra 1 card por vez
@@ -283,5 +274,3 @@ function initMap() {
         map: map
     });
 }
-
-
