@@ -5,6 +5,7 @@ const padrao = [0, 1, 2, 3, 4, 5, 6];
 let conteudoServicos;
 
 $(document).ready(function () { // ações realizadas via jquery
+
     $('#id_telefone').mask('(00) 0 0000-0000'); // Customização do input "Telefone"
 
     // Esconde a opção Selecione no input "Como conheceu a Virtù"
@@ -25,42 +26,41 @@ $(document).ready(function () { // ações realizadas via jquery
         if (this.hash !== '') {
             event.preventDefault();
             var hash = this.hash;
-    
+
             $('html, body').animate({
                 scrollTop: $(hash).offset().top - 90
-            }, 500, function () {
-            });
+            }, 500);
         }
     });
-    
+
     $('#hamburguer-icon').on('click', function (event) {
-        if(document.getElementById('hamburguer-opcoes').style.display == "none"){
+        if (document.getElementById('hamburguer-opcoes').style.display == "none") {
             document.getElementById('hamburguer-opcoes').style.display = "block";
-    
+
         } else {
             document.getElementById('hamburguer-opcoes').style.display = "none";
         }
     });
 
-    $(function(){
-        $(window).scroll(function() {
+    $(function () {
+        $(window).scroll(function () {
             var scroll = $(window).scrollTop();
-            var w =  $(window).width();
-            if(scroll >= 50 && w > 850){
-                document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
+            var w = $(window).width();
+            if (scroll >= 50 && w > 850) {
+                document.getElementById('logovirtu').src = "static/image/Logo - navbar.png";
                 document.getElementById('logovirtu').style.height = "70px";
                 document.getElementById('logovirtu').style.paddingTop = "10px";
                 document.getElementById('logovirtu').style.paddingBottom = "10px";
                 document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
                 document.getElementById('hamburguer-icon').style.display = "none";
-            } else if(w > 850) {
+            } else if (w > 850) {
                 document.getElementById('hamburguer-icon').style.display = "none";
-                document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
+                document.getElementById('logovirtu').src = "static/image/Logo - Banner.png";
                 document.getElementById('logovirtu').style.height = "250px";
                 document.getElementById('logovirtu').style.padding = "0";
                 document.getElementById('navbar').style.backgroundColor = "transparent";
             } else if (scroll >= 50) {
-                document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
+                document.getElementById('logovirtu').src = "static/image/Logo - navbar.png";
                 document.getElementById('logovirtu').style.height = "60px";
                 document.getElementById('logovirtu').style.paddingTop = "10px";
                 document.getElementById('logovirtu').style.paddingBottom = "10px";
@@ -69,7 +69,7 @@ $(document).ready(function () { // ações realizadas via jquery
                 document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
                 document.getElementById('hamburguer-opcoes').style.display = "none";
             } else {
-                document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
+                document.getElementById('logovirtu').src = "static/image/Logo - Banner.png";
                 document.getElementById('logovirtu').style.height = "250px";
                 document.getElementById('logovirtu').style.padding = "0";
                 document.getElementById('navbar').style.backgroundColor = "transparent";
@@ -79,13 +79,13 @@ $(document).ready(function () { // ações realizadas via jquery
         });
     });
 
-    $( window ).resize(function() {
-        var w =  $(window).width();
+    $(window).resize(function () {
+        var w = $(window).width();
         var scroll = $(window).scrollTop();
-        if(w > 850) {
+        if (w > 850) {
             document.getElementById('hamburguer-icon').style.display = "none";
             document.getElementById('navbar-flex').style.justifyContent = "space-between";
-        } else if (scroll >= 50){
+        } else if (scroll >= 50) {
             document.getElementById('hamburguer-icon').style.display = "block";
             document.getElementById('navbar-flex').style.justifyContent = "space-between";
         } else {
@@ -93,7 +93,7 @@ $(document).ready(function () { // ações realizadas via jquery
         }
     });
 
-    
+
 });
 
 function pegarHttp(successo) { // função standard de request http
@@ -123,7 +123,7 @@ function pegarHttp(successo) { // função standard de request http
 function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carrossel
 
     // card eh a estrutura básica, em html, de cada serviço dentro do carrossel
-    let card = '<div class="card"><div class="card-flex"><div class="card-img"></div><div class="card-conteudo"><h3 class="card-titulo"></h3><hr class="card-linha"><p class="card-descricao"></p></div></div></div>';
+    let card = '<div class="card"><div class="card-flex" onclick="irParaContato()"><div class="card-img"></div><div class="card-conteudo"><h3 class="card-titulo"></h3><hr class="card-linha"><p class="card-descricao"></p></div></div></div>';
 
     let copiaCard = card; // copia feita pra criar múltiplos cards dentro de carrossel
 
@@ -221,7 +221,7 @@ function validarSheet(ordemServicos) {
     let temp = []; // array temporário para conferir repetições
 
     // flag que será retornada
-    let flag = 1; 
+    let flag = 1;
     // começa como true e soh altera pra false caso haja erro
 
     for (i = 0; i < ordemServicos.length; i++) { // passa pelo array vindo da planilha
@@ -247,7 +247,7 @@ function validarSheet(ordemServicos) {
     return flag; // retorna se houve erro
 }
 
-function depoimentoSlick(){
+function depoimentoSlick() {
     $('#carrossel-depoimentos').slick({ // gera o carrossel através da biblioteca slick
         infinite: true, // o carrosel não volta pro começo quando acaba
         slidesToShow: 1, // mostra 1 card por vez
@@ -273,4 +273,10 @@ function initMap() {
         position: coords,
         map: map
     });
+}
+
+function irParaContato() {
+    $('html, body').animate({
+        scrollTop: $('#contatos').offset().top - 90
+    }, 500);
 }
