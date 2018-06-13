@@ -584,13 +584,13 @@ a {
 }
 
 #carrossel-depoimentos {
-    height: 350px;
+    height: 320px;
     width: 100%;
     margin-top: 30px;
 }
 
 .card-depoimento {
-    height: 350px;
+    height: 320px;
     margin: 0 30px 20px 30px;
     display: flex !important;
     flex-direction: row;
@@ -606,8 +606,8 @@ a {
 
 .img-depoimento img{
     margin-bottom: -5px;
-    height: 350px; /* Tamanho da imagem de fundo */
-    width: 460px; /* Tamanho da imagem de fundo */
+    height: 320px; /* Tamanho da imagem de fundo */
+    width: 440px; /* Tamanho da imagem de fundo */
 }
 
 .conteudo-depoimento {
@@ -618,7 +618,7 @@ a {
 }
 
 .texto-depoimento {
-    height: 330px;
+    height: 300px;
     width: 80%;
     text-align: center;
     display: flex !important;
@@ -636,6 +636,7 @@ a {
 .nome-depoimento {
     color: var(--corVermelho);
     font-weight: bolder;
+    font-size: 1.1rem;
 }
 
 @media(max-width:1200px){
