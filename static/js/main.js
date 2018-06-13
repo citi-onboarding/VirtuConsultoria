@@ -20,6 +20,27 @@ $(document).ready(function () { // ações realizadas via jquery
     });
 
     depoimentoSlick();
+
+    $('a').on('click', function (event) {
+        if (this.hash !== '') {
+            event.preventDefault();
+            var hash = this.hash;
+    
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 90
+            }, 500, function () {
+            });
+        }
+    });
+    
+    $('#hamburguer-icon').on('click', function (event) {
+        if(document.getElementById('hamburguer-opcoes').style.display == "none"){
+            document.getElementById('hamburguer-opcoes').style.display = "block";
+    
+        } else {
+            document.getElementById('hamburguer-opcoes').style.display = "none";
+        }
+    });
 });
 
 function pegarHttp(successo) { // função standard de request http
@@ -168,6 +189,68 @@ function validarSheet(ordemServicos) {
             flag = 0;
         }
     }
+}
+
+
+$(function(){
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        var w =  $(window).width();
+        if(scroll >= 50 && w > 850){
+            document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
+            document.getElementById('logovirtu').style.height = "70px";
+            document.getElementById('logovirtu').style.paddingTop = "10px";
+            document.getElementById('logovirtu').style.paddingBottom = "10px";
+            document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+            document.getElementById('hamburguer-icon').style.display = "none";
+        } else if(w > 850) {
+            document.getElementById('hamburguer-icon').style.display = "none";
+            document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
+            document.getElementById('logovirtu').style.height = "250px";
+            document.getElementById('logovirtu').style.padding = "0";
+            document.getElementById('navbar').style.backgroundColor = "transparent";
+        } else if (scroll >= 50) {
+            document.getElementById('logovirtu').src = "static/image/Logo - navbar.png" ;
+            document.getElementById('logovirtu').style.height = "60px";
+            document.getElementById('logovirtu').style.paddingTop = "10px";
+            document.getElementById('logovirtu').style.paddingBottom = "10px";
+            document.getElementById('hamburguer-icon').style.display = "block";
+            document.getElementById('navbar-flex').style.justifyContent = "space-between";
+            document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+            document.getElementById('hamburguer-opcoes').style.display = "none";
+        } else {
+            document.getElementById('logovirtu').src = "static/image/Logo - Banner.png" ;
+            document.getElementById('logovirtu').style.height = "250px";
+            document.getElementById('logovirtu').style.padding = "0";
+            document.getElementById('navbar').style.backgroundColor = "transparent";
+            document.getElementById('navbar-flex').style.justifyContent = "center";
+            document.getElementById('hamburguer-icon').style.display = "none";
+        }
+    });
+});
+
+$( window ).resize(function() {
+    var w =  $(window).width();
+    var scroll = $(window).scrollTop();
+    if(w > 850) {
+        document.getElementById('hamburguer-icon').style.display = "none";
+        document.getElementById('navbar-flex').style.justifyContent = "space-between";
+    } else if (scroll >= 50){
+        document.getElementById('hamburguer-icon').style.display = "block";
+        document.getElementById('navbar-flex').style.justifyContent = "space-between";
+    } else {
+        document.getElementById('navbar-flex').style.justifyContent = "center";
+    }
+});
+
+function popularServicos(){
+    if(conteudoServicos.length !== 0){
+        for(i=0; i<numDeServicos; i++){
+            $('#carrossel').find('.card-flex').find('h3')[i].innerText = conteudoServicos[i].titulo;
+            $('#carrossel').find('.card-flex').find('p')[i].innerText = conteudoServicos[i].descricao;
+            $('#carrossel').find('.card-flex').find('.card-img')[i].style.backgroundImage = 'url('+conteudoServicos[i].imagem+')';
+        }
+    }
 
     criarServicos(ordemServicos, flag); // cria os serviços antes de substituí-los
     return flag; // retorna se houve erro
@@ -200,4 +283,5 @@ function initMap() {
         map: map
     });
 }
+
 

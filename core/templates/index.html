@@ -22,7 +22,24 @@
 
 <body>
     <div id="main">
-        <nav id="navbar"></nav>
+            <nav id="navbar">
+                    <div id="navbar-flex">
+                        <img src="{% static 'image/Logo - Banner.png' %}" id="logovirtu">
+                        <ul class="navbar-opcoes">
+                            <li><a href="#servico">Serviços</a></li>
+                            <li><a href="#sobre-nos">Sobre nós</a></li>
+                            <li><a href="#">Depoimentos</a></li>
+                            <li><a href="#contatos">Contatos</a></li>
+                        </ul>
+                        <img class="hamburguer-icon" id="hamburguer-icon" src="{% static 'icons/bars.svg' %}">
+                    </div>
+                    <ul class="hamburguer-opcoes" id="hamburguer-opcoes">
+                        <li><a href="#servico">Serviços</a></li>
+                        <li><a href="#sobre-nos">Sobre nós</a></li>
+                        <li><a href="#">Depoimentos</a></li>
+                        <li><a href="#contatos">Contatos</a></li>
+                    </ul>
+                </nav>
         <div id="banner">
             <div class="banner-fundo">
                 <div class="banner-coluna1"></div>
@@ -40,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="servico" id="servico">
+        <div id="servico"class="servico">
             <div class="titulo">
                 <h1>Serviços</h1>
                 <hr class='titulo-linha'>

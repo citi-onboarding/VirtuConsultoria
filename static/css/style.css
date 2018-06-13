@@ -24,14 +24,99 @@ body {
     width: 100vw;
 }
 
+#navbar {
+    display: flex;
+    z-index:5;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    position: fixed !important;
+    top:0;
+    width: 100%;
+    transition-duration: 500ms;
+    -webkit-user-select: none;
+}
+
+#navbar-flex {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    top:0;
+    width: 90%;
+    transition-duration: 500ms;
+}
+
+.hamburguer-icon{
+    display: none;
+    text-align: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: var(--corCinzaVirtu);
+    width: 40px;
+    height: 40px;
+
+}
+
+#navbar .hamburguer-opcoes{
+    display: none;
+}
+
+#logovirtu {
+    height: 250px;
+    width: auto;
+    transition-duration: 500ms;
+}
+
+#navbar-flex > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#navbar li {
+    padding-left: 15px;
+    padding-right: 15px; 
+    text-align: center;
+}
+
+#navbar a{
+    text-decoration: none;
+    list-style: none;
+    color: var(--corCinzaVirtu);
+    transition-duration: 0.2s;
+}
+
+#navbar-flex > ul > li > a:hover {
+    color: var(--corVermelho);
+}
+
+#hamburguer-opcoes{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#hamburguer-opcoes > li{
+    padding: 10px;
+}
+
+#banner {
+    height: 500px;
+    width: 100vw;
+}
+
 .titulo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;  /* Deixar o titulo um pouco afastado da div anterior */
-    padding-bottom: 20px; /* Deixar o titulo um pouco afastado do conteúdo da div que ele está */
+    padding-top: 20px;  /*Deixar o titulo um pouco afastado da div anterior*/
+    padding-bottom: 20px; /*Deixar o titulo um pouco afastado do conteúdo da div que ele está*/
 }
-
 
 .titulo-linha {
     background: var(--corTituloLinha);
@@ -733,6 +818,13 @@ a {
         padding-bottom: 50px;
     }
 
+    #navbar-flex {
+        justify-content: center;
+    }
+
+    #navbar .navbar-opcoes {
+        display: none;
+    }
 }
 
 @media(max-width: 600px){
