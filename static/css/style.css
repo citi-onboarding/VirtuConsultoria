@@ -391,7 +391,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 1px 1psx 0 #ECECEC, 0 20px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
+    box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
 
 }
 
@@ -399,11 +399,10 @@ a {
     padding:0 15% 0 15%;    
 }
 
-.img-depoimento {
-    background-image: url("../image/depoimento.png");
-    background-position: auto;
-    height: 351px; /* Tamanho da imagem de fundo */
-    width: 450px; /* Tamanho da imagem de fundo */
+.img-depoimento img{
+    margin-bottom: -5px;
+    height: 350px; /* Tamanho da imagem de fundo */
+    width: 460px; /* Tamanho da imagem de fundo */
 }
 
 .conteudo-depoimento {
