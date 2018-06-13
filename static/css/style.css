@@ -350,32 +350,32 @@ body {
 }
 
 #footer {
-    display: flex;
-    flex-direction: column;
+    display: flex; 
+    flex-direction: column; 
     align-items: center;
-    width: 100vw;
-    background-color: var(--corTitulo);
+    width: 100vw; /*Footer precisa ocupar toda a tela devido a cor de fundo*/
+    background-color: var(--corTitulo); 
 }
 
 #footer-flex {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    width: 80%;
+    align-items: center; 
+    width: 80%; /*necessário pois os elementos do footer ainda precisam obedecer a margem padrão*/
 }
 
 #footer-img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 20px; /*Necessário para a imagem não ficar muito próxima aos cantos da tela*/
+    padding-bottom: 20px; /*Necessário para a imagem não ficar muito próxima aos cantos da tela*/
 }
 
 #footer-img > img {
-    height: 250px;
-    width: auto;
+    height: 250px; 
+    width: auto; /*Não modificar a dimensão padrão da imagem*/
 }
 
 #footer-redes-sociais, #footer-contatos {
@@ -383,9 +383,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    height: 170px;
-    padding-left: 10px;
-    border-left: 1.5px solid var(--corCinzaVirtu);
+    height: 170px; /*Definir uma altura padrão, para o tamahho da borda ficar igual nos dois*/
+    padding-left: 10px; /*Separar conteúdo da borda*/
+    border-left: 1.5px solid var(--corCinzaVirtu); /*Borda cinza padrão em abos*/
     color: var(--corCinzaVirtu);
 }
 
@@ -397,13 +397,13 @@ body {
 }
 
 .footer-redes-sociais-flex:hover {
-    cursor: pointer;
+    cursor: pointer;  /*Necessário pois são divs clicáveis* (clique definido via jquery)*/
 }
 
 .footer-redes-sociais-flex > img {
-    height: 35px;
-    width: 35px;
-    padding-right: 10px;
+    height: 35px; /*Tamanho de imagem padrão para os ícones de redes sociais*/
+    width: 35px; /*Tamanho de imagem padrão para os ícones de redes sociais*/
+    padding-right: 10px; /*Separar texto da imagem*/
 }
 
 .footer-redes-sociais-descricao > p {
@@ -418,18 +418,18 @@ body {
 }
 
 .footer-contatos-flex:hover {
-    cursor: auto;
+    cursor: auto; /*Ao passar o mouse por cima põe o cursor de texto, indicando que é possível copiar os dados*/
 }
 
 #footer-facebook, #footer-instagram, #footer-map {
     cursor: pointer;
-    -webkit-user-select: none;
+    -webkit-user-select: none; /*Deixa desabilitado a cópia, pois estas divs são botões que levam direto ao site*/
 }
 
 .footer-contatos-flex > img {
-    height: 25px;
-    width: 25px;
-    padding-right: 10px;
+    height: 25px;  /*Tamanho de imagem padrão para os ícones de contatos*/
+    width: 25px; /*Tamanho de imagem padrão para os ícones de contatos*/
+    padding-right: 10px; /*Separar texto da imagem*/
 }
 
 .footer-contatos-flex > h5 {
@@ -439,23 +439,23 @@ body {
 #map {
     height: 70%;
     width: 100%;
-    display: none;
-}
-
-#footer-map:hover + #map{
-    display: block;
-}
-
-#footer-map:hover ~ .footer-contatos-flex{
     display: none; 
 }
 
+#footer-map:hover + #map{
+    display: block; /*Mapa do google aparece apenas quando é detectado hover na div de endereço*/
+}
+
+#footer-map:hover ~ .footer-contatos-flex{
+    display: none; /*Ao detectar hover no endereço, desativa as proximas divs "footer-contatos-flex"*/
+}
+
 #map:hover {
-    display: block;
+    display: block; /*Necessario para deixar o mapa aparecendo enquanto o usuário mexe*/
 }
 
 #map:hover ~ .footer-contatos-flex{
-    display: none;
+    display: none;  /*Ao detectar hover no mapa, desativa as proximas divs "footer-contatos-flex"*/
 }
 
 #map:hover div{
@@ -688,11 +688,11 @@ a {
         width: 100%; /* largura do texto muda de acordo com a largura da página */
     }
 
-    #mvv-visao{
+    #mvv-visao {
         border: 0; /* Tirar qualquer borda do mvv visão pois a disposição é agora em coluna */
     }
 
-    .banner-fundo{
+    .banner-fundo {
         
         height: 85vw;
         background-size: 150%;
@@ -703,27 +703,22 @@ a {
     
     }
 
-    .banner-coluna1{
-
+    .banner-coluna1 {
         height: 35vw;
-
     }
 
-    .banner-coluna2{
-
+    .banner-coluna2 {
         height: 17vw;
-
     }
 
-    .banner-coluna3{
+    .banner-coluna3 {
         height: 40vw;
-
     }
 }
 
 @media(max-width: 470px){
 
-    .banner-fundo{
+    .banner-fundo {
         height: 120vw;
         background-position: center;
         background-size: 200%;
@@ -731,20 +726,20 @@ a {
         clip-path: polygon(100% 0, 100% 92%, 40% 92%, 50% 100%, 60% 92%, 0 92%, 0 0);
     }
 
-    .banner-coluna1{
+    .banner-coluna1 {
         height: 58vw;
     }
 
-    .banner-coluna2{
+    .banner-coluna2 {
         height: 24vw;
 
     }
 
-    .banner-coluna3{
+    .banner-coluna3 {
         height: 43vw;
     }
 
-    .banner-seta:hover{
+    .banner-seta:hover {
         margin-top:0px;
     }
 }

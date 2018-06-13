@@ -171,14 +171,14 @@ function validarSheet(ordemServicos) {
     return flag; // retorna se houve erro
 }
 
-function website(link){
-    window.open(link);
+function website(link){ //Recebe o link do html de acordo com a div
+    window.open(link); //Abre o link recebido em outra janela
 }
 
 function initMap() {
-    var uluru = {lat: -8.0517075, lng: -34.9540205};
+    var uluru = {lat: -8.0517075, lng: -34.9540205}; //Coordenadas do CFCH
     var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
+    zoom: 14,  //Disposição do mapa na tela
     center: uluru
     });
     var marker = new google.maps.Marker({
