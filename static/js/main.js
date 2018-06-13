@@ -24,6 +24,10 @@ $(document).ready(function () { // ações realizadas via jquery
 
     $('a').on('click', function (event) {
         if (this.hash !== '') {
+
+            $('.navbar-opcoes').find('a').css('color', '#A8A9AD');
+            this.style.color = 'var(--corVermelho)';
+            
             event.preventDefault();
             var hash = this.hash;
 
