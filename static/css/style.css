@@ -38,6 +38,21 @@ body {
     width: 100px; /*Tamanho padrão da linha sublinhada*/
 }
 
+.titulo-contato { /* Titulo do contato*/
+    display: flex;
+    flex-direction: column;
+    color:white;
+    align-items: center;
+    padding-top: 50px;  
+    padding-bottom: 20px; 
+}
+
+
+.titulo-linha-contato { /* Linha vermelha do Contato */
+    background: var(--corVermelho);
+    width: 100px; 
+}
+
 .banner-fundo{
     background-image:url('/static/image/Banner.gif');
     background-size: 100%;
@@ -349,6 +364,127 @@ body {
     width: auto; /* Largura acompanha o tamanho */
 }
 
+
+/* contato aqui */
+
+
+.coluna-contato{ /* Imagem de fundo do contato */
+    background-size: 100%; /* Alinha a imagem na tela */
+    background-position: center center; /* Centraliza a imagem no centro */
+
+}
+
+
+
+input[type=text] { /* Configuracoes do input do form do contato*/
+    margin-top:7px;
+    margin-bottom:7px;
+    width: 50%; /*Coloca o form com metade da div*/
+    padding-right:12px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    border-right: none;
+    border-bottom:solid 1px var(--corVermelho);
+    color:white;
+    background-color: transparent;
+    border-top:none; /* Tira as bordas default do form*/
+    border-left:none;
+    justify-content: center;
+}
+
+
+    input#id_nome{ /* input nome no form com tamanha 22% para poder ficar de lado do input telefone*/
+    width: 22%;
+    margin-right: 2.3%;
+    color:white;
+}
+
+
+input#id_telefone{ /* input telefone no form com tamanho 22% para poder ficar de lado do input nome*/
+    width: 22%;
+    margin-left: 2%;
+}
+
+input::placeholder{ /* Coloca o placeholder com cor branca do input*/
+    color:white;
+}
+
+textarea::placeholder{ /* Coloca o placeholder com cor branca na area de texto(mensagem)*/
+    color:white;
+}
+    
+option{ /* ajusta as configuracoes das opcoes do select*/
+    background: gray;
+    color:white;
+}
+
+textarea{ /* Ajusta as configuracoes da area de texto ( mensagem)*/
+    width: 50%;
+    padding-bottom: 10px;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-left: 0;
+    margin-top:7px;
+    margin-bottom:7px;
+    border-bottom:solid 1px var(--corVermelho);
+    color:white;
+    background-color: transparent;
+    border-top:none;
+    border-left:none;
+    border-right: none;
+    justify-content: center;
+}
+    
+input[type=submit] { /* Ajusta as configuracoes do botao*/
+    width: 140px;
+    background-color: var(--corVermelho);
+    color: white;
+    padding: 12px 6px;
+    margin: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    justify-content: right;
+    border: 0px;
+    margin-bottom: 70px;
+    border-radius: 3px;
+}
+    
+    
+    
+#contatos{ /* Define o tamanho da div contato*/
+    background-image: url("{% static 'image/rawpixel-623440-unsplash.jpg' %}");
+    width: 100vw;
+        
+}
+    
+    
+    
+select{ /* Ajusta as configuraçoes do select(opcoes)*/
+    width: 51.4%; /* Tamanho do select um pouco maior para poder ajustar com os outros inputs*/
+    padding-bottom: 10px;
+    padding-top: 12px;
+    padding-right: 12px;
+    margin-top:7px;
+    margin-bottom:7px;
+    border-bottom:solid 1px var(--corVermelho);
+    color:white;
+    background-color: transparent;
+    border-top:none;
+    border-left:none;
+    border-right: none;
+    justify-content: center;
+    appearance: none;
+}
+    
+    
+form { /* Configuraçoes do formulario*/
+    text-align: right; /* Alinha a direita o formulario*/
+    padding-right: 10%; /* espacamento */
+    padding-left: 10%;
+}
+
+/* termina aqui o contato*/
+
 #footer {
     display: flex; 
     flex-direction: column; 
@@ -519,6 +655,10 @@ a {
         height: 450px; /* Diminuir a altura para se adequar a página */
         
     }
+
+    .coluna-contato{
+        background-size: 120%;
+    }
 }
 
 @media(max-width: 1000px){
@@ -556,6 +696,10 @@ a {
 
     #footer-flex{
         width: 90%;
+    }
+
+    .coluna-contato{
+        background-size: 140%; /* Ajusta a imagem de fundo*/
     }
 }
 
@@ -676,6 +820,48 @@ a {
         padding-bottom: 50px;
     }
 
+    form {
+        text-align: center;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+   
+    input[type=submit] {
+        float: none;
+    }
+
+    .coluna-contato{ /* Ajusta a imagem de fundo*/
+        background-size: 220%;
+        background-position-x: 1px;
+    }
+
+    input#id_nome{ /* Ajusta o input de nome para ocupar 80% da tela*/
+        width: 80%;
+        margin-right: 0%;
+        color:white;
+    }
+
+    input[type=text] { /* Ajusta os inputs para ocupar 80% da tela*/
+        width: 80%;
+    }
+ 
+    input#id_telefone{ /* Ajusta o input de telefone para ocupar 80% da tela*/
+        width: 80%;
+        margin-left: 0%;
+    }
+
+    textarea{ /* Ajusta o input de texto(mensagem) para ocupar 80% da tela*/
+        width: 80%;
+    }
+
+    select{ /* Ajusta o seletct para ocupar 80% da tela*/
+        width: 82%;
+    }
+
+    input[type=submit] {     /*Coloca o botao com uma margem para dar um espacemento na parte de baixo*/
+        margin-top: 50px;
+    }
+
 }
 
 @media(max-width: 600px){
@@ -713,6 +899,11 @@ a {
 
     .banner-coluna3 {
         height: 40vw;
+    }
+
+    .coluna-contato{ /* Ajusta a imagem de fundo*/
+        background-size: 380%;
+        background-position-x: -350px;
     }
 }
 
@@ -760,6 +951,12 @@ a {
     .card-flex:hover {
         transition: none; 
         transform: none;
+    }
+
+    .coluna-contato{ /* Ajusta a imagem de fundo*/
+        background-size: 420%;
+        background-position-x: -250px;
+        background-position-y: 20px;
     }
 
 }
