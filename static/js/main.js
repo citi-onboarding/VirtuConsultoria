@@ -4,6 +4,12 @@ const padrao = [0, 1, 2, 3, 4, 5, 6];
 // variável que contém o conteúdo vindo de servicos.json
 let conteudoServicos;
 
+var bannerHeight = $('#banner').height();
+var servicoHeight = 0;
+var sobrenosHeight = 0;
+var depoimentosHeight = 0;
+var contatosHight = 0;
+
 $(document).ready(function () { // ações realizadas via jquery
 
     $('#id_telefone').mask('(00) 0 0000-0000'); // Customização do input "Telefone"
@@ -21,6 +27,11 @@ $(document).ready(function () { // ações realizadas via jquery
     });
 
     depoimentoSlick();
+
+    servicoHeight = $('#servico').height() + bannerHeight;
+    sobrenosHeight = $('#sobre-nos').height() + servicoHeight;
+    depoimentosHeight = $('#depoimentos').height() + sobrenosHeight;
+    contatosHight = $('#contatos').height() + depoimentosHeight;
 
     $('a').on('click', function (event) {
         if (this.hash !== '') {
@@ -80,12 +91,28 @@ $(document).ready(function () { // ações realizadas via jquery
                 document.getElementById('navbar-flex').style.justifyContent = "center";
                 document.getElementById('hamburguer-icon').style.display = "none";
             }
+
+            scroll = parseInt(scroll) + parseInt($('#navbar').height()) + 5;
+            if(scroll < bannerHeight){
+                $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
+                $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
+            } else if(scroll >= bannerHeight && scroll < servicoHeight){
+                $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
+                document.getElementById('navbar-a-servico').style.color = "#BF3B3A";
+            } else if(scroll >= servicoHeight && scroll < sobrenosHeight){
+                $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
+                document.getElementById('navbar-a-sobrenos').style.color = "#BF3B3A";
+            }
         });
     });
 
     $(window).resize(function () {
         var w = $(window).width();
         var scroll = $(window).scrollTop();
+        servicoHeight = $('#servico').height() + bannerHeight;
+        sobrenosHeight = $('#sobre-nos').height() + servicoHeight;
+        depoimentosHeight = $('#depoimentos').height() + sobrenosHeight;
+        contatosHight = $('#contatos').height() + depoimentosHeight;
         if (w > 850) {
             document.getElementById('hamburguer-icon').style.display = "none";
             document.getElementById('navbar-flex').style.justifyContent = "space-between";
