@@ -68,17 +68,19 @@ body {
     flex-direction: column;
     align-items: center;
     transition-duration: 500ms;
+    padding-left: 40px;
 }
 
 #logovirtu {
-    height: 130px;
+    height: 110px;
+    padding-top: 20px;
     width: auto;
     transition-duration: 500ms;
 }
 
 #sublogovirtu {
-    height: 65px;
-    width: 130px;
+    height: 55px;
+    width: 110px;
     transition-duration: 500ms;
 }
 
@@ -119,7 +121,7 @@ body {
 }
 
 #banner {
-    height: 500px;
+    height: 100vh;
     width: 100vw;
 }
 
@@ -152,14 +154,18 @@ body {
 }
 
 .banner-fundo{
-    background-image:url('/static/image/Banner.gif');
-    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('/static/image/Banner.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 0px;
     -webkit-clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
     clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
     width: 100vw;
-    height: 48vw;
- 
-}
+    height: 100%;
+ }
 
 .banner-coluna1{
     width: 100%;
@@ -170,10 +176,11 @@ body {
 }
 
 .banner-coluna2{
-
     width: 100%;
     height: 10vw;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     display: flex;
 
 }
@@ -232,7 +239,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 200px;
 }
 
 #carrossel {
@@ -792,6 +798,11 @@ a {
 }
 
 @media(max-width:1200px){
+
+    .banner-fundo{
+        background-size: 120%;
+    }
+
     .card-flex {
         width: 225px; /* Diminuir a largura para se adequar a página */
         height: 400px; /* Diminuir a altura para se adequar a página */
@@ -844,6 +855,7 @@ a {
 }
 
 @media(max-width: 1100px){
+    
     #carrossel-depoimentos {
         height: 270px;
     }
@@ -877,7 +889,13 @@ a {
     }
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1000px) {
+
+    .banner-fundo {
+        -webkit-clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
+        clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 58% 92%, 0 92%, 0 0);
+    }
+
     #carrossel {
         width: 90vw; /* Diminui a margem da página partir deste tamanho */
     }
@@ -968,6 +986,11 @@ a {
 }
 
 @media(max-width: 900px){
+
+    .banner-fundo{
+        background-size: 170%;
+    }
+
     #mvv {
         justify-content: center; /* Centralizar o conteúdo pois o card de valores desce */
     }
@@ -980,13 +1003,6 @@ a {
         border-right: 0; /* Tirar a borda lateral pois a partir deste ponto o card de valores desce */
     }
 
-    .banner-fundo{
-        
-        height: 65vw;
-        background-size: 120%;
-        -webkit-clip-path: polygon(100% 0, 100% 92%, 44% 92%, 50% 100%, 56% 92%, 0 92%, 0 0);
-         clip-path: polygon(100% 0, 100% 92%, 44% 92%, 50% 100%, 56% 92%, 0 92%, 0 0);
-    }
     .banner-coluna1 {
         height: 29.5vw;
     }
@@ -1005,7 +1021,7 @@ a {
         
     }
 
-    .textobotao{
+    .textobotao {
         padding-top: 14px;
     }
 
@@ -1071,6 +1087,10 @@ a {
 }
 
 @media(max-width: 850px){
+
+    #navbar-img {
+        padding-left: 0;
+    }
 
     #nossa-historia {
         flex-direction: column;
@@ -1210,6 +1230,10 @@ a {
 
 @media(max-width: 600px){
 
+    .banner-fundo {
+        background-size: cover;
+    }
+
     .mvv-flex{
         width: 80%; /* Deixar a largura do mvv-flex mudar de acordo com a largura da página */
     }
@@ -1222,6 +1246,7 @@ a {
         border: 0; /* Tirar qualquer borda do mvv visão pois a disposição é agora em coluna */
     }
 
+<<<<<<< HEAD
     .banner-fundo {
         
         height: 85vw;
@@ -1234,6 +1259,10 @@ a {
     }
 
     .banner-coluna1 {
+=======
+    .banner-coluna1{
+
+>>>>>>> f973e7ce0814e374893b6390f8dbce9406e15fa9
         height: 35vw;
     }
 
@@ -1259,12 +1288,23 @@ a {
 
 @media(max-width: 470px){
 
+<<<<<<< HEAD
     .banner-fundo {
         height: 120vw;
         background-position: center;
         background-size: 200%;
         -webkit-clip-path: polygon(100% 0, 100% 92%, 40% 92%, 50% 100%, 60% 92%, 0 92%, 0 0);
         clip-path: polygon(100% 0, 100% 92%, 40% 92%, 50% 100%, 60% 92%, 0 92%, 0 0);
+=======
+    #logovirtu {
+        height: 80px;
+        padding-top: 10px;
+    }
+
+    .banner-fundo {
+        -webkit-clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
+        clip-path: polygon(100% 0, 100% 92%, 38% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
+>>>>>>> f973e7ce0814e374893b6390f8dbce9406e15fa9
     }
 
     .banner-coluna1 {
@@ -1327,3 +1367,15 @@ a {
 
 }
 
+@media(min-height: 800px){
+    #banner {
+        height: 800px;
+    }
+
+    .banner-fundo {
+        background-size: cover;
+        height: 800px;
+        -webkit-clip-path: polygon(100% 0, 100% 95%, 45% 95%, 50% 100%, 55% 95%, 0 95%, 0 0);
+        clip-path: polygon(100% 0, 100% 95%, 45% 95%, 50% 100%, 55% 95%, 0 95%, 0 0);
+    }
+}
