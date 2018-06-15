@@ -4,7 +4,14 @@ const padrao = [0, 1, 2, 3, 4, 5, 6];
 // variável que contém o conteúdo vindo de servicos.json
 let conteudoServicos;
 
+var bannerHeight = $('#banner').height();
+var servicoHeight = 0;
+var sobrenosHeight = 0;
+var depoimentosHeight = 0;
+var contatosHight = 0;
+
 $(document).ready(function () { // ações realizadas via jquery
+
     $('#id_telefone').mask('(00) 0 0000-0000'); // Customização do input "Telefone"
 
     // Esconde a opção Selecione no input "Como conheceu a Virtù"
@@ -18,6 +25,103 @@ $(document).ready(function () { // ações realizadas via jquery
         // função chamada após o término do request json
         pegarHttp(popularServicos);
     });
+
+    depoimentoSlick();
+
+    servicoHeight = $('#servico').height() + bannerHeight;
+    sobrenosHeight = $('#sobre-nos').height() + servicoHeight;
+    depoimentosHeight = $('#depoimentos').height() + sobrenosHeight;
+    contatosHight = $('#contatos').height() + depoimentosHeight;
+
+    $('a').on('click', function (event) {
+        if (this.hash !== '') {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 90
+            }, 500);
+        }
+    });
+
+    $('#hamburguer-icon').on('click', function (event) {
+        if (document.getElementById('hamburguer-opcoes').style.display == "none") {
+            document.getElementById('hamburguer-opcoes').style.display = "block";
+
+        } else {
+            document.getElementById('hamburguer-opcoes').style.display = "none";
+        }
+    });
+
+    $(function () {
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            var w = $(window).width();
+            if (scroll >= 50 && w > 850) {
+                document.getElementById('logovirtu').style.height = "70px";
+                document.getElementById('sublogovirtu').style.display = "none";
+                document.getElementById('logovirtu').style.paddingTop = "10px";
+                document.getElementById('logovirtu').style.paddingBottom = "10px";
+                document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+                document.getElementById('hamburguer-icon').style.display = "none";
+            } else if (w > 850) {
+                document.getElementById('hamburguer-icon').style.display = "none";
+                document.getElementById('sublogovirtu').style.display = "block";
+                document.getElementById('logovirtu').style.height = "130px";
+                document.getElementById('logovirtu').style.padding = "0";
+                document.getElementById('navbar').style.backgroundColor = "transparent";
+            } else if (scroll >= 50) {
+                document.getElementById('logovirtu').style.height = "60px";
+                document.getElementById('logovirtu').style.paddingTop = "10px";
+                document.getElementById('logovirtu').style.paddingBottom = "10px";
+                document.getElementById('hamburguer-icon').style.display = "block";
+                document.getElementById('sublogovirtu').style.display = "none";
+                document.getElementById('navbar-flex').style.justifyContent = "space-between";
+                document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+                document.getElementById('hamburguer-opcoes').style.display = "none";
+            } else {
+                document.getElementById('logovirtu').style.height = "130px";
+                document.getElementById('sublogovirtu').style.display = "block";
+                document.getElementById('logovirtu').style.padding = "0";
+                document.getElementById('navbar').style.backgroundColor = "transparent";
+                document.getElementById('navbar-flex').style.justifyContent = "center";
+                document.getElementById('hamburguer-icon').style.display = "none";
+            }
+
+            scroll = parseInt(scroll) + parseInt($('#navbar').height()) + 5;
+            if (scroll < bannerHeight) {
+                $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
+                $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
+            } else if (scroll >= bannerHeight && scroll < servicoHeight) {
+                $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
+                document.getElementById('navbar-a-servico').style.color = "#BF3B3A";
+            } else if (scroll >= servicoHeight && scroll < sobrenosHeight) {
+                $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
+                document.getElementById('navbar-a-sobrenos').style.color = "#BF3B3A";
+            }
+        });
+    });
+
+    $(window).resize(function () {
+        var w = $(window).width();
+        var scroll = $(window).scrollTop();
+        servicoHeight = $('#servico').height() + bannerHeight;
+        sobrenosHeight = $('#sobre-nos').height() + servicoHeight;
+        depoimentosHeight = $('#depoimentos').height() + sobrenosHeight;
+        contatosHight = $('#contatos').height() + depoimentosHeight;
+        if (w > 850) {
+            document.getElementById('hamburguer-icon').style.display = "none";
+            document.getElementById('navbar-flex').style.justifyContent = "space-between";
+            document.getElementById('hamburguer-opcoes').style.display = "none";
+        } else if (scroll >= 50) {
+            document.getElementById('hamburguer-icon').style.display = "block";
+            document.getElementById('navbar-flex').style.justifyContent = "space-between";
+        } else {
+            document.getElementById('navbar-flex').style.justifyContent = "center";
+        }
+    });
+
+
 });
 
 function pegarHttp(successo) { // função standard de request http
@@ -47,7 +151,7 @@ function pegarHttp(successo) { // função standard de request http
 function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carrossel
 
     // card eh a estrutura básica, em html, de cada serviço dentro do carrossel
-    let card = '<div class="card"><div class="card-flex"><div class="card-img"></div><div class="card-conteudo"><h3 class="card-titulo"></h3><hr class="card-linha"><p class="card-descricao"></p></div></div></div>';
+    let card = '<div class="card"><div class="card-flex" onclick="irParaContato()"><div class="card-img"></div><div class="card-conteudo"><h3 class="card-titulo"></h3><hr class="card-linha"><p class="card-descricao"></p></div></div></div>';
 
     let copiaCard = card; // copia feita pra criar múltiplos cards dentro de carrossel
 
@@ -145,7 +249,7 @@ function validarSheet(ordemServicos) {
     let temp = []; // array temporário para conferir repetições
 
     // flag que será retornada
-    let flag = 1; 
+    let flag = 1;
     // começa como true e soh altera pra false caso haja erro
 
     for (i = 0; i < ordemServicos.length; i++) { // passa pelo array vindo da planilha
@@ -171,19 +275,48 @@ function validarSheet(ordemServicos) {
     return flag; // retorna se houve erro
 }
 
-function website(link){ //Recebe o link do html de acordo com a div
+function website(link) { //Recebe o link do html de acordo com a div
     window.open(link); //Abre o link recebido em outra janela
 }
 
 function initMap() {
-    var uluru = {lat: -8.0517075, lng: -34.9540205}; //Coordenadas do CFCH
+    var uluru = { lat: -8.0517075, lng: -34.9540205 }; //Coordenadas do CFCH
     var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,  //Disposição do mapa na tela
-    center: uluru
-    });
-    var marker = new google.maps.Marker({
-    position: uluru,
-    map: map
+        zoom: 14,  //Disposição do mapa na tela
+        center: uluru
     });
 }
 
+function depoimentoSlick() {
+    $('#carrossel-depoimentos').slick({ // gera o carrossel através da biblioteca slick
+        infinite: true, // o carrosel não volta pro começo quando acaba
+        slidesToShow: 1, // mostra 1 card por vez
+        slidesToScroll: 1, // passa 1 card por vez
+        dots: true, // bolinhas indicando em que slide o user está
+        arrows: false, // setas laterais escondidas
+        focusOnSelect: true, // realce feito com css
+        dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
+    });
+}
+
+function website(link) {
+    window.open(link);
+}
+
+function initMap() {
+    var coords = { lat: -8.0517075, lng: -34.9540205 };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: coords
+    });
+    var marker = new google.maps.Marker({
+        position: coords,
+        map: map
+    });
+}
+
+function irParaContato() {
+    $('html, body').animate({
+        scrollTop: $('#contatos').offset().top - 90
+    }, 500);
+}

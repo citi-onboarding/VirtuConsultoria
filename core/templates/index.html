@@ -16,27 +16,66 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
     <script src="{% static 'js/jquery-mask/src/jquery.mask.js' %}"></script>
-    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuNBEV_fCeJxtczbPmrH5Sn9pV_9SYvc&callback=initMap"></script>
     <title>Virtù Consultoria</title>
 </head>
 
 <body>
     <div id="main">
-        <nav id="navbar"></nav>
+        <nav id="navbar">
+            <div id="navbar-flex">
+                <div id="navbar-img">
+                    <img src="{% static 'image/Logo.png' %}" id="logovirtu">
+                    <img src="{% static 'image/SubLogo.png' %}" id="sublogovirtu">
+                </div>
+                <ul class="navbar-opcoes">
+                    <li>
+                        <a href="#servico" id="navbar-a-servico">Serviços</a>
+                    </li>
+                    <li>
+                        <a href="#sobre-nos" id="navbar-a-sobrenos">Sobre nós</a>
+                    </li>
+                    <li>
+                        <a href="#depoimentos">Depoimentos</a>
+                    </li>
+                    <li>
+                        <a href="#contatos">Contatos</a>
+                    </li>
+                </ul>
+                <img class="hamburguer-icon" id="hamburguer-icon" src="{% static 'icons/bars.svg' %}">
+            </div>
+            <ul class="hamburguer-opcoes" id="hamburguer-opcoes">
+                <li>
+                    <a href="#servico">Serviços</a>
+                </li>
+                <li>
+                    <a href="#sobre-nos">Sobre nós</a>
+                </li>
+                <li>
+                    <a href="#depoimentos">Depoimentos</a>
+                </li>
+                <li>
+                    <a href="#contatos">Contatos</a>
+                </li>
+            </ul>
+        </nav>
         <div id="banner">
-                <div class="banner-fundo">
-                    <div class="banner-coluna1"></div>
-                    <div class="banner-coluna2">
-                        <div class="banner-botao">
-                            <div class="textobotao" title="Entre em contanto conosco"><a href="#contatos"> Fale Conosco! </a></div>
+            <div class="banner-fundo">
+                <div class="banner-coluna1"></div>
+                <div class="banner-coluna2">
+                    <div class="banner-botao">
+                        <div class="textobotao" title="Entre em contanto conosco">
+                            <a href="#contatos"> Fale Conosco! </a>
                         </div>
                     </div>
-                    <div class="banner-coluna3">
-                        <a href="#servico"><img class="banner-seta" src="/static/icons/Seta-Branca.svg"></a>
-                    </div>
                 </div>
+                <div class="banner-coluna3">
+                    <a href="#servico">
+                        <img class="banner-seta" src="/static/icons/Seta-Branca.svg">
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="servico" id="servico">
+        <div id="servico" class="servico">
             <div class="titulo">
                 <h1>Serviços</h1>
                 <hr class='titulo-linha'>
@@ -88,7 +127,60 @@
             </div>
         </div>
         <div id="depoimentos">
-            <div class="titulo"></div>
+            <div class="titulo">
+                <h1>Depoimentos</h1>
+                <hr class='titulo-linha'>
+            </div>
+            <div id="carrossel-depoimentos">
+                <div class="card-depoimento">
+                    <div class="img-depoimento"></div>
+                    <div class="conteudo-depoimento">
+                        <div class="texto-depoimento">
+                            <div class="quotes-depoimento">
+                                <img src="{% static 'image/quotes.png' %}" alt="quotes">
+                            </div>
+                            <div class="inner-texto-depoimento">Aqui vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo; Aqui
+                                vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo; Aqui
+                                vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo; Aqui
+                                vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo;</div>
+                            <div class="nome-depoimento">Robert Charles</div>
+                            <div>Advogado</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-depoimento">
+                    <div class="img-depoimento"></div>
+                    <div class="conteudo-depoimento">
+                        <div class="texto-depoimento">
+                            <div class="quotes-depoimento">
+                                <img src="{% static 'image/quotes.png' %}" alt="quotes">
+                            </div>
+                            <div class="inner-texto-depoimento">Aqui vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo; Aqui
+                                vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo; Aqui
+                                vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo; Aqui
+                                vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo;</div>
+                            <div class="nome-depoimento">Robert Charles</div>
+                            <div>Advogado</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-depoimento">
+                    <div class="img-depoimento"></div>
+                    <div class="conteudo-depoimento">
+                        <div class="texto-depoimento">
+                            <div class="quotes-depoimento">
+                                <img src="{% static 'image/quotes.png' %}" alt="quotes">
+                            </div>
+                            <div class="inner-texto-depoimento">Aqui vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo; Aqui
+                                vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo; Aqui
+                                vai um comentário de um cliente antigo; Aqui vai um comentário de um cliente antigo; Aqui
+                                vai um comentário de um cliente antigo;</div>
+                            <div class="nome-depoimento">Robert Charles</div>
+                            <div>Advogado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="contatos">
             <div class="coluna-contato" style="background-image:url('/static/image/contato3.jpg')">
@@ -143,6 +235,7 @@
         </div>
     </div>
     <script src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuNBEV_fCeJxtczbPmrH5Sn9pV_9SYvc&callback=initMap"></script>
 </body>
 
 </html>

@@ -24,18 +24,116 @@ body {
     width: 100vw;
 }
 
+#navbar {
+    display: flex;
+    z-index:5;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    position: fixed !important;
+    top:0;
+    width: 100%;
+    transition-duration: 500ms;
+    -webkit-user-select: none;
+}
+
+#navbar-flex {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    top:0;
+    width: 90%;
+    transition-duration: 500ms;
+}
+
+.hamburguer-icon{
+    display: none;
+    text-align: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: var(--corCinzaVirtu);
+    width: 40px;
+    height: 40px;
+
+}
+
+#navbar .hamburguer-opcoes{
+    display: none;
+}
+
+#navbar-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition-duration: 500ms;
+}
+
+#logovirtu {
+    height: 130px;
+    width: auto;
+    transition-duration: 500ms;
+}
+
+#sublogovirtu {
+    height: 65px;
+    width: 130px;
+    transition-duration: 500ms;
+}
+
+#navbar-flex > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#navbar li {
+    padding-left: 15px;
+    padding-right: 15px; 
+    text-align: center;
+}
+
+#navbar a{
+    text-decoration: none;
+    list-style: none;
+    color: var(--corCinzaVirtu);
+    transition-duration: 0.2s;
+}
+
+#navbar-flex > ul > li > a:hover {
+    color: var(--corVermelho);
+}
+
+#hamburguer-opcoes{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#hamburguer-opcoes > li{
+    padding: 10px;
+}
+
+#banner {
+    height: 500px;
+    width: 100vw;
+}
+
 .titulo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;  /*Deixar o titulo um pouco afastado da div anterior*/
+    padding-top: 20px;  /*Deixar o titulo um pouco afastado da div anterior*/
     padding-bottom: 20px; /*Deixar o titulo um pouco afastado do conteúdo da div que ele está*/
 }
 
-
 .titulo-linha {
     background: var(--corTituloLinha);
-    width: 100px; /*Tamanho padrão da linha sublinhada*/
+    width: 100px; /* Tamanho padrão da linha sublinhada */
 }
 
 .titulo-contato { /* Titulo do contato*/
@@ -134,43 +232,44 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 200px;
 }
 
 #carrossel {
     width: 80vw;    
-    margin-bottom: 50px; /*Margem abaixo do carrossel para comportar os botões, pois caso contrário eles ficam ultrapassando a div*/
+    margin-bottom: 50px; /* Margem abaixo do carrossel para comportar os botões, pois caso contrário eles ficam ultrapassando a div */
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center; /*Importante para deixar o card centralizado*/
-    justify-content: center; /*Importante para deixar o card centralizado*/
+    align-items: center; /* Importante para deixar o card centralizado */
+    justify-content: center; /* Importante para deixar o card centralizado */
     height: 460px; 
 }
 
 .card-flex {
-    transition: all 0.1s linear; /*Transição na hora que o hover é desativado*/
+    transition: all 0.1s linear; /* Transição na hora que o hover é desativado */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 250px;
     height: 460px;
-    box-shadow: 0 1px 1px 0 #ECECEC, 0 1px 5px 0 rgba(0, 0, 0, 0.19); /*Sombra do card*/
+    box-shadow: 0 1px 1px 0 #ECECEC, 0 1px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
     margin: 0 auto; 
 }
 
 .card-flex:hover {
-    transition: all 0.1s linear; /*Tempo e tipo da transição ao ativar o hover */
-    cursor: pointer; /*Transformar o cursor em ponteiro pois futuramente o card irá ser clicável*/
-    transform: scale(1.1); /*Aumentar o tamanho caso o cursor esteja em cima*/
+    transition: all 0.1s linear; /* Tempo e tipo da transição ao ativar o hover */
+    cursor: pointer; /* Transformar o cursor em ponteiro pois futuramente o card irá ser clicável */
+    transform: scale(1.1); /* Aumentar o tamanho caso o cursor esteja em cima */
 }
 
 .card-img {
     background-image: url("/static/image/Documentação.jpg");
-    height: 300px; /*Tamanho da imagem de fundo*/
-    width: 250px; /*Tamanho da imagem de fundo*/
-    background-size: 300px; /*Escala na qual ela irá aparecer*/
+    height: 300px; /* Tamanho da imagem de fundo */
+    width: 250px; /* Tamanho da imagem de fundo */
+    background-size: 300px; /* Escala na qual ela irá aparecer */
 }
 
 .card-conteudo {
@@ -190,7 +289,7 @@ body {
 .card-linha {
     width: 100%;
     height: 1px;
-    border-style: none; /*Tirar o estilo do hr para que fique uma linha realmente*/
+    border-style: none; /* Tirar o estilo do hr para que fique uma linha realmente */
     background: var(--corLinhas);
 }
 
@@ -629,7 +728,68 @@ a {
     color: white;
 }
 
+#depoimentos {
+    width: 100%;   
+}
 
+#carrossel-depoimentos {
+    height: 320px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.card-depoimento {
+    height: 320px;
+    margin: 0 30px 20px 30px;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
+    margin-bottom: 50px;
+}
+
+#carrossel-depoimentos .slick-list {
+    padding:0 15% 0 15%;
+}
+
+.img-depoimento {
+    background-image: url('/static/image/depoimentos.png');
+    background-size: cover;
+    margin-bottom: -5px;
+    height: 320px; /* Tamanho da imagem de fundo */
+    width: 49.9%; /* Tamanho da imagem de fundo */
+}
+
+.conteudo-depoimento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.texto-depoimento {
+    height: 300px;
+    width: 80%;
+    text-align: center;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.quotes-depoimento img {
+    height: 60px;
+    width: 35px;
+}
+
+.nome-depoimento {
+    color: var(--corVermelho);
+    font-weight: bolder;
+    font-size: 1.1rem;
+}
 
 @media(max-width:1200px){
     .card-flex {
@@ -643,8 +803,8 @@ a {
 
     .card-img {
         height: 300px; /* Diminuir a altura para se adequar a página */
-        width: 225px; /* Diminuir a largura para se adequar a página */
-        background-size: 280px; 
+        width: 49.9%; /* Diminuir a largura para se adequar a página */
+        background-size: cover;
     }
 
     .card.slick-slide.slick-active{
@@ -653,7 +813,63 @@ a {
 
     .card.slick-slide{
         height: 450px; /* Diminuir a altura para se adequar a página */
-        
+    }
+
+    #carrossel-depoimentos {
+        height: 280px;
+    }
+
+    .card-depoimento {
+        height: 280px;
+    }
+    
+    .img-depoimento {
+        height: 280px; /* Tamanho da imagem de fundo */
+        width: 400px; /* Tamanho da imagem de fundo */
+    }
+
+    .texto-depoimento {
+        height: 260px;
+        font-size: 0.9rem;
+    }
+
+    .quotes-depoimento {
+        height: 55px;
+        width: 32px;
+    }
+
+    .nome-depoimento {
+        font-size: 0.95rem;
+    }
+}
+
+@media(max-width: 1100px){
+    #carrossel-depoimentos {
+        height: 270px;
+    }
+
+    .card-depoimento {
+        height: 270px;
+    }
+    
+    .img-depoimento {
+        height: 270px; /* Tamanho da imagem de fundo */
+        width: 49.9%; /* Tamanho da imagem de fundo */
+        background-size: cover;
+    }
+
+    .texto-depoimento {
+        height: 260px;
+        font-size: 0.85rem;
+    }
+
+    .quotes-depoimento {
+        height: 55px;
+        width: 32px;
+    }
+    
+    .nome-depoimento {
+        font-size: 0.9rem;
     }
 
     .coluna-contato{
@@ -701,6 +917,54 @@ a {
     .coluna-contato{
         background-size: 140%; /* Ajusta a imagem de fundo*/
     }
+    
+    #carrossel-depoimentos {
+        height: 255px;
+    }
+
+    .card-depoimento {
+        height: 255px;
+    }
+    
+    .img-depoimento {
+        height: 255px; /* Tamanho da imagem de fundo */
+        width: 49.9%; /* Tamanho da imagem de fundo */
+        background-size: cover;
+    }
+
+    .texto-depoimento {
+        height: 260px;
+        font-size: 0.80rem;
+    }
+    
+    .nome-depoimento {
+        font-size: 0.85rem;
+    }
+}
+
+@media(max-width: 930px){
+    #carrossel-depoimentos {
+        height: 240px;
+    }
+
+    .card-depoimento {
+        height: 240px;
+    }
+    
+    .img-depoimento {
+        height: 240px; /* Tamanho da imagem de fundo */
+        width: 49.9%; /* Tamanho da imagem de fundo */
+        background-size: cover;
+    }
+
+    .texto-depoimento {
+        height: 230px;
+        font-size: 0.75rem;
+    }
+    
+    .nome-depoimento {
+        font-size: 0.8rem;
+    }
 }
 
 @media(max-width: 900px){
@@ -745,6 +1009,65 @@ a {
         padding-top: 14px;
     }
 
+}
+
+@media(max-width: 880px){
+    #carrossel-depoimentos {
+        height: 360px;
+    }
+    
+    .card-depoimento {
+        height: 360px;
+        margin: 0 30px 20px 30px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
+    
+    }
+    
+    #carrossel-depoimentos .slick-list {
+        padding:0 15% 0 15%;    
+    }
+    
+    .img-depoimento {
+        height: 100%; /* Tamanho da imagem de fundo */
+        width: 280px; /* Tamanho da imagem de fundo */
+    }
+    
+    .conteudo-depoimento {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 49.9%;
+    }
+    
+    .texto-depoimento {
+        height: 300px;
+        width: 100%;
+        text-align: center;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        font-size: 0.7rem;
+    }
+    
+    .quotes-depoimento img {
+        height: 60px;
+        width: 35px;
+    }
+    
+    .nome-depoimento {
+        color: var(--corVermelho);
+        font-weight: bolder;
+        font-size: 1rem;
+    }
+
+    .inner-texto-depoimento {
+        width: 450px;
+    }
 }
 
 @media(max-width: 850px){
@@ -813,6 +1136,10 @@ a {
         height: 25px;
     }
 
+    .inner-texto-depoimento {
+        width: 380px;
+    }
+
     #footer-contatos{
         height: 130px;
         border:0;
@@ -862,6 +1189,23 @@ a {
         margin-top: 50px;
     }
 
+    #navbar-flex {
+        justify-content: center;
+    }
+
+    #navbar .navbar-opcoes {
+        display: none;
+    }
+}
+
+@media(max-width: 700px){
+    .inner-texto-depoimento {
+        width: 300px;
+    }
+
+    .nome-depoimento {
+        font-size: 0.85rem;
+    }
 }
 
 @media(max-width: 600px){
@@ -907,6 +1251,12 @@ a {
     }
 }
 
+@media(max-width: 500px){
+    .inner-texto-depoimento {
+        width: 270px;
+    }
+}
+
 @media(max-width: 470px){
 
     .banner-fundo {
@@ -933,6 +1283,18 @@ a {
     .banner-seta:hover {
         margin-top:0px;
     }
+
+    .img-depoimento {
+        width: 100%; /* Tamanho da imagem de fundo */
+    }
+
+    .inner-texto-depoimento, .texto-depoimento, .conteudo-depoimento {
+        width: 100%;
+    }
+
+    .nome-depoimento {
+        font-size: 0.8rem;
+    }
 }
 
 @media(max-width: 350px){
@@ -946,6 +1308,10 @@ a {
         height: 300px; /* Diminuir imagem para se adequar ao novo tamanho do card */
         width: 220px; /* Diminuir imagem para se adequar ao novo tamanho do card */
         background-size: 280px;
+    }
+
+    .inner-texto-depoimento {
+        font-size: 0.7rem;
     }
 
     .card-flex:hover {
