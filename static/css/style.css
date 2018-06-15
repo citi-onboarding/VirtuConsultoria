@@ -1246,23 +1246,8 @@ a {
         border: 0; /* Tirar qualquer borda do mvv visão pois a disposição é agora em coluna */
     }
 
-<<<<<<< HEAD
-    .banner-fundo {
-        
-        height: 85vw;
-        background-size: 150%;
-        background-position: center;
-        
-        -webkit-clip-path: polygon(100% 0, 100% 92%, 43% 92%, 50% 100%, 57% 92%, 0 92%, 0 0);
-                clip-path: polygon(100% 0, 100% 92%, 43% 92%, 50% 100%, 57% 92%, 0 92%, 0 0);
-    
-    }
-
-    .banner-coluna1 {
-=======
     .banner-coluna1{
 
->>>>>>> f973e7ce0814e374893b6390f8dbce9406e15fa9
         height: 35vw;
     }
 
@@ -1288,14 +1273,6 @@ a {
 
 @media(max-width: 470px){
 
-<<<<<<< HEAD
-    .banner-fundo {
-        height: 120vw;
-        background-position: center;
-        background-size: 200%;
-        -webkit-clip-path: polygon(100% 0, 100% 92%, 40% 92%, 50% 100%, 60% 92%, 0 92%, 0 0);
-        clip-path: polygon(100% 0, 100% 92%, 40% 92%, 50% 100%, 60% 92%, 0 92%, 0 0);
-=======
     #logovirtu {
         height: 80px;
         padding-top: 10px;
@@ -1304,7 +1281,6 @@ a {
     .banner-fundo {
         -webkit-clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
         clip-path: polygon(100% 0, 100% 92%, 38% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
->>>>>>> f973e7ce0814e374893b6390f8dbce9406e15fa9
     }
 
     .banner-coluna1 {
