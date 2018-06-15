@@ -608,21 +608,21 @@ a {
     display: flex !important;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    cursor: pointer;
     box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
-
+    margin-bottom: 50px;
 }
 
 #carrossel-depoimentos .slick-list {
-    padding:0 15% 0 15%;    
+    padding:0 15% 0 15%;
 }
 
 .img-depoimento {
     background-image: url('/static/image/depoimentos.png');
-    background-size: auto;
+    background-size: cover;
     margin-bottom: -5px;
     height: 320px; /* Tamanho da imagem de fundo */
-    width: 440px; /* Tamanho da imagem de fundo */
+    width: 49.9%; /* Tamanho da imagem de fundo */
 }
 
 .conteudo-depoimento {
@@ -666,8 +666,8 @@ a {
 
     .card-img {
         height: 300px; /* Diminuir a altura para se adequar a página */
-        width: 225px; /* Diminuir a largura para se adequar a página */
-        background-size: 280px; 
+        width: 49.9%; /* Diminuir a largura para se adequar a página */
+        background-size: cover;
     }
 
     .card.slick-slide.slick-active{
@@ -676,7 +676,6 @@ a {
 
     .card.slick-slide{
         height: 450px; /* Diminuir a altura para se adequar a página */
-        
     }
 
     #carrossel-depoimentos {
@@ -718,7 +717,8 @@ a {
     
     .img-depoimento {
         height: 270px; /* Tamanho da imagem de fundo */
-        width: 390px; /* Tamanho da imagem de fundo */
+        width: 49.9%; /* Tamanho da imagem de fundo */
+        background-size: cover;
     }
 
     .texto-depoimento {
@@ -783,7 +783,8 @@ a {
     
     .img-depoimento {
         height: 255px; /* Tamanho da imagem de fundo */
-        width: 370px; /* Tamanho da imagem de fundo */
+        width: 49.9%; /* Tamanho da imagem de fundo */
+        background-size: cover;
     }
 
     .texto-depoimento {
@@ -807,7 +808,8 @@ a {
     
     .img-depoimento {
         height: 240px; /* Tamanho da imagem de fundo */
-        width: 350px; /* Tamanho da imagem de fundo */
+        width: 49.9%; /* Tamanho da imagem de fundo */
+        background-size: cover;
     }
 
     .texto-depoimento {
@@ -884,15 +886,15 @@ a {
     }
     
     .img-depoimento {
-        height: 200px; /* Tamanho da imagem de fundo */
-        width: 260px; /* Tamanho da imagem de fundo */
+        height: 100%; /* Tamanho da imagem de fundo */
+        width: 280px; /* Tamanho da imagem de fundo */
     }
     
     .conteudo-depoimento {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 49.9%;
     }
     
     .texto-depoimento {
@@ -904,6 +906,7 @@ a {
         align-items: center;
         justify-content: space-around;
         margin-bottom: 20px;
+        font-size: 0.7rem;
     }
     
     .quotes-depoimento img {
@@ -914,11 +917,11 @@ a {
     .nome-depoimento {
         color: var(--corVermelho);
         font-weight: bolder;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .inner-texto-depoimento {
-        width: 260px;
+        width: 450px;
     }
 }
 
@@ -988,6 +991,10 @@ a {
         height: 25px;
     }
 
+    .inner-texto-depoimento {
+        width: 380px;
+    }
+
     #footer-contatos{
         height: 130px;
         border:0;
@@ -1001,6 +1008,16 @@ a {
 
     #navbar .navbar-opcoes {
         display: none;
+    }
+}
+
+@media(max-width: 700px){
+    .inner-texto-depoimento {
+        width: 300px;
+    }
+
+    .nome-depoimento {
+        font-size: 0.85rem;
     }
 }
 
@@ -1044,6 +1061,12 @@ a {
     .banner-coluna3{
         height: 40vw;
 
+    }
+}
+
+@media(max-width: 500px){
+    .inner-texto-depoimento {
+        width: 270px;
     }
 }
 
@@ -1098,6 +1121,10 @@ a {
         height: 300px; /* Diminuir imagem para se adequar ao novo tamanho do card */
         width: 220px; /* Diminuir imagem para se adequar ao novo tamanho do card */
         background-size: 280px;
+    }
+
+    .inner-texto-depoimento {
+        font-size: 0.7rem;
     }
 
     .card-flex:hover {

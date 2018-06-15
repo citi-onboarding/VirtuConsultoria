@@ -282,7 +282,7 @@ function depoimentoSlick() {
         slidesToScroll: 1, // passa 1 card por vez
         dots: true, // bolinhas indicando em que slide o user está
         arrows: false, // setas laterais escondidas
-        focusOnSelect: false, // realce feito com css
+        focusOnSelect: true, // realce feito com css
         dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
     });
 }
