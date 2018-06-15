@@ -91,11 +91,17 @@
             <div class="titulo"></div>
         </div>
         <div id="contatos">
-            <div class="titulo"></div>
-            <form action="" method="post">
-                {% csrf_token %} {{ form }}
-                <input type="submit" value="Enviar">
-            </form>
+            <div class="coluna-contato" style="background-image:url('/static/image/contato3.jpg')">
+                <div class="titulo-contato">
+                    <h1>Contato</h1>
+                    <hr class='titulo-linha-contato'>
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %} {{ form }}
+                    </br>
+                    <input type="submit" value="Enviar">
+                </form>
+        </div>
         </div>
         <div id="footer">
             <div id="footer-flex">
