@@ -99,7 +99,6 @@ $(document).ready(function () { // ações realizadas via jquery
                 document.getElementById('hamburguer-icon').style.display = "none";
             } 
             scroll = parseInt(scroll) + parseInt($('#navbar').height()) + 5;
-            console.log(scroll + ' ' + servicoHeight); 
             if(scroll < bannerHeight){
                 $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
                 $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
@@ -141,7 +140,9 @@ $(document).ready(function () { // ações realizadas via jquery
             document.getElementById('navbar-flex').style.justifyContent = "space-between";
             document.getElementById('hamburguer-opcoes').style.display = "none";
             document.getElementById('navbar-img').style.paddingLeft = "40px";
+            document.getElementById('logovirtu').style.height = "110px";
         } else if (scroll >= 50) {
+            document.getElementById('logovirtu').style.height = "70px";
             document.getElementById('hamburguer-icon').style.display = "block";
             document.getElementById('navbar-flex').style.justifyContent = "space-between";
             document.getElementById('navbar-img').style.paddingLeft = "20px";
