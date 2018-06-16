@@ -1355,3 +1355,9 @@ a {
         clip-path: polygon(100% 0, 100% 95%, 45% 95%, 50% 100%, 55% 95%, 0 95%, 0 0);
     }
 }
+
+@media (min-height: 680px) and (min-width: 601px){
+    .banner-fundo {
+        background-size: cover;
+    }
+}

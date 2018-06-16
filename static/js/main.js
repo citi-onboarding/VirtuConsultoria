@@ -146,7 +146,12 @@ $(document).ready(function () { // ações realizadas via jquery
             document.getElementById('hamburguer-icon').style.display = "block";
             document.getElementById('navbar-flex').style.justifyContent = "space-between";
             document.getElementById('navbar-img').style.paddingLeft = "20px";
+        } else if (w > 470){
+            document.getElementById('logovirtu').style.height = "110px";
+            document.getElementById('navbar-img').style.paddingLeft = "0";
+            document.getElementById('navbar-flex').style.justifyContent = "center";
         } else {
+            document.getElementById('logovirtu').style.height = "80px";
             document.getElementById('navbar-img').style.paddingLeft = "0";
             document.getElementById('navbar-flex').style.justifyContent = "center";
         }
