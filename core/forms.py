@@ -3,7 +3,7 @@ from django import forms
 class emailForm(forms.Form):
     
     comoConheceuOpcoes = (
-        ('Selecione', 'Selecione'),
+        ('Selecione', 'Como conheceu a virtù?'),
         ('Redes sociais', 'Redes sociais'),
         ('Indicação', 'Indicação'),
         ('Pesquisa', 'Pesquisa'),

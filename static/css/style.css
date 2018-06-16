@@ -1263,6 +1263,10 @@ a {
         background-size: 380%;
         background-position-x: -350px;
     }
+
+    .inner-texto-depoimento {
+        font-size: 0.5rem;
+    }
 }
 
 @media(max-width: 500px){
@@ -1327,7 +1331,7 @@ a {
     }
 
     .inner-texto-depoimento {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
     }
 
     .card-flex:hover {
