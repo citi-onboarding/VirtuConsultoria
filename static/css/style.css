@@ -489,7 +489,7 @@ input[type=text] { /* Configuracoes do input do form do contato*/
     padding-top: 12px;
     padding-bottom: 10px;
     border-right: none;
-    border-bottom:solid 1px var(--corVermelho);
+    border-bottom:solid 1.5px var(--corVermelho);
     color:white;
     background-color: transparent;
     border-top:none; /* Tira as bordas default do form*/
@@ -498,7 +498,7 @@ input[type=text] { /* Configuracoes do input do form do contato*/
 }
 
 
-    input#id_nome{ /* input nome no form com tamanha 22% para poder ficar de lado do input telefone*/
+input#id_nome{ /* input nome no form com tamanha 22% para poder ficar de lado do input telefone*/
     width: 22%;
     margin-right: 2.3%;
     color:white;
@@ -507,7 +507,7 @@ input[type=text] { /* Configuracoes do input do form do contato*/
 
 input#id_telefone{ /* input telefone no form com tamanho 22% para poder ficar de lado do input nome*/
     width: 22%;
-    margin-left: 2%;
+    margin-left: 2.3%;
 }
 
 input::placeholder{ /* Coloca o placeholder com cor branca do input*/
@@ -531,13 +531,14 @@ textarea{ /* Ajusta as configuracoes da area de texto ( mensagem)*/
     padding-left: 0;
     margin-top:7px;
     margin-bottom:7px;
-    border-bottom:solid 1px var(--corVermelho);
+    border-bottom:solid 1.5px var(--corVermelho);
     color:white;
     background-color: transparent;
     border-top:none;
     border-left:none;
     border-right: none;
     justify-content: center;
+    resize: none;
 }
     
 input[type=submit] { /* Ajusta as configuracoes do botao*/
@@ -550,7 +551,7 @@ input[type=submit] { /* Ajusta as configuracoes do botao*/
     cursor: pointer;
     justify-content: right;
     border: 0px;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
     border-radius: 3px;
 }
     
@@ -562,16 +563,24 @@ input[type=submit] { /* Ajusta as configuracoes do botao*/
         
 }
     
-    
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border-bottom:solid 1.5px var(--corCinzaVirtu);
+    outline: 0;
+}  
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--corCinzaVirtu) inset;
+}
     
 select{ /* Ajusta as configuraçoes do select(opcoes)*/
-    width: 51.4%; /* Tamanho do select um pouco maior para poder ajustar com os outros inputs*/
+    width: 51%; /* Tamanho do select um pouco maior para poder ajustar com os outros inputs*/
     padding-bottom: 10px;
     padding-top: 12px;
     padding-right: 12px;
     margin-top:7px;
     margin-bottom:7px;
-    border-bottom:solid 1px var(--corVermelho);
+    border-bottom:solid 1.5px var(--corVermelho);
     color:white;
     background-color: transparent;
     border-top:none;
@@ -786,6 +795,10 @@ a {
     margin-bottom: 20px;
 }
 
+.inner-texto-depoimento{
+    color: var(--corFonte);
+}
+
 .quotes-depoimento img {
     height: 60px;
     width: 35px;
@@ -814,7 +827,7 @@ a {
 
     .card-img {
         height: 300px; /* Diminuir a altura para se adequar a página */
-        width: 49.9%; /* Diminuir a largura para se adequar a página */
+        width: 100%; /* Diminuir a largura para se adequar a página */
         background-size: cover;
     }
 

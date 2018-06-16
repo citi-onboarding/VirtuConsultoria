@@ -212,7 +212,6 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
     criados e substituídos com seus respectivos conteúdos */
 
     $('#carrossel').slick({ // gera o carrossel através da biblioteca slick
-        infinite: false, // o carrosel não volta pro começo quando acaba
         slidesToShow: 3, // mostra 3 cards por vez
         slidesToScroll: 3, // passa 3 cards por vez
         arrows: true, // utiliza as setas do próprio slick
