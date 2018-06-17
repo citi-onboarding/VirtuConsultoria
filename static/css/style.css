@@ -129,7 +129,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;  /*Deixar o titulo um pouco afastado da div anterior*/
+    padding-top: 60px;  /*Deixar o titulo um pouco afastado da div anterior*/
     padding-bottom: 20px; /*Deixar o titulo um pouco afastado do conteúdo da div que ele está*/
 }
 
@@ -602,6 +602,7 @@ form { /* Configuraçoes do formulario*/
 }
 
 /* termina aqui o contato*/
+/* começa aqui o footer*/
 
 #footer {
     display: flex; 
@@ -623,12 +624,10 @@ form { /* Configuraçoes do formulario*/
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px; /*Necessário para a imagem não ficar muito próxima aos cantos da tela*/
-    padding-bottom: 20px; /*Necessário para a imagem não ficar muito próxima aos cantos da tela*/
 }
 
 #footer-img > img {
-    height: 250px; 
+    height: 200px; 
     width: auto; /*Não modificar a dimensão padrão da imagem*/
 }
 
@@ -637,7 +636,7 @@ form { /* Configuraçoes do formulario*/
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    height: 170px; /*Definir uma altura padrão, para o tamahho da borda ficar igual nos dois*/
+    height: 130px; /*Definir uma altura padrão, para o tamahho da borda ficar igual nos dois*/
     padding-left: 10px; /*Separar conteúdo da borda*/
     border-left: 1.5px solid var(--corCinzaVirtu); /*Borda cinza padrão em abos*/
     color: var(--corCinzaVirtu);
@@ -655,8 +654,8 @@ form { /* Configuraçoes do formulario*/
 }
 
 .footer-redes-sociais-flex > img {
-    height: 35px; /*Tamanho de imagem padrão para os ícones de redes sociais*/
-    width: 35px; /*Tamanho de imagem padrão para os ícones de redes sociais*/
+    height: 25px; /*Tamanho de imagem padrão para os ícones de redes sociais*/
+    width: 25px; /*Tamanho de imagem padrão para os ícones de redes sociais*/
     padding-right: 10px; /*Separar texto da imagem*/
 }
 
@@ -681,8 +680,8 @@ form { /* Configuraçoes do formulario*/
 }
 
 .footer-contatos-flex > img {
-    height: 25px;  /*Tamanho de imagem padrão para os ícones de contatos*/
-    width: 25px; /*Tamanho de imagem padrão para os ícones de contatos*/
+    height: 20px;  /*Tamanho de imagem padrão para os ícones de contatos*/
+    width: 20px; /*Tamanho de imagem padrão para os ícones de contatos*/
     padding-right: 10px; /*Separar texto da imagem*/
 }
 
@@ -691,7 +690,7 @@ form { /* Configuraçoes do formulario*/
 }
 
 #map {
-    height: 70%;
+    height: 82%;
     width: 100%;
     display: none; 
 }
@@ -735,7 +734,7 @@ h1 {
 h5 {
     margin: 0;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
 }
 
 p {
@@ -1165,12 +1164,13 @@ a {
     }
 
     .footer-redes-sociais-descricao > p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .footer-redes-sociais-flex > img{
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
+        padding-right: 15px;
     }
 
     .inner-texto-depoimento {
@@ -1179,9 +1179,15 @@ a {
 
     #footer-contatos{
         height: 130px;
+        width: 256.5px;
+        align-items: center;
         border:0;
         padding: 0;
         padding-bottom: 50px;
+    }
+
+    .footer-contatos-flex {
+        width: 220px;
     }
 
     form {
