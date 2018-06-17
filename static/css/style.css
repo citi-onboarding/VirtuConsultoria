@@ -157,7 +157,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('/static/image/Banner.gif');
+    background-image: url('/static/image/Banner.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 0px;
