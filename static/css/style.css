@@ -572,6 +572,10 @@ textarea:focus, input:focus, select:focus {
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px var(--corCinzaVirtu) inset;
 }
+
+ul.errorlist{ /* muda a cor quando dar erro */
+    color: var(--corVermelho);
+}
     
 select{ /* Ajusta as configuraçoes do select(opcoes)*/
     width: 51%; /* Tamanho do select um pouco maior para poder ajustar com os outros inputs*/
