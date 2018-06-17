@@ -129,7 +129,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 60px;  /*Deixar o titulo um pouco afastado da div anterior*/
+    padding-top: 50px;  /*Deixar o titulo um pouco afastado da div anterior*/
     padding-bottom: 20px; /*Deixar o titulo um pouco afastado do conteúdo da div que ele está*/
 }
 
@@ -558,9 +558,7 @@ input[type=submit] { /* Ajusta as configuracoes do botao*/
     
     
 #contatos{ /* Define o tamanho da div contato*/
-    background-image: url("{% static 'image/rawpixel-623440-unsplash.jpg' %}");
     width: 100vw;
-        
 }
     
 textarea:focus, input:focus, select:focus {
@@ -796,6 +794,10 @@ a {
     align-items: center;
     justify-content: space-around;
     margin-bottom: 20px;
+}
+
+#depoimentos .slick-dots.dots-css{
+    bottom: -50px;
 }
 
 .inner-texto-depoimento{

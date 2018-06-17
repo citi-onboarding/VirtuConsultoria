@@ -321,9 +321,9 @@ function website(link) { //Recebe o link do html de acordo com a div
 }
 
 function initMap() {
-    var uluru = { lat: -8.0517075, lng: -34.9540205 }; //Coordenadas do CFCH
+    var uluru = { lat: -8.0498704, lng: -34.9542109 }; //Coordenadas do CFCH
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,  //Disposição do mapa na tela
+        zoom: 18,  //Disposição do mapa na tela
         center: uluru
     });
 }
