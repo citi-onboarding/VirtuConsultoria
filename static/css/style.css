@@ -521,7 +521,9 @@ textarea::placeholder{ /* Coloca o placeholder com cor branca na area de texto(m
 option{ /* ajusta as configuracoes das opcoes do select*/
     background: gray;
     color:white;
+    
 }
+
 
 textarea{ /* Ajusta as configuracoes da area de texto ( mensagem)*/
     width: 50%;
