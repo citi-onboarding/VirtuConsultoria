@@ -332,8 +332,7 @@ body {
     padding-bottom: 10px; /* Dar uma margem para o texto se afastar do fundo do card, seguindo o mockup */
 }
 
-
-.slick-list.draggable {
+#carrossel .slick-list.draggable {
     width: 70vw; /* Margem menor que as outras para as setas ficarem dentro da margem */
     margin: 0 auto; 
 }
@@ -672,7 +671,7 @@ form { /* Configuraçoes do formulario*/
 }
 
 #footer-img > img {
-    height: 200px; 
+    height: 150px; 
     width: auto; /*Não modificar a dimensão padrão da imagem*/
 }
 
@@ -681,7 +680,7 @@ form { /* Configuraçoes do formulario*/
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    height: 130px; /*Definir uma altura padrão, para o tamahho da borda ficar igual nos dois*/
+    height: 100px; /*Definir uma altura padrão, para o tamahho da borda ficar igual nos dois*/
     padding-left: 10px; /*Separar conteúdo da borda*/
     border-left: 1.5px solid var(--corCinzaVirtu); /*Borda cinza padrão em abos*/
     color: var(--corCinzaVirtu);
@@ -803,14 +802,14 @@ a {
 }
 
 #carrossel-depoimentos {
-    height: 320px;
+    height: 260px;
     width: 100%;
     margin-top: 30px;
     margin-bottom: 100px;
 }
 
 .card-depoimento {
-    height: 320px;
+    height: 250px;
     margin: 0 30px 20px 30px;
     display: flex !important;
     flex-direction: row;
@@ -821,14 +820,14 @@ a {
 }
 
 #carrossel-depoimentos .slick-list {
-    padding:0 15% 0 15%;
+    padding:0 20% 0 20%;
 }
 
 .img-depoimento {
     background-image: url('/static/image/depoimentos.png');
     background-size: cover;
     margin-bottom: -5px;
-    height: 320px; /* Tamanho da imagem de fundo */
+    height: 100%; /* Tamanho da imagem de fundo */
     width: 49.9%; /* Tamanho da imagem de fundo */
 }
 
@@ -836,12 +835,13 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 49.9%;
+    height: 100%;
 }
 
 .texto-depoimento {
     height: 300px;
-    width: 80%;
+    width: 90%;
     text-align: center;
     display: flex !important;
     flex-direction: column;
@@ -854,8 +854,16 @@ a {
     bottom: -50px;
 }
 
+#carrossel-depoimentos.slick-list.draggable {
+    width: 50vw; /* Margem menor que as outras para as setas ficarem dentro da margem */
+    margin: 0 auto;
+}
+
 .inner-texto-depoimento{
     color: var(--corFonte);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    width:100%;
 }
 
 .quotes-depoimento img {
@@ -866,7 +874,22 @@ a {
 .nome-depoimento {
     color: var(--corVermelho);
     font-weight: bolder;
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+@media(max-width:1400px){
+
+    .inner-texto-depoimento{
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    }
+
+}
+
+@media(max-width:1330px){
+    .inner-texto-depoimento{
+        font-size: 0.75rem;
+    }
 }
 
 @media(max-width:1200px){
@@ -912,8 +935,7 @@ a {
     }
     
     .img-depoimento {
-        height: 280px; /* Tamanho da imagem de fundo */
-        width: 400px; /* Tamanho da imagem de fundo */
+        width: 49.9%; /* Tamanho da imagem de fundo */
     }
 
     .texto-depoimento {
@@ -950,7 +972,7 @@ a {
     }
     
     .img-depoimento {
-        height: 270px; /* Tamanho da imagem de fundo */
+        height: 100%; /* Tamanho da imagem de fundo */
         width: 49.9%; /* Tamanho da imagem de fundo */
         background-size: cover;
     }
@@ -1059,6 +1081,16 @@ a {
     select{ /* Ajusta o seletct para ocupar 80% da tela*/
         width: 51.8%;
     }
+
+    .inner-texto-depoimento {
+        font-size: 0.75rem;
+    }
+}
+
+@media(max-width: 970px) {
+    .inner-texto-depoimento {
+    font-size: 0.8rem;
+    }
 }
 
 @media(max-width: 930px){
@@ -1071,8 +1103,8 @@ a {
     }
     
     .img-depoimento {
-        height: 240px; /* Tamanho da imagem de fundo */
-        width: 49.9%; /* Tamanho da imagem de fundo */
+        height: 49.9%; /* Tamanho da imagem de fundo */
+        width: 49.9%;
         background-size: cover;
     }
 
@@ -1138,11 +1170,11 @@ a {
 
 @media(max-width: 880px){
     #carrossel-depoimentos {
-        height: 360px;
+        height: 350px;
     }
     
     .card-depoimento {
-        height: 360px;
+        height: 350px;
         margin: 0 30px 20px 30px;
         display: flex !important;
         flex-direction: column;
@@ -1164,7 +1196,7 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 49.9%;
+        width: 80%;
     }
     
     .texto-depoimento {
@@ -1188,10 +1220,6 @@ a {
         color: var(--corVermelho);
         font-weight: bolder;
         font-size: 1rem;
-    }
-
-    .inner-texto-depoimento {
-        width: 450px;
     }
 }
 
@@ -1279,7 +1307,7 @@ a {
     }
 
     .inner-texto-depoimento {
-        width: 380px;
+        width: 100%;
     }
 
     #footer-contatos{
@@ -1340,11 +1368,24 @@ a {
 
 @media(max-width: 700px){
     .inner-texto-depoimento {
-        width: 300px;
+        font-size: 0.75rem;
     }
 
     .nome-depoimento {
         font-size: 0.85rem;
+    }
+
+    #carrossel-depoimentos {
+        height: 390px;
+        }
+
+    .card-depoimento {
+        height: 390px;
+        margin: 0 30px 20px 30px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
     }
 }
 
@@ -1385,7 +1426,7 @@ a {
     }
 
     .inner-texto-depoimento {
-        font-size: 0.5rem;
+        font-size: 0.75rem;
     }
 
     textarea{
@@ -1393,9 +1434,9 @@ a {
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 520px){
     .inner-texto-depoimento {
-        width: 270px;
+        font-size: 0.72rem;
     }
 
     textarea{
@@ -1434,21 +1475,39 @@ a {
 
     .img-depoimento {
         width: 100%; /* Tamanho da imagem de fundo */
+        height: 200px;
     }
 
     .inner-texto-depoimento, .texto-depoimento, .conteudo-depoimento {
         width: 100%;
     }
 
+    .inner-texto-depoimento {
+        font-size: 0.8rem;
+    }
+
     .nome-depoimento {
         font-size: 0.8rem;
+    }
+
+    #carrossel-depoimentos {
+        height: 420px;
+        }
+
+    .card-depoimento {
+        height: 420px;
+        margin: 0 30px 20px 30px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
     }
 }
 
 @media(max-width: 350px){
 
     .inner-texto-depoimento {
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 
     .card-flex:hover {
