@@ -24,6 +24,8 @@ body {
     width: 100vw;
 }
 
+/*Começa a partir daqui o css responsável pela navbar (navbar-max) */
+
 #navbar {
     display: flex;
     z-index:5;
@@ -79,8 +81,8 @@ body {
 }
 
 #sublogovirtu {
-    height: 55px;
-    width: 110px;
+    height: 40px;
+    width: 90px;
     transition-duration: 500ms;
 }
 
@@ -88,9 +90,11 @@ body {
     list-style: none;
     display: flex;
     flex-direction: row;
-    align-items: space-between;
+    align-items: center;
     justify-content: flex-end;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 #navbar li {
@@ -118,6 +122,15 @@ body {
 
 #hamburguer-opcoes > li{
     padding: 10px;
+}
+
+.navbar-redes-sociais {
+    height: 20px;
+    width: auto;
+}
+
+.navbar-redes-sociais:hover{
+    cursor: pointer;
 }
 
 #banner {
