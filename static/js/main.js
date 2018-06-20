@@ -31,7 +31,7 @@ $(document).ready(function () { // ações realizadas via jquery
     depoimentoSlick();
 
     $('a').on('click', function (event) {
-        if ((this.hash !== '')) {
+        if (this.hash !== '') {
             event.preventDefault();
             var hash = this.hash;
             var dist = ($(hash).offset().top - $(window).scrollTop())/2;
