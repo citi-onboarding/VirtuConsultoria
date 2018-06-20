@@ -31,13 +31,14 @@ $(document).ready(function () { // ações realizadas via jquery
     depoimentoSlick();
 
     $('a').on('click', function (event) {
-        if (this.hash !== '') {
+        if ((this.hash !== '')) {
             event.preventDefault();
             var hash = this.hash;
+            var dist = ($(hash).offset().top - $(window).scrollTop())/2;
 
             $('html, body').animate({
                 scrollTop: $(hash).offset().top - navbarHeight
-            }, 500);
+            }, Math.abs(dist));
         }
     });
 
@@ -49,7 +50,7 @@ $(document).ready(function () { // ações realizadas via jquery
         }
     });
 
-    window.onload = navbarResponsiva;
+    window.onload = navbarResponsiva; 
     window.onscroll = navbarResponsiva;
     window.onresize = navbarResponsiva;
 

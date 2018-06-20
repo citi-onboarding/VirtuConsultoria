@@ -133,6 +133,8 @@ body {
     cursor: pointer;
 }
 
+/*Termina aqui o css responsável pela navbar (navbar-max) */
+
 #banner {
     height: 100vh;
     width: 100vw;
@@ -1119,9 +1121,21 @@ a {
 
 @media(max-width: 850px){
 
+    /* Começa a partir daqui o css responsável pela navbar (navbar-850) */
+
     #navbar-img {
         padding-left: 0;
     }
+
+    #navbar-flex {
+        justify-content: center;
+    }
+
+    #navbar .navbar-opcoes {
+        display: none;
+    }
+
+     /* Termina aqui o css responsável pela navbar (navbar-850) */
 
     #nossa-historia {
         flex-direction: column;
@@ -1245,14 +1259,6 @@ a {
 
     input[type=submit] {     /*Coloca o botao com uma margem para dar um espacemento na parte de baixo*/
         margin-top: 50px;
-    }
-
-    #navbar-flex {
-        justify-content: center;
-    }
-
-    #navbar .navbar-opcoes {
-        display: none;
     }
 }
 
