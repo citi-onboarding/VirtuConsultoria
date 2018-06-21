@@ -235,6 +235,8 @@ body {
 
 }
 
+/*Começa a partir daqui o css responsável pela div de serviços (serviços-max) */
+
 #servico {
     display: flex;
     flex-direction: column;
@@ -251,7 +253,6 @@ body {
     flex-direction: column;
     align-items: center; /* Importante para deixar o card centralizado */
     justify-content: center; /* Importante para deixar o card centralizado */
-    height: 460px; 
 }
 
 .card-flex {
@@ -259,8 +260,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 250px;
-    height: 460px;
+    width: 240px;
+    height: 420px;
     box-shadow: 0 1px 1px 0 #ECECEC, 0 1px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
     margin: 0 auto; 
 }
@@ -273,9 +274,9 @@ body {
 
 .card-img {
     background-image: url("/static/image/Documentação.jpg");
-    height: 300px; /* Tamanho da imagem de fundo */
-    width: 250px; /* Tamanho da imagem de fundo */
-    background-size: 300px; /* Escala na qual ela irá aparecer */
+    height: 250px; /* Tamanho da imagem de fundo */
+    width: 100%; /* Tamanho da imagem de fundo */
+    background-size: cover; /* Escala na qual ela irá aparecer */
 }
 
 .card-conteudo {
@@ -284,7 +285,6 @@ body {
     align-items: center;
     justify-content: space-around;
     padding: 10px; 
-    height: 200px; 
     width: 80%;
 }
 
@@ -307,7 +307,7 @@ body {
     text-align: center;
     margin: 0; /* Tirar a margem padrão da tag p */
     color: var(--corFonte);
-    padding-bottom: 15px; /* Dar uma margem para o texto se afastar do fundo do card, seguindo o mockup */
+    padding-bottom: 10px; /* Dar uma margem para o texto se afastar do fundo do card, seguindo o mockup */
 }
 
 
@@ -320,8 +320,7 @@ body {
     display: flex; /* Alinhar card no centro */
     flex-direction: column; /* Alinhar card no centro */
     align-items: center; /* Alinhar card no centro */
-    height: 520px; /* Tamanho maior que o card para dar espaço durante o aumento do scale (com o hover) */
-    width: 305px; /* Tamanho maior que o card para dar espaço durante o aumento do scale (com o hover) */
+    height: 470px; /* Tamanho maior que o card para dar espaço durante o aumento do scale (com o hover) */
     margin: 0 auto;
 }
 
@@ -332,22 +331,35 @@ body {
 }
 
 .slick-prev.slick-arrow{
+    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
     width: 40px; 
     height: 40px;
-    background: url("/static/icons/Seta.svg"); /* Ícone da seta anterior */
-    background-size: 40px; /* Disposição do background igual o tamanho do botão */
+    background: url("/static/icons/Prev.svg"); /* Ícone da seta anterior */
+    background-size: cover; /* Disposição do background igual o tamanho do botão */
     margin-left: 10px; /* Deixar o botão mais próximo a margem */
 }
 
+.slick-prev.slick-arrow:hover{
+    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
+    background: url("/static/icons/PrevHover.svg"); /* Ícone da seta anterior */
+}
+
 .slick-next.slick-arrow{
+    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
     width: 40px;
     height: 40px;
     background: url("/static/icons/Next.svg"); /* Ícone da próxima seta */
-    background-size: 40px; /* Disposição do background igual o tamanho do botão */
+    background-size: cover; /* Disposição do background igual o tamanho do botão */
     margin-right: 10px; /* Deixar o botão mais próximo a margem */
 }
 
+.slick-next.slick-arrow:hover{
+    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
+    background: url("/static/icons/NextHover.svg"); /* Ícone da seta anterior */
+}
+
 .dots-css li button {
+    transition: all 0.4s linear; /* Tempo e tipo da transição ao ativar o hover */
     background-color: #A8A9AD;
     height: 2px;
     padding: 0;
@@ -356,6 +368,7 @@ body {
 }
 
 .slick-active button:before {
+    transition: all 0.4s linear; /* Tempo e tipo da transição ao ativar o hover */
     background-color: var(--corVermelho);
     width: 24px;
     color: transparent !important;
@@ -372,6 +385,8 @@ body {
 .slick-slide {
     outline: none !important;
 }
+
+/* Termina aqui o css responsável pela div de serviços  */
 
 #sobre-nos {
     display: flex;
@@ -821,9 +836,11 @@ a {
         background-size: 120%;
     }
 
+    /* Começa a partir daqui o css responsável pela div de serviços (serviços-1200) */
+
     .card-flex {
-        width: 225px; /* Diminuir a largura para se adequar a página */
-        height: 400px; /* Diminuir a altura para se adequar a página */
+        width: 210px; /* Diminuir a largura para se adequar a página */
+        height: 380px; /* Diminuir a altura para se adequar a página */
     }
 
     .card-descricao {
@@ -831,18 +848,16 @@ a {
     }
 
     .card-img {
-        height: 300px; /* Diminuir a altura para se adequar a página */
-        width: 100%; /* Diminuir a largura para se adequar a página */
+        height: 210px; /* Diminuir a altura para se adequar a página */
+        width: 100%;
         background-size: cover;
     }
 
-    .card.slick-slide.slick-active{
-        height: 450px; /* Diminuir a altura para se adequar a página */
+    .card.slick-slide{
+        height: 430px; /* Diminuir a altura para se adequar a página */
     }
 
-    .card.slick-slide{
-        height: 450px; /* Diminuir a altura para se adequar a página */
-    }
+    /* Termina aqui o css responsável pela div de serviços */
 
     #carrossel-depoimentos {
         height: 280px;
@@ -914,6 +929,8 @@ a {
         clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 58% 92%, 0 92%, 0 0);
     }
 
+    /* Começa a partir daqui o css responsável pela div de serviços (serviços-1000) */
+
     #carrossel {
         width: 90vw; /* Diminui a margem da página partir deste tamanho */
     }
@@ -925,6 +942,8 @@ a {
     .slick-prev.slick-arrow{
         margin-left: 20px; /* Aumentar a margem direita para se adequar a nova margem do site */
     }
+    
+    /* Termina aqui o css responsável pela div de serviços */
 
     #mvv {
         width: 90%; /* Diminui a margem da página partir deste tamanho */
@@ -1343,17 +1362,6 @@ a {
 }
 
 @media(max-width: 350px){
-
-    .card-flex {
-        width: 220px; /* Diminuir card para se adequar a esta resolução */
-        height: 395px; /* Diminuir card para se adequar a esta resolução */
-    }
-
-    .card-img {
-        height: 300px; /* Diminuir imagem para se adequar ao novo tamanho do card */
-        width: 220px; /* Diminuir imagem para se adequar ao novo tamanho do card */
-        background-size: 280px;
-    }
 
     .inner-texto-depoimento {
         font-size: 0.5rem;
