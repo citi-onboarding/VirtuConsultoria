@@ -454,9 +454,10 @@ body {
 
 .mvv-descricao { 
     text-align: center;
-    height: 120px; /* Padronizar o tamanho do texto */
+    height: 100px; /* Padronizar o tamanho do texto */
     width: 80%;
     color: var(--corFonte);
+    font-size: 0.9rem;
 }
 
 #nossa-historia {
@@ -464,8 +465,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap; /* Quebrar a formação de linha, responsividade */
     width: 80%; /* Necessário pois a div pai não segue a margem padrão (80vw) devido a cor de fundo */
-    padding-top: 60px; /* Separar as divs nossa história da div mvv */
-    padding-bottom: 50px;
+    padding-top: 30px; /* Separar as divs nossa história da div mvv */
+    padding-bottom: 30px;
 }
 
 #nossa-historia-texto {
@@ -973,7 +974,7 @@ a {
     }
 
     .mvv-descricao {
-        height: 130px; /* Aumenta um pouco o tamanho devido ao texto que perde espaço lateral */
+        height: 110px; /* Aumenta um pouco o tamanho devido ao texto que perde espaço lateral */
     }
 
     #nossa-historia-img > img {
