@@ -345,36 +345,35 @@ body {
     margin: 0 auto;
 }
 
-.slick-next.slick-arrow::before, .slick-prev.slick-arrow::before{ 
+#carrossel .slick-next.slick-arrow::before, #carrossel .slick-prev.slick-arrow::before{ 
     color: transparent; /* Deixar o botão padrão transparente */
     width: 40px; /* Aumentar a área clicável do botão */
     height: 40px; /* Aumentar a área clicável do botão */
 }
 
-.slick-prev.slick-arrow{
-    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
+#carrossel .slick-prev.slick-arrow{
     width: 40px; 
     height: 40px;
     background: url("/static/icons/Prev.svg"); /* Ícone da seta anterior */
     background-size: cover; /* Disposição do background igual o tamanho do botão */
     margin-left: 10px; /* Deixar o botão mais próximo a margem */
+    transition: all 0.3s linear;
 }
 
-.slick-prev.slick-arrow:hover{
+#carrossel .slick-prev.slick-arrow:hover{
     transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
     background: url("/static/icons/PrevHover.svg"); /* Ícone da seta anterior */
 }
-
-.slick-next.slick-arrow{
-    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
+#carrossel .slick-next.slick-arrow{
     width: 40px;
     height: 40px;
     background: url("/static/icons/Next.svg"); /* Ícone da próxima seta */
     background-size: cover; /* Disposição do background igual o tamanho do botão */
     margin-right: 10px; /* Deixar o botão mais próximo a margem */
+    transition: all 0.3s linear;
 }
 
-.slick-next.slick-arrow:hover{
+#carrossel .slick-next.slick-arrow:hover{
     transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
     background: url("/static/icons/NextHover.svg"); /* Ícone da seta anterior */
 }
@@ -850,11 +849,34 @@ a {
     margin-bottom: 20px;
 }
 
-#depoimentos .slick-dots.dots-css{
+#carrossel-depoimentos .slick-next.slick-arrow::before, #carrossel-depoimentos .slick-prev.slick-arrow::before{ 
+    color: transparent; /* Deixar o botão padrão transparente */
+    width: 40px; /* Aumentar a área clicável do botão */
+    height: 40px; /* Aumentar a área clicável do botão */
+}
+
+#carrossel-depoimentos .slick-prev.slick-arrow{
+    width: 40px; 
+    height: 40px;
+    background: url("/static/icons/Seta.svg"); /* Ícone da seta anterior */
+    background-size: 40px; /* Disposição do background igual o tamanho do botão */
+    margin-left: 20%; /* Deixar o botão mais próximo a margem */
+    z-index: 6;
+}
+
+#carrossel-depoimentos .slick-next.slick-arrow{
+    width: 40px;
+    height: 40px;
+    background: url("/static/icons/Next.svg"); /* Ícone da próxima seta */
+    background-size: 40px; /* Disposição do background igual o tamanho do botão */
+    margin-right: 20%; /* Deixar o botão mais próximo a margem */
+}
+
+#depoimentos .slick-dots .dots-css{
     bottom: -50px;
 }
 
-#carrossel-depoimentos.slick-list.draggable {
+#carrossel-depoimentos .slick-list .draggable {
     width: 50vw; /* Margem menor que as outras para as setas ficarem dentro da margem */
     margin: 0 auto;
 }
@@ -1013,11 +1035,11 @@ a {
         width: 90vw; /* Diminui a margem da página partir deste tamanho */
     }
 
-    .slick-next.slick-arrow{
+    #carrossel .slick-next.slick-arrow{
         margin-right: 20px; /* Aumentar a margem direita para se adequar a nova margem do site */
     }
 
-    .slick-prev.slick-arrow{
+    #carrossel .slick-prev.slick-arrow{
         margin-left: 20px; /* Aumentar a margem direita para se adequar a nova margem do site */
     }
     
@@ -1187,6 +1209,14 @@ a {
         padding:0 15% 0 15%;    
     }
     
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 15%; /* Deixar o botão mais próximo a margem */
+    }
+    
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 15%; /* Deixar o botão mais próximo a margem */
+    }
+
     .img-depoimento {
         height: 100%; /* Tamanho da imagem de fundo */
         width: 280px; /* Tamanho da imagem de fundo */
@@ -1484,6 +1514,8 @@ a {
 
     .inner-texto-depoimento {
         font-size: 0.8rem;
+        max-width: 80%;
+        min-width: 80%;
     }
 
     .nome-depoimento {
