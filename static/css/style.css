@@ -744,6 +744,13 @@ form { /* Configuraçoes do formulario*/
     display: block;
 }
 
+#emailErro {
+    font-size: 18px;
+    color: var(--corVermelho);
+    font-weight: bolder;
+    text-shadow: 1px 1px #272727;
+}
+
 hr {
     height: 1px;
     border-style: none; /* Retirar o style padrão do hr para se parecer uma linha simples */
