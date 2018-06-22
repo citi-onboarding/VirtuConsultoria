@@ -24,7 +24,9 @@
         <nav id="navbar">
             <div id="navbar-flex">
                 <div id="navbar-img">
-                    <img src="{% static 'image/Logo.png' %}" id="logovirtu">
+                    <a href="#banner"> 
+                        <img src="{% static 'image/Logo.png' %}" id="logovirtu"> 
+                    </a>
                     <img src="{% static 'image/SubLogo.png' %}" id="sublogovirtu">
                 </div>
                 <ul class="navbar-opcoes">
@@ -39,6 +41,16 @@
                     </li>
                     <li>
                         <a href="#contatos" id="navbar-a-contatos">Contatos</a>
+                    </li>
+                    <li>
+                        <a onclick="website('https://www.facebook.com/VirtuPolitica/')">
+                            <img src="{% static 'icons/Facebook - logo.svg' %}" class="navbar-redes-sociais">
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="website('https://www.instagram.com/VirtuPolitica/')">
+                            <img src="{% static 'icons/Instagram - logo.svg' %}" class="navbar-redes-sociais">
+                        </a>
                     </li>
                 </ul>
                 <img class="hamburguer-icon" id="hamburguer-icon" src="{% static 'icons/bars.svg' %}">
