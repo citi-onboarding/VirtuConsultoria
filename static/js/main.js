@@ -140,6 +140,7 @@ function navbarResponsiva () {
 $(window).resize(function () {
     var w = $(window).width();
     var scroll = $(window).scrollTop();
+    bannerHeight = $('#banner').height();
     servicoHeight = $('#servico').height() + bannerHeight;
     sobrenosHeight = $('#sobre-nos').height() + servicoHeight;
     depoimentosHeight = $('#depoimentos').height() + sobrenosHeight;
