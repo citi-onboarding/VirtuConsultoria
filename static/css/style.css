@@ -566,7 +566,7 @@ textarea{ /* Ajusta as configuracoes da area de texto ( mensagem)*/
     padding-bottom: 10px;
     padding-top: 12px;
     padding-right: 12px;
-    padding-left: 0;
+    padding-left: -50px;
     margin-top:7px;
     margin-bottom:7px;
     border-bottom:solid 1.5px var(--corVermelho);
