@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'friendlybot4ever@gmail.com'
-EMAIL_HOST_PASSWORD = 'bot01234'
+EMAIL_HOST_USER = 'virtu.consultoriapolitica@gmail.com'
+EMAIL_HOST_PASSWORD = 'Virtu.Consul18'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

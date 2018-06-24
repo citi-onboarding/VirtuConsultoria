@@ -1,8 +1,10 @@
 // valor passado na criação dos serviços caso a planilha contenha algum erro
-const padrao = [0, 1, 2, 3, 4, 5, 6];
+const padrao = [0, 1, 2, 3, 4, 5, 6, 7];
 
 // variável que contém o conteúdo vindo de servicos.json
 let conteudoServicos;
+
+var navbarHeight = 74;
 
 var bannerHeight = $('#banner').height();
 var servicoHeight = 0;
@@ -11,6 +13,16 @@ var depoimentosHeight = 0;
 var contatosHight = 0;
 
 $(document).ready(function () { // ações realizadas via jquery
+    $('#emailErro').hide();
+    $('form').submit(function(e) {
+        let email = $('#id_email').val();
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+            return (true);
+        }
+        e.preventDefault();
+        $('#emailErro').show();
+        return (false);
+    });
 
     $('#id_telefone').mask('(00) 0 0000-0000'); // Customização do input "Telefone"
 
@@ -32,132 +44,137 @@ $(document).ready(function () { // ações realizadas via jquery
         if (this.hash !== '') {
             event.preventDefault();
             var hash = this.hash;
+            var dist = ($(hash).offset().top - $(window).scrollTop()) / 2;
 
             $('html, body').animate({
-                scrollTop: $(hash).offset().top - 90
-            }, 500);
+                scrollTop: $(hash).offset().top - navbarHeight
+            }, Math.abs(dist));
         }
     });
 
     $('#hamburguer-icon').on('click', function (event) {
         if (document.getElementById('hamburguer-opcoes').style.display == "none") {
-            document.getElementById('hamburguer-opcoes').style.display = "block";
-
+            $("#hamburguer-opcoes").slideDown("slow");
         } else {
-            document.getElementById('hamburguer-opcoes').style.display = "none";
+            $("#hamburguer-opcoes").slideUp("slow");
         }
     });
 
-    $(function () {
-        $(window).scroll(function () {
-            var scroll = $(window).scrollTop();
-            var w = $(window).width();
-            if (scroll >= 10 && w > 850) {
-                document.getElementById('logovirtu').style.height = "70px";
-                document.getElementById('sublogovirtu').style.display = "none";
-                document.getElementById('logovirtu').style.paddingTop = "10px";
-                document.getElementById('logovirtu').style.paddingBottom = "10px";
-                document.getElementById('navbar-img').style.paddingLeft = "0";
-                document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
-                document.getElementById('hamburguer-icon').style.display = "none";
-            } else if (w > 850) {
-                document.getElementById('hamburguer-icon').style.display = "none";
-                document.getElementById('sublogovirtu').style.display = "block";
-                document.getElementById('logovirtu').style.height = "110px";
-                document.getElementById('navbar-img').style.paddingLeft = "40px";
-                document.getElementById('logovirtu').style.paddingTop = "20px";
-                document.getElementById('logovirtu').style.paddingBottom = "0";
-                document.getElementById('navbar').style.backgroundColor = "transparent";
-            } else if (scroll >= 10) {
-                document.getElementById('logovirtu').style.height = "55px";
-                document.getElementById('logovirtu').style.paddingTop = "10px";
-                document.getElementById('logovirtu').style.paddingBottom = "10px";
-                document.getElementById('hamburguer-icon').style.display = "block";
-                document.getElementById('navbar-img').style.paddingLeft = "0";
-                document.getElementById('sublogovirtu').style.display = "none";
-                document.getElementById('navbar-flex').style.justifyContent = "space-between";
-                document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
-                document.getElementById('hamburguer-opcoes').style.display = "none";
-            } else if (w > 470){
-                document.getElementById('logovirtu').style.height = "110px";
-                document.getElementById('navbar-img').style.padding = "0";
-                document.getElementById('sublogovirtu').style.display = "block";
-                document.getElementById('logovirtu').style.paddingTop = "20px";
-                document.getElementById('logovirtu').style.paddingLeft = "0";
-                document.getElementById('navbar').style.backgroundColor = "transparent";
-                document.getElementById('navbar-flex').style.justifyContent = "center";
-                document.getElementById('hamburguer-icon').style.display = "none";
-            } else {
-                document.getElementById('logovirtu').style.height = "80px";
-                document.getElementById('navbar-img').style.padding = "0";
-                document.getElementById('sublogovirtu').style.display = "block";
-                document.getElementById('logovirtu').style.paddingTop = "10px";
-                document.getElementById('logovirtu').style.paddingBottom = "0";
-                document.getElementById('logovirtu').style.paddingLeft = "0";
-                document.getElementById('navbar').style.backgroundColor = "transparent";
-                document.getElementById('navbar-flex').style.justifyContent = "center";
-                document.getElementById('hamburguer-icon').style.display = "none";
-            } 
-            scroll = parseInt(scroll) + parseInt($('#navbar').height()) + 5;
-            if (scroll < bannerHeight) {
-                $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
-                $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
-                $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
-                $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
-            } else if(scroll >= bannerHeight && scroll < servicoHeight){
-                $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
-                $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
-                $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
-                document.getElementById('navbar-a-servico').style.color = "#BF3B3A";
-            } else if (scroll >= servicoHeight && scroll < sobrenosHeight) {
-                $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
-                $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
-                $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
-                document.getElementById('navbar-a-sobrenos').style.color = "#BF3B3A";
-            } else if (scroll >= sobrenosHeight && scroll < depoimentosHeight){
-                $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
-                $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
-                $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
-                document.getElementById('navbar-a-depoimentos').style.color = "#BF3B3A";
-            } else {
-                $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
-                $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
-                $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
-                document.getElementById('navbar-a-contatos').style.color = "#BF3B3A";
-            }
-        });
-    });
+    window.onload = navbarResponsiva;
+    window.onscroll = navbarResponsiva;
+    window.onresize = navbarResponsiva;
 
-    $(window).resize(function () {
-        var w = $(window).width();
-        var scroll = $(window).scrollTop();
-        servicoHeight = $('#servico').height() + bannerHeight;
-        sobrenosHeight = $('#sobre-nos').height() + servicoHeight;
-        depoimentosHeight = $('#depoimentos').height() + sobrenosHeight;
-        contatosHight = $('#contatos').height() + depoimentosHeight;
-        if (w > 850) {
-            document.getElementById('hamburguer-icon').style.display = "none";
-            document.getElementById('navbar-flex').style.justifyContent = "space-between";
-            document.getElementById('hamburguer-opcoes').style.display = "none";
-            document.getElementById('navbar-img').style.paddingLeft = "40px";
-            document.getElementById('logovirtu').style.height = "110px";
-        } else if (scroll >= 50) {
-            document.getElementById('logovirtu').style.height = "70px";
-            document.getElementById('hamburguer-icon').style.display = "block";
-            document.getElementById('navbar-flex').style.justifyContent = "space-between";
-            document.getElementById('navbar-img').style.paddingLeft = "20px";
-        } else if (w > 470){
-            document.getElementById('logovirtu').style.height = "110px";
-            document.getElementById('navbar-img').style.paddingLeft = "0";
-            document.getElementById('navbar-flex').style.justifyContent = "center";
-        } else {
-            document.getElementById('logovirtu').style.height = "80px";
-            document.getElementById('navbar-img').style.paddingLeft = "0";
-            document.getElementById('navbar-flex').style.justifyContent = "center";
-        }
+});
 
-    });
+function navbarResponsiva() {
+    var scroll = $(window).scrollTop();
+    var w = $(window).width();
+    if (scroll >= 10 && w > 850) {
+        document.getElementById('logovirtu').style.height = "65px";
+        document.getElementById('sublogovirtu').style.display = "none";
+        document.getElementById('logovirtu').style.paddingTop = "5px";
+        document.getElementById('navbar-img').style.paddingLeft = "0";
+        document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+        document.getElementById('hamburguer-icon').style.display = "none";
+    } else if (w > 850) {
+        document.getElementById('hamburguer-icon').style.display = "none";
+        document.getElementById('sublogovirtu').style.display = "block";
+        document.getElementById('logovirtu').style.height = "110px";
+        document.getElementById('navbar-img').style.paddingLeft = "20px";
+        document.getElementById('logovirtu').style.paddingTop = "20px";
+        document.getElementById('navbar').style.backgroundColor = "transparent";
+    } else if (scroll >= 10) {
+        document.getElementById('logovirtu').style.height = "55px";
+        document.getElementById('logovirtu').style.paddingTop = "5px";
+        document.getElementById('hamburguer-icon').style.display = "block";
+        document.getElementById('navbar-img').style.paddingLeft = "0";
+        document.getElementById('sublogovirtu').style.display = "none";
+        document.getElementById('navbar-flex').style.justifyContent = "space-between";
+        document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
+        document.getElementById('hamburguer-opcoes').style.display = "none";
+    } else if (w > 470) {
+        document.getElementById('logovirtu').style.height = "110px";
+        document.getElementById('navbar-img').style.padding = "0";
+        document.getElementById('sublogovirtu').style.display = "block";
+        document.getElementById('logovirtu').style.paddingTop = "20px";
+        document.getElementById('logovirtu').style.paddingLeft = "0";
+        document.getElementById('navbar').style.backgroundColor = "transparent";
+        document.getElementById('navbar-flex').style.justifyContent = "center";
+        document.getElementById('hamburguer-icon').style.display = "none";
+    } else {
+        document.getElementById('logovirtu').style.height = "80px";
+        document.getElementById('navbar-img').style.padding = "0";
+        document.getElementById('sublogovirtu').style.display = "block";
+        document.getElementById('logovirtu').style.paddingTop = "10px";
+        document.getElementById('logovirtu').style.paddingLeft = "0";
+        document.getElementById('navbar').style.backgroundColor = "transparent";
+        document.getElementById('navbar-flex').style.justifyContent = "center";
+        document.getElementById('hamburguer-icon').style.display = "none";
+    }
 
+    if (w > 850) {
+        navbarHeight = 74;
+    } else {
+        navbarHeight = 63;
+    }
+
+    scroll = parseInt(scroll) + navbarHeight + 2;
+    if (scroll < bannerHeight) {
+        $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
+        $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
+        $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
+        $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
+    } else if (scroll >= bannerHeight && scroll < servicoHeight) {
+        $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
+        $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
+        $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
+        document.getElementById('navbar-a-servico').style.color = "#BF3B3A";
+    } else if (scroll >= servicoHeight && scroll < sobrenosHeight) {
+        $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
+        $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
+        $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
+        document.getElementById('navbar-a-sobrenos').style.color = "#BF3B3A";
+    } else if (scroll >= sobrenosHeight && scroll < depoimentosHeight) {
+        $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
+        $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
+        $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
+        document.getElementById('navbar-a-depoimentos').style.color = "#BF3B3A";
+    } else {
+        $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
+        $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
+        $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
+        document.getElementById('navbar-a-contatos').style.color = "#BF3B3A";
+    }
+}
+
+$(window).resize(function () {
+    var w = $(window).width();
+    var scroll = $(window).scrollTop();
+    bannerHeight = $('#banner').height();
+    servicoHeight = $('#servico').height() + bannerHeight;
+    sobrenosHeight = $('#sobre-nos').height() + servicoHeight;
+    depoimentosHeight = $('#depoimentos').height() + sobrenosHeight;
+    contatosHight = $('#contatos').height() + depoimentosHeight;
+    if (w > 850) {
+        document.getElementById('hamburguer-icon').style.display = "none";
+        document.getElementById('navbar-flex').style.justifyContent = "space-between";
+        document.getElementById('hamburguer-opcoes').style.display = "none";
+        document.getElementById('navbar-img').style.paddingLeft = "40px";
+        document.getElementById('logovirtu').style.height = "110px";
+    } else if (scroll >= 50) {
+        document.getElementById('logovirtu').style.height = "70px";
+        document.getElementById('hamburguer-icon').style.display = "block";
+        document.getElementById('navbar-flex').style.justifyContent = "space-between";
+        document.getElementById('navbar-img').style.paddingLeft = "20px";
+    } else if (w > 470) {
+        document.getElementById('logovirtu').style.height = "110px";
+        document.getElementById('navbar-img').style.paddingLeft = "0";
+        document.getElementById('navbar-flex').style.justifyContent = "center";
+    } else {
+        document.getElementById('logovirtu').style.height = "80px";
+        document.getElementById('navbar-img').style.paddingLeft = "0";
+        document.getElementById('navbar-flex').style.justifyContent = "center";
+    }
 
 });
 
@@ -166,8 +183,8 @@ function pegarHttp(successo) { // função standard de request http
     var http = new XMLHttpRequest();
 
     // a parte 'alt=json' eh da API do google que transforma a planilha num JSON
-    var url = 'https://spreadsheets.google.com/feeds/list/1OdQ52u7NODWOC8b7CELRd6IU9dVBCSUr3Aamv4ze39k/od6/public/values?alt=json';
-
+    var url = 'https://spreadsheets.google.com/feeds/list/1YXei8y2HJYWkfBE39WSoGcgS0YanFCUyqx9zr_EysFM/od6/public/values?alt=json';
+    
     http.open('GET', url, true); // realiza o request via AJAX com método GET
 
     http.onreadystatechange = () => { // testa se já recebeu a resposta
@@ -216,6 +233,7 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
         slidesToScroll: 3, // passa 3 cards por vez
         arrows: true, // utiliza as setas do próprio slick
         dots: true, // bolinhas indicando em que slide o user está
+        infinite: false,
         focusOnSelect: false, // realce feito com css
         dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
         responsive: [ // reajuste do slick de acordo com a max-width
@@ -238,6 +256,7 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
         ]
     });
 
+    bannerHeight = $('#banner').height();
     servicoHeight = $('#servico').height() + bannerHeight;
     sobrenosHeight = $('#sobre-nos').height() + servicoHeight;
     depoimentosHeight = $('#depoimentos').height() + sobrenosHeight;
@@ -246,7 +265,9 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
 
 // substitui o conteúdo de cada card, via jquery, de acordo com a ordem do sheets
 function substituirServicos(ordemServicos) {
+    console.log(ordemServicos);
     for (i = 0; i < ordemServicos.length; i++) {
+        console.log(conteudoServicos[ordemServicos[i]].titulo);
         $('#carrossel').find('.card-flex').find('h3')[i].innerText = conteudoServicos[ordemServicos[i]].titulo;
         $('#carrossel').find('.card-flex').find('p')[i].innerText = conteudoServicos[ordemServicos[i]].descricao;
         $('#carrossel').find('.card-flex').find('.card-img')[i].style.backgroundImage = 'url(' + conteudoServicos[ordemServicos[i]].imagem + ')';
@@ -275,7 +296,7 @@ function popularServicos(resposta) {
         começa do 1 enquanto que o array começa do 0 */
         j++;
     }
-
+    
     // ordemServicos = [1, 0, 2, 3];
 
     // chama função de validação antes de substituir o conteúdo dos cards
@@ -287,6 +308,7 @@ function popularServicos(resposta) {
 
 // testa se na planilha existem números repetidos ou letras (erro)
 function validarSheet(ordemServicos) {
+
     let temp = []; // array temporário para conferir repetições
 
     // flag que será retornada
@@ -310,7 +332,7 @@ function validarSheet(ordemServicos) {
         else {
             flag = 0;
         }
-    }
+    }   
 
     criarServicos(ordemServicos, flag); // cria os serviços antes de substituí-los
     return flag; // retorna se houve erro
@@ -334,7 +356,7 @@ function depoimentoSlick() {
         slidesToShow: 1, // mostra 1 card por vez
         slidesToScroll: 1, // passa 1 card por vez
         dots: true, // bolinhas indicando em que slide o user está
-        arrows: false, // setas laterais escondidas
+        arrows: true, // setas laterais escondidas
         focusOnSelect: true, // realce feito com css
         dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
     });
@@ -361,3 +383,4 @@ function irParaContato() {
         scrollTop: $('#contatos').offset().top - 90
     }, 500);
 }
+

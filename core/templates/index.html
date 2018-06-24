@@ -25,7 +25,9 @@
         <nav id="navbar">
             <div id="navbar-flex">
                 <div id="navbar-img">
-                    <img src="{% static 'image/Logo.png' %}" id="logovirtu">
+                    <a href="#banner"> 
+                        <img src="{% static 'image/Logo.png' %}" id="logovirtu"> 
+                    </a>
                     <img src="{% static 'image/SubLogo.png' %}" id="sublogovirtu">
                 </div>
                 <ul class="navbar-opcoes">
@@ -40,6 +42,16 @@
                     </li>
                     <li>
                         <a href="#contatos" id="navbar-a-contatos">Contatos</a>
+                    </li>
+                    <li>
+                        <a onclick="website('https://www.facebook.com/VirtuPolitica/')">
+                            <img src="{% static 'icons/Facebook - logo.svg' %}" class="navbar-redes-sociais">
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="website('https://www.instagram.com/VirtuPolitica/')">
+                            <img src="{% static 'icons/Instagram - logo.svg' %}" class="navbar-redes-sociais">
+                        </a>
                     </li>
                 </ul>
                 <img class="hamburguer-icon" id="hamburguer-icon" src="{% static 'icons/bars.svg' %}">
@@ -96,22 +108,19 @@
                     <img class="mvv-img" src="{% static 'icons/Missão.svg' %}">
                     <h3 class="mvv-titulo">Missão</h3>
                     <hr class="mvv-linha">
-                    <p class="mvv-descricao">Texto contendo a missão da empresa, texto contendo a visão da empresa, texto contendo a visão da empresa,
-                        texto contendo a visão da empresa, texto.</p>
+                    <p class="mvv-descricao">​Realizar projetos de excelência para nossos clientes e capacitar estudantes de Ciência Política para atuação profissional dentro do mercado</p>
                 </div>
                 <div class="mvv-flex" id="mvv-visao">
                     <img class="mvv-img" src="{% static 'icons/Visão.svg' %}">
                     <h3 class="mvv-titulo">Visão</h3>
                     <hr class="mvv-linha">
-                    <p class="mvv-descricao">Texto contendo a visão da empresa, Texto contendo a visão da empresa, texto contendo a visão da empresa.
-                        texto contendo a visão da empresa, texto contendo.</p>
+                    <p class="mvv-descricao">​Ser mais reconhecida no âmbito político estadual como empresa de referência</p>
                 </div>
                 <div class="mvv-flex">
                     <img class="mvv-img" src="{% static 'icons/Valor.svg' %}">
                     <h3 class="mvv-titulo">Valores</h3>
                     <hr class="mvv-linha">
-                    <p class="mvv-descricao">Texto contendo os valores da empresa, texto contendo os valores da empresa, texto contendo os valores
-                        da empresa, texto contendo os valores da empresa.</p>
+                    <p class="mvv-descricao">​Empreender: Ser a Virtù</br>Horizontalidade: juntos crescemos mais</br>Procure, aprenda, dedique-se</br>Transparência, uma moral democrática a ser vivida.</p>
                 </div>
             </div>
             <div id="nossa-historia">
@@ -191,8 +200,9 @@
                 </div>
                 <form action="" method="post">
                     {% csrf_token %} {{ form }}
-                    </br>
-                    <input type="submit" value="Enviar">
+                </br>
+                <span id="emailErro">Email inválido</span>
+                <input type="submit" value="Enviar">
                 </form>
         </div>
         </div>
@@ -236,7 +246,7 @@
         </div>
     </div>
     <script src="{% static 'js/main.js' %}"></script>
-    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuNBEV_fCeJxtczbPmrH5Sn9pV_9SYvc&callback=initMap"></script>
+    <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1gLTafZSCRoC8jSJaw4vJA-IoJCHItkQ&callback=initMap"></script>
 </body>
 
 </html>
