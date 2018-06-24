@@ -1,5 +1,5 @@
 // valor passado na criação dos serviços caso a planilha contenha algum erro
-const padrao = [0, 1, 2, 3, 4, 5, 6];
+const padrao = [0, 1, 2, 3, 4, 5, 6, 7];
 
 // variável que contém o conteúdo vindo de servicos.json
 let conteudoServicos;
@@ -183,8 +183,8 @@ function pegarHttp(successo) { // função standard de request http
     var http = new XMLHttpRequest();
 
     // a parte 'alt=json' eh da API do google que transforma a planilha num JSON
-    var url = 'https://spreadsheets.google.com/feeds/list/1OdQ52u7NODWOC8b7CELRd6IU9dVBCSUr3Aamv4ze39k/od6/public/values?alt=json';
-
+    var url = 'https://spreadsheets.google.com/feeds/list/1YXei8y2HJYWkfBE39WSoGcgS0YanFCUyqx9zr_EysFM/od6/public/values?alt=json';
+    
     http.open('GET', url, true); // realiza o request via AJAX com método GET
 
     http.onreadystatechange = () => { // testa se já recebeu a resposta
@@ -264,7 +264,9 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
 
 // substitui o conteúdo de cada card, via jquery, de acordo com a ordem do sheets
 function substituirServicos(ordemServicos) {
+    console.log(ordemServicos);
     for (i = 0; i < ordemServicos.length; i++) {
+        console.log(conteudoServicos[ordemServicos[i]].titulo);
         $('#carrossel').find('.card-flex').find('h3')[i].innerText = conteudoServicos[ordemServicos[i]].titulo;
         $('#carrossel').find('.card-flex').find('p')[i].innerText = conteudoServicos[ordemServicos[i]].descricao;
         $('#carrossel').find('.card-flex').find('.card-img')[i].style.backgroundImage = 'url(' + conteudoServicos[ordemServicos[i]].imagem + ')';
@@ -293,7 +295,7 @@ function popularServicos(resposta) {
         começa do 1 enquanto que o array começa do 0 */
         j++;
     }
-
+    
     // ordemServicos = [1, 0, 2, 3];
 
     // chama função de validação antes de substituir o conteúdo dos cards
@@ -305,6 +307,7 @@ function popularServicos(resposta) {
 
 // testa se na planilha existem números repetidos ou letras (erro)
 function validarSheet(ordemServicos) {
+
     let temp = []; // array temporário para conferir repetições
 
     // flag que será retornada
@@ -328,7 +331,7 @@ function validarSheet(ordemServicos) {
         else {
             flag = 0;
         }
-    }
+    }   
 
     criarServicos(ordemServicos, flag); // cria os serviços antes de substituí-los
     return flag; // retorna se houve erro

@@ -1,37 +1,42 @@
 [
     {
-        "titulo": "Documentação",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+        "titulo": "Pesquisa de Opinião",
+        "descricao": "Pesquisa quantitativa para identificar opiniões, costumes ou características de um determinado público-alvo, tendo os resultados sumarizados em um relatório.",
         "imagem": "/static/image/Documentação.jpg"
     },
     {
-        "titulo": "Pesquisa",
-        "descricao": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+        "titulo": "Grupo Focal",
+        "descricao":"Análise qualitativa da interação de um grupo para identificar as crenças, visões de mundo e opiniões relacionadas a um tema específico.",
         "imagem": "/static/image/Documentação.jpg"
     },
     {
-        "titulo": "Reunião",
-        "descricao": "Lorem Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+        "titulo": "Memorandum",
+        "descricao": "Relatório objetivo com as principais informações reais e seguras acerca de um tema.",
         "imagem": "/static/image/Documentação.jpg"
     },
     {
-        "titulo": "Consultoria",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+        "titulo": "Consultoria de Campanha/Mandato",
+        "descricao": "Acompanhamento do cliente antes, durante e/ou após o período de campanha, bem como avaliação do mandato através de inteligência política qualificada.",
         "imagem": "/static/image/Documentação.jpg"
     },
     {
-        "titulo": "Pesquisa",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+        "titulo": "Fortalecimento Institucional",
+        "descricao": "Plano de ação com diretrizes para fortalecer as relações institucionais tanto no âmbito interno, entre seus membros, quanto no externo.",
         "imagem": "/static/image/Documentação.jpg"
     },
     {
-        "titulo": "Pesquisa",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+        "titulo": "Acompanhamento dos Poderes",
+        "descricao": "Construção de relatório acerca das principais pautas recentes e relacionadas a algum tema específico das decisões tomadas pelos Poderes.",
         "imagem": "/static/image/Documentação.jpg"
     },
     {
-        "titulo": "Pesquisa",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend efficitur rutrum.Praesent suscipit tortor in elit vehicula aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+        "titulo": "Capacitação de Candidatos Aspirantes",
+        "descricao": "Curso planejado para que o futuro candidato e/ou sua equipe obtenha conhecimentos teóricos garantindo, tendo assim, vantagem na disputa eleitoral e no exercício da política.",
+        "imagem": "/static/image/Documentação.jpg"
+    },
+    {
+        "titulo": "Capacitação Institucional",
+        "descricao": "Cursos ministrados para o aprimoramento da atividade política e da efetividade das ações públicas.",
         "imagem": "/static/image/Documentação.jpg"
     }
 ]
