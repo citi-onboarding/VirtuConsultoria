@@ -1,0 +1,10 @@
+-r base.txt
+
+gunicorn==19.7.1
+psycopg2==2.7.1
+python-http-client==3.0.0
+sendgrid==3.6.5
+sendgrid-django==4.0.4
+django-storages==1.6.5
+boto3==1.4.7
+whitenoise==4.0b4
