@@ -304,7 +304,14 @@ body {
 }
 
 .card-titulo {
-    font-size: 1.5rem;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 110%;
+    height: 46px;
 }
 
 .card-linha {
@@ -873,6 +880,11 @@ a {
     .card-flex {
         width: 210px; /* Diminuir a largura para se adequar a página */
         height: 380px; /* Diminuir a altura para se adequar a página */
+    }
+
+    .card-titulo{
+        font-size: 1.1rem;
+        
     }
 
     .card-descricao {

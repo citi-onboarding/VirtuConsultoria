@@ -233,6 +233,7 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
         slidesToScroll: 3, // passa 3 cards por vez
         arrows: true, // utiliza as setas do próprio slick
         dots: true, // bolinhas indicando em que slide o user está
+        infinite: false,
         focusOnSelect: false, // realce feito com css
         dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
         responsive: [ // reajuste do slick de acordo com a max-width
