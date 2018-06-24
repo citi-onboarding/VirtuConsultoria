@@ -24,10 +24,13 @@ def index(request):
             send_mail(
                 assunto,    # Assunto do email
                 fullContent,  # Corpo do email
-                'friendlybot4ever@gmail.com',   # email de envio
-                ['friendlybot4ever@gmail.com'], #email de destino
+                'virtu.consultoriapolitica@gmail.com',   # email de envio
+                ['virtu.consultoriapolitica@gmail.com'], #email de destino
                 fail_silently=False,
             )
+
+            form = emailForm()
+
 
     # Caso a página tenha sido acessada via URL gera um form em branco
     else:

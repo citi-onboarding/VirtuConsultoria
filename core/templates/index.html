@@ -202,8 +202,9 @@
                 </div>
                 <form action="" method="post">
                     {% csrf_token %} {{ form }}
-                    </br>
-                    <input type="submit" value="Enviar">
+                </br>
+                <span id="emailErro">Email inválido</span>
+                <input type="submit" value="Enviar">
                 </form>
         </div>
         </div>

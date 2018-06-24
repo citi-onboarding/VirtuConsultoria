@@ -505,7 +505,7 @@ body {
 
 
 .coluna-contato{ /* Imagem de fundo do contato */
-    background-size: 100%; /* Alinha a imagem na tela */
+    background-size: cover; /* Alinha a imagem na tela */
     background-position: center center; /* Centraliza a imagem no centro */
 
 }
@@ -531,14 +531,14 @@ input[type=text] { /* Configuracoes do input do form do contato*/
 
 input#id_nome{ /* input nome no form com tamanha 22% para poder ficar de lado do input telefone*/
     width: 22%;
-    margin-right: 2.3%;
+    
     color:white;
 }
 
 
 input#id_telefone{ /* input telefone no form com tamanho 22% para poder ficar de lado do input nome*/
     width: 22%;
-    margin-left: 2.3%;
+    margin-left: 4.3%;
 }
 
 input::placeholder{ /* Coloca o placeholder com cor branca do input*/
@@ -552,6 +552,13 @@ textarea::placeholder{ /* Coloca o placeholder com cor branca na area de texto(m
 option{ /* ajusta as configuracoes das opcoes do select*/
     background: gray;
     color:white;
+}
+
+input#id_mensagem{ /* input telefone no form com tamanho 22% para poder ficar de lado do input nome*/
+    width: 50%;
+    height: 30vh;
+    word-break: break-word;
+    -webkit-appearance: textarea;
 }
 
 textarea{ /* Ajusta as configuracoes da area de texto ( mensagem)*/
@@ -570,6 +577,7 @@ textarea{ /* Ajusta as configuracoes da area de texto ( mensagem)*/
     border-right: none;
     justify-content: center;
     resize: none;
+    -webkit-appearance: none;
 }
     
 input[type=submit] { /* Ajusta as configuracoes do botao*/
@@ -599,7 +607,7 @@ textarea:focus, input:focus, select:focus {
 }  
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px var(--corCinzaVirtu) inset;
+    -webkit-box-shadow: 0 0 0 200px var(--corCinzaVirtu) inset;
 }
 
 ul.errorlist{ /* muda a cor quando dar erro */
@@ -607,7 +615,7 @@ ul.errorlist{ /* muda a cor quando dar erro */
 }
     
 select{ /* Ajusta as configuraçoes do select(opcoes)*/
-    width: 51%; /* Tamanho do select um pouco maior para poder ajustar com os outros inputs*/
+    width: 51.2%; /* Tamanho do select um pouco maior para poder ajustar com os outros inputs*/
     padding-bottom: 10px;
     padding-top: 12px;
     padding-right: 12px;
@@ -625,6 +633,7 @@ select{ /* Ajusta as configuraçoes do select(opcoes)*/
     
     
 form { /* Configuraçoes do formulario*/
+    width: 80vw;
     text-align: right; /* Alinha a direita o formulario*/
     padding-right: 10%; /* espacamento */
     padding-left: 10%;
@@ -742,6 +751,13 @@ form { /* Configuraçoes do formulario*/
 
 #map:hover div{
     display: block;
+}
+
+#emailErro {
+    font-size: 18px;
+    color: var(--corVermelho);
+    font-weight: bolder;
+    
 }
 
 hr {
@@ -901,6 +917,14 @@ a {
     .nome-depoimento {
         font-size: 0.95rem;
     }
+
+    select{
+        width: 51.7%;
+    }
+    
+    textarea{
+        width: 49.7%;
+    }
 }
 
 @media(max-width: 1100px){
@@ -934,7 +958,11 @@ a {
     }
 
     .coluna-contato{
-        background-size: 120%;
+        background-size: cover;
+    }
+
+    textarea{
+        width: 49.8%;
     }
 }
 
@@ -986,7 +1014,7 @@ a {
     }
 
     .coluna-contato{
-        background-size: 140%; /* Ajusta a imagem de fundo*/
+        background-size: cover; /* Ajusta a imagem de fundo*/
     }
     
     #carrossel-depoimentos {
@@ -1010,6 +1038,14 @@ a {
     
     .nome-depoimento {
         font-size: 0.85rem;
+    }
+
+    input#id_telefone{ 
+       
+        margin-left: 4%;
+    }
+    select{ /* Ajusta o seletct para ocupar 80% da tela*/
+        width: 51.8%;
     }
 }
 
@@ -1076,6 +1112,14 @@ a {
 
     .textobotao {
         padding-top: 14px;
+    }
+
+    input#id_telefone{
+      
+        margin-left: 3.8%;
+    }
+    textarea{
+        width: 49.7%;
     }
 
 }
@@ -1250,7 +1294,7 @@ a {
     }
 
     .coluna-contato{ /* Ajusta a imagem de fundo*/
-        background-size: 220%;
+        background-size: cover;
         background-position-x: 1px;
     }
 
@@ -1324,18 +1368,26 @@ a {
     }
 
     .coluna-contato{ /* Ajusta a imagem de fundo*/
-        background-size: 380%;
+        background-size: cover;
         background-position-x: -350px;
     }
 
     .inner-texto-depoimento {
         font-size: 0.5rem;
     }
+
+    textarea{
+        width: 49.7%;
+    }
 }
 
 @media(max-width: 500px){
     .inner-texto-depoimento {
         width: 270px;
+    }
+
+    textarea{
+        width: 78.5%;
     }
 }
 
@@ -1396,6 +1448,10 @@ a {
         background-size: 420%;
         background-position-x: -250px;
         background-position-y: 20px;
+    }
+
+    textarea{
+        width: 78%;
     }
 
 }
