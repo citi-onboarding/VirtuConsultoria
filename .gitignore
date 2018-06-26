@@ -5,3 +5,4 @@ migrations/__pycache__/
 mysite/__pycache__/
 .vscode/
 *.pyc
+.env
