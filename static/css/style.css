@@ -304,7 +304,14 @@ body {
 }
 
 .card-titulo {
-    font-size: 1.5rem;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 110%;
+    height: 46px;
 }
 
 .card-linha {
@@ -325,8 +332,7 @@ body {
     padding-bottom: 10px; /* Dar uma margem para o texto se afastar do fundo do card, seguindo o mockup */
 }
 
-
-.slick-list.draggable {
+#carrossel .slick-list.draggable {
     width: 70vw; /* Margem menor que as outras para as setas ficarem dentro da margem */
     margin: 0 auto; 
 }
@@ -339,36 +345,35 @@ body {
     margin: 0 auto;
 }
 
-.slick-next.slick-arrow::before, .slick-prev.slick-arrow::before{ 
+#carrossel .slick-next.slick-arrow::before, #carrossel .slick-prev.slick-arrow::before{ 
     color: transparent; /* Deixar o botão padrão transparente */
     width: 40px; /* Aumentar a área clicável do botão */
     height: 40px; /* Aumentar a área clicável do botão */
 }
 
-.slick-prev.slick-arrow{
-    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
+#carrossel .slick-prev.slick-arrow{
     width: 40px; 
     height: 40px;
     background: url("/static/icons/Prev.svg"); /* Ícone da seta anterior */
     background-size: cover; /* Disposição do background igual o tamanho do botão */
     margin-left: 10px; /* Deixar o botão mais próximo a margem */
+    transition: all 0.3s linear;
 }
 
-.slick-prev.slick-arrow:hover{
+#carrossel .slick-prev.slick-arrow:hover{
     transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
     background: url("/static/icons/PrevHover.svg"); /* Ícone da seta anterior */
 }
-
-.slick-next.slick-arrow{
-    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
+#carrossel .slick-next.slick-arrow{
     width: 40px;
     height: 40px;
     background: url("/static/icons/Next.svg"); /* Ícone da próxima seta */
     background-size: cover; /* Disposição do background igual o tamanho do botão */
     margin-right: 10px; /* Deixar o botão mais próximo a margem */
+    transition: all 0.3s linear;
 }
 
-.slick-next.slick-arrow:hover{
+#carrossel .slick-next.slick-arrow:hover{
     transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
     background: url("/static/icons/NextHover.svg"); /* Ícone da seta anterior */
 }
@@ -552,6 +557,7 @@ textarea::placeholder{ /* Coloca o placeholder com cor branca na area de texto(m
 option{ /* ajusta as configuracoes das opcoes do select*/
     background: gray;
     color:white;
+    
 }
 
 input#id_mensagem{ /* input telefone no form com tamanho 22% para poder ficar de lado do input nome*/
@@ -560,6 +566,7 @@ input#id_mensagem{ /* input telefone no form com tamanho 22% para poder ficar de
     word-break: break-word;
     -webkit-appearance: textarea;
 }
+
 
 textarea{ /* Ajusta as configuracoes da area de texto ( mensagem)*/
     width: 50%;
@@ -665,7 +672,7 @@ form { /* Configuraçoes do formulario*/
 }
 
 #footer-img > img {
-    height: 200px; 
+    height: 150px; 
     width: auto; /*Não modificar a dimensão padrão da imagem*/
 }
 
@@ -674,7 +681,7 @@ form { /* Configuraçoes do formulario*/
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    height: 130px; /*Definir uma altura padrão, para o tamahho da borda ficar igual nos dois*/
+    height: 100px; /*Definir uma altura padrão, para o tamahho da borda ficar igual nos dois*/
     padding-left: 10px; /*Separar conteúdo da borda*/
     border-left: 1.5px solid var(--corCinzaVirtu); /*Borda cinza padrão em abos*/
     color: var(--corCinzaVirtu);
@@ -796,14 +803,14 @@ a {
 }
 
 #carrossel-depoimentos {
-    height: 320px;
+    height: 260px;
     width: 100%;
     margin-top: 30px;
     margin-bottom: 100px;
 }
 
 .card-depoimento {
-    height: 320px;
+    height: 250px;
     margin: 0 30px 20px 30px;
     display: flex !important;
     flex-direction: row;
@@ -814,14 +821,14 @@ a {
 }
 
 #carrossel-depoimentos .slick-list {
-    padding:0 15% 0 15%;
+    padding:0 20% 0 20%;
 }
 
 .img-depoimento {
     background-image: url('/static/image/depoimentos.png');
     background-size: cover;
     margin-bottom: -5px;
-    height: 320px; /* Tamanho da imagem de fundo */
+    height: 100%; /* Tamanho da imagem de fundo */
     width: 49.9%; /* Tamanho da imagem de fundo */
 }
 
@@ -829,12 +836,13 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 49.9%;
+    height: 100%;
 }
 
 .texto-depoimento {
     height: 300px;
-    width: 80%;
+    width: 90%;
     text-align: center;
     display: flex !important;
     flex-direction: column;
@@ -843,12 +851,58 @@ a {
     margin-bottom: 20px;
 }
 
-#depoimentos .slick-dots.dots-css{
+#carrossel-depoimentos .slick-next.slick-arrow::before, #carrossel-depoimentos .slick-prev.slick-arrow::before{ 
+    color: transparent; /* Deixar o botão padrão transparente */
+    width: 40px; /* Aumentar a área clicável do botão */
+    height: 40px; /* Aumentar a área clicável do botão */
+}
+
+#carrossel-depoimentos .slick-prev.slick-arrow{
+    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
+    width: 20px; 
+    height: 20px;
+    background: url("/static/icons/Prev.svg"); /* Ícone da seta anterior */
+    background-size: 20px; /* Disposição do background igual o tamanho do botão */
+    margin-left: 47%; /* Deixar o botão mais próximo a margem */
+    margin-top: 152px;
+    z-index: 6;
+}
+
+#carrossel-depoimentos .slick-prev.slick-arrow:hover{
+    background: url("/static/icons/PrevHover.svg"); /* Ícone da seta anterior */
+    transition: all 0.3s linear;
+}
+
+#carrossel-depoimentos .slick-next.slick-arrow{
+    transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
+    width: 20px;
+    height: 20px;
+    background: url("/static/icons/Next.svg"); /* Ícone da próxima seta */
+    background-size: 20px; /* Disposição do background igual o tamanho do botão */
+    margin-right: 47%; /* Deixar o botão mais próximo a margem */
+    margin-top: 152px;
+    z-index: 6;
+}
+
+#carrossel-depoimentos .slick-next.slick-arrow:hover{
+    background: url("/static/icons/NextHover.svg"); /* Ícone da seta anterior */
+    transition: all 0.3s linear;
+}
+
+#depoimentos .slick-dots .dots-css{
     bottom: -50px;
+}
+
+#carrossel-depoimentos .slick-list .draggable {
+    width: 50vw; /* Margem menor que as outras para as setas ficarem dentro da margem */
+    margin: 0 auto;
 }
 
 .inner-texto-depoimento{
     color: var(--corFonte);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    width:100%;
 }
 
 .quotes-depoimento img {
@@ -859,7 +913,22 @@ a {
 .nome-depoimento {
     color: var(--corVermelho);
     font-weight: bolder;
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+@media(max-width:1400px){
+
+    .inner-texto-depoimento{
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    }
+
+}
+
+@media(max-width:1330px){
+    .inner-texto-depoimento{
+        font-size: 0.75rem;
+    }
 }
 
 @media(max-width:1200px){
@@ -873,6 +942,11 @@ a {
     .card-flex {
         width: 210px; /* Diminuir a largura para se adequar a página */
         height: 380px; /* Diminuir a altura para se adequar a página */
+    }
+
+    .card-titulo{
+        font-size: 1.1rem;
+        
     }
 
     .card-descricao {
@@ -895,13 +969,22 @@ a {
         height: 280px;
     }
 
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 46%; /* Deixar o botão mais próximo a margem */
+        margin-top: 160px;
+    }
+
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 46%; /* Deixar o botão mais próximo a margem */
+        margin-top: 160px;
+    }
+
     .card-depoimento {
         height: 280px;
     }
     
     .img-depoimento {
-        height: 280px; /* Tamanho da imagem de fundo */
-        width: 400px; /* Tamanho da imagem de fundo */
+        width: 49.9%; /* Tamanho da imagem de fundo */
     }
 
     .texto-depoimento {
@@ -933,12 +1016,22 @@ a {
         height: 270px;
     }
 
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 46%; /* Deixar o botão mais próximo a margem */
+        margin-top: 155px;
+    }
+
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 46%; /* Deixar o botão mais próximo a margem */
+        margin-top: 155px;
+    }
+
     .card-depoimento {
         height: 270px;
     }
     
     .img-depoimento {
-        height: 270px; /* Tamanho da imagem de fundo */
+        height: 100%; /* Tamanho da imagem de fundo */
         width: 49.9%; /* Tamanho da imagem de fundo */
         background-size: cover;
     }
@@ -979,11 +1072,11 @@ a {
         width: 90vw; /* Diminui a margem da página partir deste tamanho */
     }
 
-    .slick-next.slick-arrow{
+    #carrossel .slick-next.slick-arrow{
         margin-right: 20px; /* Aumentar a margem direita para se adequar a nova margem do site */
     }
 
-    .slick-prev.slick-arrow{
+    #carrossel .slick-prev.slick-arrow{
         margin-left: 20px; /* Aumentar a margem direita para se adequar a nova margem do site */
     }
     
@@ -1021,6 +1114,16 @@ a {
         height: 255px;
     }
 
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 45%; /* Deixar o botão mais próximo a margem */
+        margin-top: 150px;
+    }
+
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 45%; /* Deixar o botão mais próximo a margem */
+        margin-top: 150px;
+    }
+
     .card-depoimento {
         height: 255px;
     }
@@ -1047,6 +1150,16 @@ a {
     select{ /* Ajusta o seletct para ocupar 80% da tela*/
         width: 51.8%;
     }
+
+    .inner-texto-depoimento {
+        font-size: 0.75rem;
+    }
+}
+
+@media(max-width: 970px) {
+    .inner-texto-depoimento {
+    font-size: 0.8rem;
+    }
 }
 
 @media(max-width: 930px){
@@ -1054,13 +1167,23 @@ a {
         height: 240px;
     }
 
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 45%; /* Deixar o botão mais próximo a margem */
+        margin-top: 142px;
+    }
+
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 45%; /* Deixar o botão mais próximo a margem */
+        margin-top: 142px;
+    }
+
     .card-depoimento {
         height: 240px;
     }
     
     .img-depoimento {
-        height: 240px; /* Tamanho da imagem de fundo */
-        width: 49.9%; /* Tamanho da imagem de fundo */
+        height: 49.9%; /* Tamanho da imagem de fundo */
+        width: 49.9%;
         background-size: cover;
     }
 
@@ -1126,11 +1249,11 @@ a {
 
 @media(max-width: 880px){
     #carrossel-depoimentos {
-        height: 360px;
+        height: 350px;
     }
     
     .card-depoimento {
-        height: 360px;
+        height: 350px;
         margin: 0 30px 20px 30px;
         display: flex !important;
         flex-direction: column;
@@ -1143,6 +1266,16 @@ a {
         padding:0 15% 0 15%;    
     }
     
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 45%; /* Deixar o botão mais próximo a margem */
+        margin-top: 195px;
+    }
+
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 45%; /* Deixar o botão mais próximo a margem */
+        margin-top: 195px;
+    }
+
     .img-depoimento {
         height: 100%; /* Tamanho da imagem de fundo */
         width: 280px; /* Tamanho da imagem de fundo */
@@ -1152,7 +1285,7 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 49.9%;
+        width: 80%;
     }
     
     .texto-depoimento {
@@ -1176,10 +1309,6 @@ a {
         color: var(--corVermelho);
         font-weight: bolder;
         font-size: 1rem;
-    }
-
-    .inner-texto-depoimento {
-        width: 450px;
     }
 }
 
@@ -1267,7 +1396,7 @@ a {
     }
 
     .inner-texto-depoimento {
-        width: 380px;
+        width: 100%;
     }
 
     #footer-contatos{
@@ -1328,11 +1457,34 @@ a {
 
 @media(max-width: 700px){
     .inner-texto-depoimento {
-        width: 300px;
+        font-size: 0.75rem;
     }
 
     .nome-depoimento {
         font-size: 0.85rem;
+    }
+
+    #carrossel-depoimentos {
+        height: 390px;
+    }
+    
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 44%; /* Deixar o botão mais próximo a margem */
+        margin-top: 217px;
+    }
+
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 44%; /* Deixar o botão mais próximo a margem */
+        margin-top: 217px;
+    }
+
+    .card-depoimento {
+        height: 390px;
+        margin: 0 30px 20px 30px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
     }
 }
 
@@ -1372,8 +1524,18 @@ a {
         background-position-x: -350px;
     }
 
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 43%; /* Deixar o botão mais próximo a margem */
+        margin-top: 217px;
+    }
+
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 43%; /* Deixar o botão mais próximo a margem */
+        margin-top: 217px;
+    }
+
     .inner-texto-depoimento {
-        font-size: 0.5rem;
+        font-size: 0.75rem;
     }
 
     textarea{
@@ -1381,9 +1543,9 @@ a {
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 520px){
     .inner-texto-depoimento {
-        width: 270px;
+        font-size: 0.72rem;
     }
 
     textarea{
@@ -1422,21 +1584,51 @@ a {
 
     .img-depoimento {
         width: 100%; /* Tamanho da imagem de fundo */
+        height: 200px;
     }
 
     .inner-texto-depoimento, .texto-depoimento, .conteudo-depoimento {
         width: 100%;
     }
 
+    .inner-texto-depoimento {
+        font-size: 0.8rem;
+        max-width: 80%;
+        min-width: 80%;
+    }
+
     .nome-depoimento {
         font-size: 0.8rem;
+    }
+
+    #carrossel-depoimentos {
+        height: 420px;
+    }
+    
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 40%; /* Deixar o botão mais próximo a margem */
+        margin-top: 230px;
+    }
+
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 40%; /* Deixar o botão mais próximo a margem */
+        margin-top: 230px;
+    }
+
+    .card-depoimento {
+        height: 420px;
+        margin: 0 30px 20px 30px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
     }
 }
 
 @media(max-width: 350px){
 
     .inner-texto-depoimento {
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 
     .card-flex:hover {

@@ -234,6 +234,7 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
         infinite: false,
         arrows: true, // utiliza as setas do próprio slick
         dots: true, // bolinhas indicando em que slide o user está
+        infinite: false,
         focusOnSelect: false, // realce feito com css
         dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
         responsive: [ // reajuste do slick de acordo com a max-width
@@ -356,7 +357,7 @@ function depoimentoSlick() {
         slidesToShow: 1, // mostra 1 card por vez
         slidesToScroll: 1, // passa 1 card por vez
         dots: true, // bolinhas indicando em que slide o user está
-        arrows: false, // setas laterais escondidas
+        arrows: true, // setas laterais escondidas
         focusOnSelect: true, // realce feito com css
         dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
     });
