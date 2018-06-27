@@ -809,6 +809,27 @@ a {
     color: white;
 }
 
+.bar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-right: 300px;
+    justify-content: space-between;
+    padding: 8px 3px;
+    font-size: 0.7em;
+    background-color: var(--corTitulo);
+    opacity: 0.9; 
+    color: white;
+}
+
+#coracao {
+    padding-right: 20px
+}
+
+.bar i {
+    color: #92D050; 
+}
+
 #depoimentos {
     width: 100%;   
 }

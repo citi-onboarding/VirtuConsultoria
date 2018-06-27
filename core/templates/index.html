@@ -10,13 +10,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
     <script src="{% static 'js/jquery-mask/src/jquery.mask.js' %}"></script>
-    <link rel="shortcut icon" href="/static/image/icone.png"/>
+    <link rel="shortcut icon" href="/static/image/icone.png" />
     <title>Virtù Consultoria</title>
 </head>
 
@@ -25,8 +27,8 @@
         <nav id="navbar">
             <div id="navbar-flex">
                 <div id="navbar-img">
-                    <a href="#banner"> 
-                        <img src="{% static 'image/Logo.png' %}" id="logovirtu"> 
+                    <a href="#banner">
+                        <img src="{% static 'image/Logo.png' %}" id="logovirtu">
                     </a>
                     <img src="{% static 'image/SubLogo.png' %}" id="sublogovirtu">
                 </div>
@@ -108,7 +110,8 @@
                     <img class="mvv-img" src="{% static 'icons/Missão.svg' %}">
                     <h3 class="mvv-titulo">Missão</h3>
                     <hr class="mvv-linha">
-                    <p class="mvv-descricao">​Realizar projetos de excelência para nossos clientes e capacitar estudantes de Ciência Política para atuação profissional dentro do mercado</p>
+                    <p class="mvv-descricao">​Realizar projetos de excelência para nossos clientes e capacitar estudantes de Ciência Política para
+                        atuação profissional dentro do mercado</p>
                 </div>
                 <div class="mvv-flex" id="mvv-visao">
                     <img class="mvv-img" src="{% static 'icons/Visão.svg' %}">
@@ -120,7 +123,8 @@
                     <img class="mvv-img" src="{% static 'icons/Valor.svg' %}">
                     <h3 class="mvv-titulo">Valores</h3>
                     <hr class="mvv-linha">
-                    <p class="mvv-descricao">​Empreender: Ser a Virtù</br>Horizontalidade: juntos crescemos mais</br>Procure, aprenda, dedique-se</br>Transparência, uma moral democrática a ser vivida.</p>
+                    <p class="mvv-descricao">​Empreender: Ser a Virtù</br>Horizontalidade: juntos crescemos mais</br>Procure, aprenda, dedique-se</br>Transparência,
+                        uma moral democrática a ser vivida.</p>
                 </div>
             </div>
             <div id="nossa-historia">
@@ -200,11 +204,11 @@
                 </div>
                 <form action="" method="post">
                     {% csrf_token %} {{ form }}
-                </br>
-                <span id="emailErro">Email inválido</span>
-                <input type="submit" value="Enviar">
+                    </br>
+                    <span id="emailErro">Email inválido</span>
+                    <input type="submit" value="Enviar">
                 </form>
-        </div>
+            </div>
         </div>
         <div id="footer">
             <div id="footer-flex">
@@ -243,6 +247,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="bar">
+            <span>© 2017 CITi - Todos os direitos reservados</span>
+            <span>Made with
+                <i class="fa fa-code"></i> and
+                <i class="fa fa-heart" id="coracao"></i>
+            </span>
         </div>
     </div>
     <script src="{% static 'js/main.js' %}"></script>
