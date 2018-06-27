@@ -28,7 +28,7 @@ body {
 
 #navbar {
     display: flex;
-    z-index:5;
+    z-index: 10000;
     flex-direction: column;
     align-items: center;
     background-color: transparent;
@@ -292,6 +292,7 @@ body {
     height: 250px; /* Tamanho da imagem de fundo */
     width: 100%; /* Tamanho da imagem de fundo */
     background-size: cover; /* Escala na qual ela irá aparecer */
+    background-position: center center; /* Centraliza a imagem no centro */
 }
 
 .card-conteudo {
@@ -364,6 +365,17 @@ body {
     transition: all 0.3s linear; /* Tempo e tipo da transição ao ativar o hover */
     background: url("/static/icons/PrevHover.svg"); /* Ícone da seta anterior */
 }
+
+#carrossel .slick-prev.slick-arrow.slick-disabled:hover{
+    background: url("/static/icons/Prev.svg"); /* Ícone da seta anterior */
+    cursor: auto;
+}
+
+#carrossel .slick-next.slick-arrow.slick-disabled:hover{
+    background: url("/static/icons/Next.svg"); /* Ícone da seta anterior */
+    cursor: auto;
+}
+
 #carrossel .slick-next.slick-arrow{
     width: 40px;
     height: 40px;
@@ -512,7 +524,6 @@ body {
 .coluna-contato{ /* Imagem de fundo do contato */
     background-size: cover; /* Alinha a imagem na tela */
     background-position: center center; /* Centraliza a imagem no centro */
-
 }
 
 
@@ -825,7 +836,6 @@ a {
 }
 
 .img-depoimento {
-    background-image: url('/static/image/depoimentos.png');
     background-size: cover;
     margin-bottom: -5px;
     height: 100%; /* Tamanho da imagem de fundo */
@@ -1661,7 +1671,7 @@ a {
     }
 }
 
-@media (min-height: 680px) and (min-width: 601px){
+@media (min-height: 750px) and (min-width: 601px){
     .banner-fundo {
         background-size: cover;
     }

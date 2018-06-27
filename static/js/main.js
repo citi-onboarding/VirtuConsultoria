@@ -47,7 +47,7 @@ $(document).ready(function () { // ações realizadas via jquery
             var dist = ($(hash).offset().top - $(window).scrollTop()) / 2;
 
             $('html, body').animate({
-                scrollTop: $(hash).offset().top - navbarHeight
+                scrollTop: $(hash).offset().top - navbarHeight + 10
             }, Math.abs(dist));
         }
     });
@@ -380,8 +380,9 @@ function initMap() {
 }
 
 function irParaContato() {
+    var dist = ($('#contatos').offset().top - $(window).scrollTop()) / 2;
     $('html, body').animate({
-        scrollTop: $('#contatos').offset().top - 90
-    }, 500);
+        scrollTop: $('#contatos').offset().top - navbarHeight + 10
+    }, Math.abs(dist));
 }
 
