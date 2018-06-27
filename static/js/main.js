@@ -27,7 +27,7 @@ $(document).ready(function () { // ações realizadas via jquery
     $('#id_telefone').mask('(00) 0 0000-0000'); // Customização do input "Telefone"
 
     // Esconde a opção Selecione no input "Como conheceu a Virtù"
-    $('option:first').hide();
+    $('option:first').attr('disabled', 'disabled');
 
     // contante recebe o conteudo do arquivo local 'servicos.json'
     $.getJSON("static/js/servicos.json", function (json) {
