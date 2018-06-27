@@ -292,6 +292,7 @@ body {
     height: 250px; /* Tamanho da imagem de fundo */
     width: 100%; /* Tamanho da imagem de fundo */
     background-size: cover; /* Escala na qual ela irá aparecer */
+    background-position: center center; /* Centraliza a imagem no centro */
 }
 
 .card-conteudo {
@@ -523,7 +524,6 @@ body {
 .coluna-contato{ /* Imagem de fundo do contato */
     background-size: cover; /* Alinha a imagem na tela */
     background-position: center center; /* Centraliza a imagem no centro */
-
 }
 
 
@@ -836,7 +836,6 @@ a {
 }
 
 .img-depoimento {
-    background-image: url('/static/image/depoimentos.png');
     background-size: cover;
     margin-bottom: -5px;
     height: 100%; /* Tamanho da imagem de fundo */
