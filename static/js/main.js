@@ -45,7 +45,7 @@ $(document).ready(function () { // ações realizadas via jquery
         if (this.hash !== '') {
             event.preventDefault();
             var hash = this.hash;
-            var dist = ($(hash).offset().top - $(window).scrollTop()) / 2;
+            var dist = ($(hash).offset().top - $(window).scrollTop()) / 1.5;
 
             $('html, body').animate({
                 scrollTop: $(hash).offset().top - navbarHeight + 10

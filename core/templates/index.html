@@ -197,7 +197,7 @@
             </div>
         </div>
         <div id="contatos">
-            <div class="coluna-contato" style="background-image:url('/static/image/contato.jpg')">
+            <div class="coluna-contato" style="background-image:url('/static/image/Contato.jpg')">
                 <div class="titulo-contato">
                     <h1>Contato</h1>
                     <hr class='titulo-linha-contato'>
@@ -249,11 +249,16 @@
             </div>
         </div>
         <div class="bar">
-            <span>© 2018 CITi - Todos os direitos reservados</span>
-            <span>Made with
-                <i class="fa fa-code"></i> and
-                <i class="fa fa-heart" id="coracao"></i>
+            <div id="bar-flex">
+                <div>© 2018 CITi - Todos os direitos reservados</div>
+                <div class="madewith">
+                    <div id="bar-made-with">Made with
+                        <i class="fa fa-code"></i> and
+                        <i class="far fa-heart" id="coracao"></i>
+                    </div>
+                </div>
             </span>
+            </div>
         </div>
     </div>
     <script src="{% static 'js/main.js' %}"></script>
