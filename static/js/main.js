@@ -22,12 +22,13 @@ $(document).ready(function () { // ações realizadas via jquery
         e.preventDefault();
         $('#emailErro').show();
         return (false);
-    });
+    }); 
 
     $('#id_telefone').mask('(00) 0 0000-0000'); // Customização do input "Telefone"
 
-    // Esconde a opção Selecione no input "Como conheceu a Virtù"
+    // Desabilita a opção Selecione no input "Como conheceu a Virtù"
     $('option:first').attr('disabled', 'disabled');
+    $('option:first').attr('style', 'background-color: white !important');
 
     // contante recebe o conteudo do arquivo local 'servicos.json'
     $.getJSON("static/js/servicos.json", function (json) {
