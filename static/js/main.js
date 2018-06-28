@@ -267,9 +267,7 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
 
 // substitui o conteúdo de cada card, via jquery, de acordo com a ordem do sheets
 function substituirServicos(ordemServicos) {
-    console.log(ordemServicos);
     for (i = 0; i < ordemServicos.length; i++) {
-        console.log(conteudoServicos[ordemServicos[i]].titulo);
         $('#carrossel').find('.card-flex').find('h3')[i].innerText = conteudoServicos[ordemServicos[i]].titulo;
         $('#carrossel').find('.card-flex').find('p')[i].innerText = conteudoServicos[ordemServicos[i]].descricao;
         $('#carrossel').find('.card-flex').find('.card-img')[i].style.backgroundImage = 'url(' + conteudoServicos[ordemServicos[i]].imagem + ')';
