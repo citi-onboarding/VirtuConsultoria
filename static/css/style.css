@@ -709,10 +709,11 @@ form { /* Configuraçoes do formulario*/
     cursor: pointer;  /*Necessário pois são divs clicáveis* (clique definido via jquery)*/
 }
 
-.footer-redes-sociais-flex > img {
+#footer-instagram, #footer-facebook {
     height: 25px; /*Tamanho de imagem padrão para os ícones de redes sociais*/
     width: 25px; /*Tamanho de imagem padrão para os ícones de redes sociais*/
     padding-right: 10px; /*Separar texto da imagem*/
+    font-size: 1.5rem;
 }
 
 .footer-redes-sociais-descricao > p {
@@ -730,15 +731,22 @@ form { /* Configuraçoes do formulario*/
     cursor: auto; /*Ao passar o mouse por cima põe o cursor de texto, indicando que é possível copiar os dados*/
 }
 
-#footer-facebook, #footer-instagram, #footer-map {
+#footer-facebook-div, #footer-instagram-div, #footer-map {
     cursor: pointer;
     -webkit-user-select: none; /*Deixa desabilitado a cópia, pois estas divs são botões que levam direto ao site*/
 }
 
-.footer-contatos-flex > img {
+.footer-contatos-flex > i {
     height: 20px;  /*Tamanho de imagem padrão para os ícones de contatos*/
     width: 20px; /*Tamanho de imagem padrão para os ícones de contatos*/
     padding-right: 10px; /*Separar texto da imagem*/
+}
+
+#footer .far, #footer .fas, #footer .fa, #footer .fab{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-contatos-flex > h5 {
@@ -1436,10 +1444,11 @@ span {
         font-size: 0.7rem;
     }
 
-    .footer-redes-sociais-flex > img{
+    #footer-facebook, #footer-instagram {
         width: 20px;
         height: 20px;
         padding-right: 15px;
+        font-size: 1.3rem;
     }
 
     .inner-texto-depoimento {
