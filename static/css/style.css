@@ -80,10 +80,12 @@ body {
     transition-duration: 500ms;
 }
 
-#sublogovirtu {
+#banner-text {
+    text-align: center;
     height: 40px;
     width: 90px;
-    transition-duration: 500ms;
+    color: var(--corCinzaVirtu);
+    font-size: 1.1rem;
 }
 
 #navbar-flex > ul {
@@ -1546,6 +1548,11 @@ span {
 
 @media(max-width: 600px){
 
+    #logovirtu {
+        height: 80px;
+        padding-top: 10px;
+    }
+
     .banner-fundo {
         background-size: cover;
     }
@@ -1620,11 +1627,6 @@ span {
 }
 
 @media(max-width: 470px){
-
-    #logovirtu {
-        height: 80px;
-        padding-top: 10px;
-    }
 
     .banner-fundo {
         -webkit-clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);

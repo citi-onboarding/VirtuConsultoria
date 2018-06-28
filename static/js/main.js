@@ -72,14 +72,14 @@ function navbarResponsiva() {
     var w = $(window).width();
     if (scroll >= 10 && w > 850) {
         document.getElementById('logovirtu').style.height = "65px";
-        document.getElementById('sublogovirtu').style.display = "none";
+        document.getElementById('banner-text').style.display = "none";
         document.getElementById('logovirtu').style.paddingTop = "5px";
         document.getElementById('navbar-img').style.paddingLeft = "0";
         document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
         document.getElementById('hamburguer-icon').style.display = "none";
     } else if (w > 850) {
         document.getElementById('hamburguer-icon').style.display = "none";
-        document.getElementById('sublogovirtu').style.display = "block";
+        document.getElementById('banner-text').style.display = "block";
         document.getElementById('logovirtu').style.height = "110px";
         document.getElementById('navbar-img').style.paddingLeft = "20px";
         document.getElementById('logovirtu').style.paddingTop = "20px";
@@ -89,14 +89,14 @@ function navbarResponsiva() {
         document.getElementById('logovirtu').style.paddingTop = "5px";
         document.getElementById('hamburguer-icon').style.display = "block";
         document.getElementById('navbar-img').style.paddingLeft = "0";
-        document.getElementById('sublogovirtu').style.display = "none";
+        document.getElementById('banner-text').style.display = "none";
         document.getElementById('navbar-flex').style.justifyContent = "space-between";
         document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
         document.getElementById('hamburguer-opcoes').style.display = "none";
-    } else if (w > 470) {
+    } else if (w > 600) {
         document.getElementById('logovirtu').style.height = "110px";
         document.getElementById('navbar-img').style.padding = "0";
-        document.getElementById('sublogovirtu').style.display = "block";
+        document.getElementById('banner-text').style.display = "block";
         document.getElementById('logovirtu').style.paddingTop = "20px";
         document.getElementById('logovirtu').style.paddingLeft = "0";
         document.getElementById('navbar').style.backgroundColor = "transparent";
@@ -105,7 +105,7 @@ function navbarResponsiva() {
     } else {
         document.getElementById('logovirtu').style.height = "80px";
         document.getElementById('navbar-img').style.padding = "0";
-        document.getElementById('sublogovirtu').style.display = "block";
+        document.getElementById('banner-text').style.display = "block";
         document.getElementById('logovirtu').style.paddingTop = "10px";
         document.getElementById('logovirtu').style.paddingLeft = "0";
         document.getElementById('navbar').style.backgroundColor = "transparent";
@@ -167,7 +167,7 @@ $(window).resize(function () {
         document.getElementById('hamburguer-icon').style.display = "block";
         document.getElementById('navbar-flex').style.justifyContent = "space-between";
         document.getElementById('navbar-img').style.paddingLeft = "20px";
-    } else if (w > 470) {
+    } else if (w > 600) {
         document.getElementById('logovirtu').style.height = "110px";
         document.getElementById('navbar-img').style.paddingLeft = "0";
         document.getElementById('navbar-flex').style.justifyContent = "center";
