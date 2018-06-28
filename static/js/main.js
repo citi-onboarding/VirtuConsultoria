@@ -238,11 +238,13 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
         infinite: false,
         focusOnSelect: false, // realce feito com css
         dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick
+        draggable: false, // desabilita o carrossel arrastável
         responsive: [ // reajuste do slick de acordo com a max-width
             {
                 // mostra e passa 2 por vez quando a width eh menor que 1024
                 breakpoint: 1024,
                 settings: {
+                    draggable: true,
                     slidesToShow: 2,
                     slidesToScroll: 2,
                 }
@@ -251,6 +253,7 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
                 // mostra e passa 1 por vez quando a width eh menor que 720
                 breakpoint: 720,
                 settings: {
+                    draggable: true,                    
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
