@@ -70,7 +70,7 @@ body {
     flex-direction: column;
     align-items: center;
     transition-duration: 500ms;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 #logovirtu {
@@ -80,7 +80,7 @@ body {
     transition-duration: 500ms;
 }
 
-#banner-text {
+#navbar-text {
     text-align: center;
     height: 40px;
     width: 90px;
@@ -178,8 +178,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 0px;
-    -webkit-clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
-    clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
+    -webkit-clip-path: polygon(100% 0, 100% 95%, 46% 95%, 50% 100%, 54% 95%, 0 95%, 0 0);
+    clip-path: polygon(100% 0, 100% 95%, 46% 95%, 50% 100%, 54% 95%, 0 95%, 0 0);
     width: 100vw;
     height: 100%;
  }
@@ -548,13 +548,21 @@ input[type=text] { /* Configuracoes do input do form do contato*/
 
 
 input#id_nome{ /* input nome no form com tamanha 22% para poder ficar de lado do input telefone*/
-    width: 22.9%;
+    width: 23.2%;
     color:white;
 }
 
 input#id_telefone{ /* input telefone no form com tamanho 22% para poder ficar de lado do input nome*/
     width: 22%;
     margin-left: 4%;
+}
+
+input#id_email{
+    width: 50.3%;
+}
+
+input#id_assunto{
+    width: 50.3%;
 }
 
 input::placeholder{ /* Coloca o placeholder com cor branca do input*/
@@ -973,7 +981,15 @@ span {
 
 @media(max-width: 1600px){
     input#id_nome{ /* input nome no form com tamanha 22% para poder ficar de lado do input telefone*/
-        width: 22.7%;
+        width: 22.8%;
+    }
+
+    input#id_email{
+        width: 50.2%;
+    }
+    
+    input#id_assunto{
+        width: 50.2%;
     }
 }
 
@@ -983,7 +999,6 @@ span {
     font-size: 0.8rem;
     margin-bottom: 5px;
     }
-
 }
 
 @media(max-width:1330px){
@@ -1122,13 +1137,14 @@ span {
     textarea{
         width: 49.8%;
     }
+
 }
 
 @media(max-width: 1000px) {
 
     .banner-fundo {
-        -webkit-clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
-        clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 58% 92%, 0 92%, 0 0);
+        -webkit-clip-path: polygon(100% 0, 100% 95%, 42% 95%, 50% 100%, 62% 95%, 0 95%, 0 0);
+        clip-path: polygon(100% 0, 100% 95%, 42% 95%, 50% 100%, 58% 95%, 0 95%, 0 0);
     }
 
     /* Começa a partir daqui o css responsável pela div de serviços (serviços-1000) */
@@ -1227,7 +1243,7 @@ span {
     }
 }
 
-@media(max-width: 930px){
+@media(max-width: 935px){
     #carrossel-depoimentos {
         height: 240px;
     }
@@ -1260,6 +1276,7 @@ span {
     .nome-depoimento {
         font-size: 0.8rem;
     }
+    
 }
 
 @media(max-width: 900px){
@@ -1375,6 +1392,7 @@ span {
         font-weight: bolder;
         font-size: 1rem;
     }
+
 }
 
 @media(max-width: 850px){
@@ -1508,6 +1526,14 @@ span {
         margin-left: 0%;
     }
 
+    input#id_email{
+        width: 80%;
+    }
+    
+    input#id_assunto{
+        width: 80%;
+    }
+
     textarea{ /* Ajusta o input de texto(mensagem) para ocupar 80% da tela*/
         width: 80%;
     }
@@ -1609,10 +1635,6 @@ span {
         font-size: 0.75rem;
     }
 
-    textarea{
-        width: 49.7%;
-    }
-
     #bar-flex {
         flex-direction: column;
         align-items: center;
@@ -1637,8 +1659,8 @@ span {
 @media(max-width: 470px){
 
     .banner-fundo {
-        -webkit-clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
-        clip-path: polygon(100% 0, 100% 92%, 38% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
+        -webkit-clip-path: polygon(100% 0, 100% 95%, 42% 95%, 50% 100%, 62% 95%, 0 95%, 0 0);
+        clip-path: polygon(100% 0, 100% 95%, 38% 95%, 50% 100%, 62% 95%, 0 95%, 0 0);
     }
 
     .banner-coluna1 {
