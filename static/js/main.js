@@ -85,9 +85,8 @@ $(document).ready(function () { // ações realizadas via jquery
 function navbarResponsiva() {
     var scroll = $(window).scrollTop();
     var w = $(window).width();
-    console.log(w + 'nav');
-    console.log(lastNumber + ' ' + parseInt(scroll) + ' ' + w);
-    if (scroll >= 10 && w >= 850) {
+    hamburguerOpcoes.style.display = "none";
+    if (lastNumber != 1 && scroll >= 10 && w >= 850) {
         logoVirtu.style.height = "65px";
         navbarText.style.display = "none";
         logoVirtu.style.paddingTop = "5px";
@@ -96,8 +95,7 @@ function navbarResponsiva() {
         hamburguerIcon.style.display = "none";
         navbarOpcoes.style.display = "flex";
         lastNumber = 1;
-        console.log(1);
-    } else if (w >= 850) {
+    } else if (lastNumber != 2 && scroll < 10 && w >= 850) {
         hamburguerIcon.style.display = "none";
         navbarText.style.display = "block";
         logoVirtu.style.height = "110px";
@@ -108,8 +106,7 @@ function navbarResponsiva() {
         logoVirtu.style.height = "110px";
         navbarOpcoes.style.display = "flex";
         lastNumber = 2;
-        console.log(2);
-    } else if (scroll >= 10) {
+    } else if (lastNumber != 3 && scroll >= 10 && w < 850) {
         hamburguerOpcoes.style.display = "none";
         logoVirtu.style.height = "55px";
         logoVirtu.style.paddingTop = "5px";
@@ -120,8 +117,7 @@ function navbarResponsiva() {
         navbar.style.backgroundColor = "#1B1B1B";
         navbarOpcoes.style.display = "none";
         lastNumber = 3;
-        console.log(3)
-    } else if (w > 600) {
+    } else if (lastNumber != 4 && scroll < 10 && w >= 600 && w < 850) {
         logoVirtu.style.height = "110px";
         navbarImg.style.padding = "0";
         navbarText.style.display = "block";
@@ -132,8 +128,7 @@ function navbarResponsiva() {
         hamburguerIcon.style.display = "none";
         navbarOpcoes.style.display = "none";
         lastNumber = 4;
-        console.log(4);
-    } else {
+    } else if (lastNumber != 5 && scroll < 10 && w < 600){
         logoVirtu.style.height = "80px";
         navbarImg.style.padding = "0";
         navbarText.style.display = "block";
