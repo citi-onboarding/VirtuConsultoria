@@ -12,6 +12,21 @@ var sobrenosHeight = 0;
 var depoimentosHeight = 0;
 var contatosHight = 0;
 
+var logoVirtu = document.getElementById('logovirtu');
+var navbarText = document.getElementById('navbar-text');
+var navbarFlex =  document.getElementById('navbar-flex');
+var navbarImg = document.getElementById('navbar-img');
+var navbar = document.getElementById('navbar');
+var hamburguerIcon =  document.getElementById('hamburguer-icon');
+var hamburguerOpcoes =  document.getElementById('hamburguer-opcoes');
+var lastNumber = 0;
+var navbarOpcoes = document.getElementById('navbar-opcoes');
+
+var navServico = $('#navbar-a-servico');
+var navSobenos = $('#navbar-a-sobrenos');
+var navDepoimento = $('#navbar-a-depoimentos');
+var navContatos = $('#navbar-a-contatos');
+
 $(document).ready(function () { // ações realizadas via jquery
     $('#emailErro').hide();
     $('form').submit(function(e) {
@@ -54,7 +69,7 @@ $(document).ready(function () { // ações realizadas via jquery
     });
 
     $('#hamburguer-icon').on('click', function (event) {
-        if (document.getElementById('hamburguer-opcoes').style.display == "none") {
+        if (hamburguerOpcoes.style.display == "none") {
             $("#hamburguer-opcoes").slideDown("slow");
         } else {
             $("#hamburguer-opcoes").slideUp("slow");
@@ -70,47 +85,60 @@ $(document).ready(function () { // ações realizadas via jquery
 function navbarResponsiva() {
     var scroll = $(window).scrollTop();
     var w = $(window).width();
-    if (scroll >= 10 && w > 850) {
-        document.getElementById('logovirtu').style.height = "65px";
-        document.getElementById('banner-text').style.display = "none";
-        document.getElementById('logovirtu').style.paddingTop = "5px";
-        document.getElementById('navbar-img').style.paddingLeft = "0";
-        document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
-        document.getElementById('hamburguer-icon').style.display = "none";
-    } else if (w > 850) {
-        document.getElementById('hamburguer-icon').style.display = "none";
-        document.getElementById('banner-text').style.display = "block";
-        document.getElementById('logovirtu').style.height = "110px";
-        document.getElementById('navbar-img').style.paddingLeft = "20px";
-        document.getElementById('logovirtu').style.paddingTop = "20px";
-        document.getElementById('navbar').style.backgroundColor = "transparent";
-    } else if (scroll >= 10) {
-        document.getElementById('logovirtu').style.height = "55px";
-        document.getElementById('logovirtu').style.paddingTop = "5px";
-        document.getElementById('hamburguer-icon').style.display = "block";
-        document.getElementById('navbar-img').style.paddingLeft = "0";
-        document.getElementById('banner-text').style.display = "none";
-        document.getElementById('navbar-flex').style.justifyContent = "space-between";
-        document.getElementById('navbar').style.backgroundColor = "#1B1B1B";
-        document.getElementById('hamburguer-opcoes').style.display = "none";
-    } else if (w > 600) {
-        document.getElementById('logovirtu').style.height = "110px";
-        document.getElementById('navbar-img').style.padding = "0";
-        document.getElementById('banner-text').style.display = "block";
-        document.getElementById('logovirtu').style.paddingTop = "20px";
-        document.getElementById('logovirtu').style.paddingLeft = "0";
-        document.getElementById('navbar').style.backgroundColor = "transparent";
-        document.getElementById('navbar-flex').style.justifyContent = "center";
-        document.getElementById('hamburguer-icon').style.display = "none";
-    } else {
-        document.getElementById('logovirtu').style.height = "80px";
-        document.getElementById('navbar-img').style.padding = "0";
-        document.getElementById('banner-text').style.display = "block";
-        document.getElementById('logovirtu').style.paddingTop = "10px";
-        document.getElementById('logovirtu').style.paddingLeft = "0";
-        document.getElementById('navbar').style.backgroundColor = "transparent";
-        document.getElementById('navbar-flex').style.justifyContent = "center";
-        document.getElementById('hamburguer-icon').style.display = "none";
+    hamburguerOpcoes.style.display = "none";
+    if (lastNumber != 1 && scroll >= 10 && w >= 850) {
+        logoVirtu.style.height = "65px";
+        navbarText.style.display = "none";
+        logoVirtu.style.paddingTop = "5px";
+        navbarImg.style.paddingLeft = "20px";
+        navbar.style.backgroundColor = "#1B1B1B";
+        hamburguerIcon.style.display = "none";
+        navbarOpcoes.style.display = "flex";
+        lastNumber = 1;
+    } else if (lastNumber != 2 && scroll < 10 && w >= 850) {
+        hamburguerIcon.style.display = "none";
+        navbarText.style.display = "block";
+        logoVirtu.style.height = "110px";
+        navbarImg.style.padding= "0 0 0 20px";
+        navbar.style.backgroundColor = "transparent";
+        navbarText.style.justifyContent = "space-between";
+        hamburguerOpcoes.style.display = "none";
+        logoVirtu.style.height = "110px";
+        navbarOpcoes.style.display = "flex";
+        lastNumber = 2;
+    } else if (lastNumber != 3 && scroll >= 10 && w < 850) {
+        hamburguerOpcoes.style.display = "none";
+        logoVirtu.style.height = "55px";
+        logoVirtu.style.paddingTop = "5px";
+        hamburguerIcon.style.display = "block";
+        navbarImg.style.paddingLeft = "0";
+        navbarText.style.display = "none";
+        navbarFlex.style.justifyContent = "space-between";
+        navbar.style.backgroundColor = "#1B1B1B";
+        navbarOpcoes.style.display = "none";
+        lastNumber = 3;
+    } else if (lastNumber != 4 && scroll < 10 && w >= 600 && w < 850) {
+        logoVirtu.style.height = "110px";
+        navbarImg.style.padding = "0";
+        navbarText.style.display = "block";
+        logoVirtu.style.paddingTop = "20px";
+        logoVirtu.style.paddingLeft = "0";
+        navbar.style.backgroundColor = "transparent";
+        navbarFlex.style.justifyContent = "center";
+        hamburguerIcon.style.display = "none";
+        navbarOpcoes.style.display = "none";
+        lastNumber = 4;
+    } else if (lastNumber != 5 && scroll < 10 && w < 600){
+        logoVirtu.style.height = "80px";
+        navbarImg.style.padding = "0";
+        navbarText.style.display = "block";
+        logoVirtu.style.paddingTop = "10px";
+        logoVirtu.style.paddingLeft = "0";
+        navbar.style.backgroundColor = "transparent";
+        navbarFlex.style.justifyContent = "center"
+        navbarOpcoes.style.display = "none";
+        hamburguerIcon.style.display = "none";
+        lastNumber = 5;
     }
 
     if (w > 850) {
@@ -121,62 +149,39 @@ function navbarResponsiva() {
 
     scroll = parseInt(scroll) + navbarHeight + 2;
     if (scroll < bannerHeight) {
-        $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
-        $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
-        $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
-        $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
+        navServico.removeAttr('style'); //Tira formatação do servico
+        navSobenos.removeAttr('style'); //Tira formatação do sobrenos
+        navDepoimento.removeAttr('style'); //Tira formatação do depoimento
+        navContatos.removeAttr('style'); //Tira formatação do contato
     } else if (scroll >= bannerHeight && scroll < servicoHeight) {
-        $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
-        $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
-        $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
+        navSobenos.removeAttr('style'); //Tira formatação do sobrenos
+        navDepoimento.removeAttr('style'); //Tira formatação do depoimento
+        navContatos.removeAttr('style'); //Tira formatação do contato
         document.getElementById('navbar-a-servico').style.color = "#BF3B3A";
     } else if (scroll >= servicoHeight && scroll < sobrenosHeight) {
-        $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
-        $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
-        $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
+        navServico.removeAttr('style'); //Tira formatação do servico
+        navDepoimento.removeAttr('style'); //Tira formatação do depoimento
+        navContatos.removeAttr('style'); //Tira formatação do contato
         document.getElementById('navbar-a-sobrenos').style.color = "#BF3B3A";
     } else if (scroll >= sobrenosHeight && scroll < depoimentosHeight) {
-        $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
-        $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
-        $('#navbar-a-contatos').removeAttr('style'); //Tira formatação do contato
+        navServico.removeAttr('style'); //Tira formatação do servico
+        navSobenos.removeAttr('style'); //Tira formatação do sobrenos
+        navContatos.removeAttr('style'); //Tira formatação do contato
         document.getElementById('navbar-a-depoimentos').style.color = "#BF3B3A";
     } else {
-        $('#navbar-a-servico').removeAttr('style'); //Tira formatação do servico
-        $('#navbar-a-sobrenos').removeAttr('style'); //Tira formatação do sobrenos
-        $('#navbar-a-depoimentos').removeAttr('style'); //Tira formatação do depoimento
+        navServico.removeAttr('style'); //Tira formatação do servico
+        navSobenos.removeAttr('style'); //Tira formatação do sobrenos
+        navDepoimento.removeAttr('style'); //Tira formatação do depoimento
         document.getElementById('navbar-a-contatos').style.color = "#BF3B3A";
     }
 }
 
 $(window).resize(function () {
-    var w = $(window).width();
-    var scroll = $(window).scrollTop();
     bannerHeight = $('#banner').height();
     servicoHeight = $('#servico').height() + bannerHeight;
     sobrenosHeight = $('#sobre-nos').height() + servicoHeight;
     depoimentosHeight = $('#depoimentos').height() + sobrenosHeight;
     contatosHight = $('#contatos').height() + depoimentosHeight;
-    if (w > 850) {
-        document.getElementById('hamburguer-icon').style.display = "none";
-        document.getElementById('navbar-flex').style.justifyContent = "space-between";
-        document.getElementById('hamburguer-opcoes').style.display = "none";
-        document.getElementById('navbar-img').style.paddingLeft = "40px";
-        document.getElementById('logovirtu').style.height = "110px";
-    } else if (scroll >= 50) {
-        document.getElementById('logovirtu').style.height = "70px";
-        document.getElementById('hamburguer-icon').style.display = "block";
-        document.getElementById('navbar-flex').style.justifyContent = "space-between";
-        document.getElementById('navbar-img').style.paddingLeft = "20px";
-    } else if (w > 600) {
-        document.getElementById('logovirtu').style.height = "110px";
-        document.getElementById('navbar-img').style.paddingLeft = "0";
-        document.getElementById('navbar-flex').style.justifyContent = "center";
-    } else {
-        document.getElementById('logovirtu').style.height = "80px";
-        document.getElementById('navbar-img').style.paddingLeft = "0";
-        document.getElementById('navbar-flex').style.justifyContent = "center";
-    }
-
 });
 
 function pegarHttp(successo) { // função standard de request http
@@ -235,6 +240,7 @@ function criarServicos(ordemServicos, flag) { // gera o conteúdo da div carross
         infinite: false,
         arrows: true, // utiliza as setas do próprio slick
         dots: true, // bolinhas indicando em que slide o user está
+        draggable: false,
         infinite: false,
         focusOnSelect: false, // realce feito com css
         dotsClass: 'slick-dots dots-css', // opção para estilizar as bolinhas do slick

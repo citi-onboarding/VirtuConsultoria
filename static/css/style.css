@@ -70,7 +70,7 @@ body {
     flex-direction: column;
     align-items: center;
     transition-duration: 500ms;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 #logovirtu {
@@ -80,7 +80,7 @@ body {
     transition-duration: 500ms;
 }
 
-#banner-text {
+#navbar-text {
     text-align: center;
     height: 40px;
     width: 90px;
@@ -178,8 +178,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 0px;
-    -webkit-clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
-    clip-path: polygon(100% 0, 100% 92%, 46% 92%, 50% 100%, 54% 92%, 0 92%, 0 0);
+    -webkit-clip-path: polygon(100% 0, 100% 95%, 46% 95%, 50% 100%, 54% 95%, 0 95%, 0 0);
+    clip-path: polygon(100% 0, 100% 95%, 46% 95%, 50% 100%, 54% 95%, 0 95%, 0 0);
     width: 100vw;
     height: 100%;
  }
@@ -548,15 +548,21 @@ input[type=text] { /* Configuracoes do input do form do contato*/
 
 
 input#id_nome{ /* input nome no form com tamanha 22% para poder ficar de lado do input telefone*/
-    width: 22%;
-    
+    width: 23.2%;
     color:white;
 }
 
-
 input#id_telefone{ /* input telefone no form com tamanho 22% para poder ficar de lado do input nome*/
     width: 22%;
-    margin-left: 4.3%;
+    margin-left: 4%;
+}
+
+input#id_email{
+    width: 50.3%;
+}
+
+input#id_assunto{
+    width: 50.3%;
 }
 
 input::placeholder{ /* Coloca o placeholder com cor branca do input*/
@@ -573,7 +579,7 @@ option{ /* ajusta as configuracoes das opcoes do select*/
     
 }
 
-input#id_mensagem{ /* input telefone no form com tamanho 22% para poder ficar de lado do input nome*/
+input#id_mensagem{
     width: 50%;
     height: 30vh;
     word-break: break-word;
@@ -973,13 +979,26 @@ span {
     font-size: 1rem;
 }
 
+@media(max-width: 1600px){
+    input#id_nome{ /* input nome no form com tamanha 22% para poder ficar de lado do input telefone*/
+        width: 22.8%;
+    }
+
+    input#id_email{
+        width: 50.2%;
+    }
+    
+    input#id_assunto{
+        width: 50.2%;
+    }
+}
+
 @media(max-width:1400px){
 
     .inner-texto-depoimento{
     font-size: 0.8rem;
     margin-bottom: 5px;
     }
-
 }
 
 @media(max-width:1330px){
@@ -1058,6 +1077,10 @@ span {
         font-size: 0.95rem;
     }
 
+    input#id_nome{ /* input nome no form com tamanha 22% para poder ficar de lado do input telefone*/
+        width: 22%;
+    }
+
     select{
         width: 51.7%;
     }
@@ -1114,13 +1137,14 @@ span {
     textarea{
         width: 49.8%;
     }
+
 }
 
 @media(max-width: 1000px) {
 
     .banner-fundo {
-        -webkit-clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
-        clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 58% 92%, 0 92%, 0 0);
+        -webkit-clip-path: polygon(100% 0, 100% 95%, 42% 95%, 50% 100%, 62% 95%, 0 95%, 0 0);
+        clip-path: polygon(100% 0, 100% 95%, 42% 95%, 50% 100%, 58% 95%, 0 95%, 0 0);
     }
 
     /* Começa a partir daqui o css responsável pela div de serviços (serviços-1000) */
@@ -1219,7 +1243,7 @@ span {
     }
 }
 
-@media(max-width: 930px){
+@media(max-width: 935px){
     #carrossel-depoimentos {
         height: 240px;
     }
@@ -1252,6 +1276,7 @@ span {
     .nome-depoimento {
         font-size: 0.8rem;
     }
+    
 }
 
 @media(max-width: 900px){
@@ -1367,6 +1392,7 @@ span {
         font-weight: bolder;
         font-size: 1rem;
     }
+
 }
 
 @media(max-width: 850px){
@@ -1500,6 +1526,14 @@ span {
         margin-left: 0%;
     }
 
+    input#id_email{
+        width: 80%;
+    }
+    
+    input#id_assunto{
+        width: 80%;
+    }
+
     textarea{ /* Ajusta o input de texto(mensagem) para ocupar 80% da tela*/
         width: 80%;
     }
@@ -1527,12 +1561,12 @@ span {
     }
     
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 44%; /* Deixar o botão mais próximo a margem */
+        margin-left: 43%; /* Deixar o botão mais próximo a margem */
         margin-top: 217px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 44%; /* Deixar o botão mais próximo a margem */
+        margin-right: 43%; /* Deixar o botão mais próximo a margem */
         margin-top: 217px;
     }
 
@@ -1588,21 +1622,17 @@ span {
     }
 
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 43%; /* Deixar o botão mais próximo a margem */
+        margin-left: 42%; /* Deixar o botão mais próximo a margem */
         margin-top: 217px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 43%; /* Deixar o botão mais próximo a margem */
+        margin-right: 42%; /* Deixar o botão mais próximo a margem */
         margin-top: 217px;
     }
 
     .inner-texto-depoimento {
         font-size: 0.75rem;
-    }
-
-    textarea{
-        width: 49.7%;
     }
 
     #bar-flex {
@@ -1629,8 +1659,8 @@ span {
 @media(max-width: 470px){
 
     .banner-fundo {
-        -webkit-clip-path: polygon(100% 0, 100% 92%, 42% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
-        clip-path: polygon(100% 0, 100% 92%, 38% 92%, 50% 100%, 62% 92%, 0 92%, 0 0);
+        -webkit-clip-path: polygon(100% 0, 100% 95%, 42% 95%, 50% 100%, 62% 95%, 0 95%, 0 0);
+        clip-path: polygon(100% 0, 100% 95%, 38% 95%, 50% 100%, 62% 95%, 0 95%, 0 0);
     }
 
     .banner-coluna1 {
@@ -1674,12 +1704,12 @@ span {
     }
     
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 40%; /* Deixar o botão mais próximo a margem */
+        margin-left: 38%; /* Deixar o botão mais próximo a margem */
         margin-top: 230px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 40%; /* Deixar o botão mais próximo a margem */
+        margin-right: 38%; /* Deixar o botão mais próximo a margem */
         margin-top: 230px;
     }
 
@@ -1690,6 +1720,17 @@ span {
         flex-direction: column;
         align-items: center;
         box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
+    }
+}
+
+@media(max-width: 400px){
+    .inner-texto-depoimento {
+        font-size: 0.75rem;
+    }
+
+    .card-depoimento {
+        margin-right: 15px;
+        margin-left: 15px;
     }
 }
 
@@ -1712,6 +1753,16 @@ span {
 
     textarea{
         width: 78%;
+    }
+
+    #carrossel-depoimentos .slick-prev.slick-arrow{
+        margin-left: 36%; /* Deixar o botão mais próximo a margem */
+        margin-top: 230px;
+    }
+
+    #carrossel-depoimentos .slick-next.slick-arrow{
+        margin-right: 36%; /* Deixar o botão mais próximo a margem */
+        margin-top: 230px;
     }
 
 }
