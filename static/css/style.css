@@ -892,14 +892,14 @@ span {
     background-size: cover;
     margin-bottom: -5px;
     height: 100%; /* Tamanho da imagem de fundo */
-    width: 49.9%; /* Tamanho da imagem de fundo */
+    width: 40%; /* Tamanho da imagem de fundo */
 }
 
 .conteudo-depoimento {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 49.9%;
+    width: 60%;
     height: 100%;
 }
 
@@ -996,14 +996,8 @@ span {
 @media(max-width:1400px){
 
     .inner-texto-depoimento{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-bottom: 5px;
-    }
-}
-
-@media(max-width:1330px){
-    .inner-texto-depoimento{
-        font-size: 0.75rem;
     }
 }
 
@@ -1233,13 +1227,13 @@ span {
     }
 
     .inner-texto-depoimento {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
 }
 
 @media(max-width: 970px) {
     .inner-texto-depoimento {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     }
 }
 
@@ -1263,7 +1257,7 @@ span {
     }
     
     .img-depoimento {
-        height: 49.9%; /* Tamanho da imagem de fundo */
+        height: 100%; /* Tamanho da imagem de fundo */
         width: 49.9%;
         background-size: cover;
     }
@@ -1360,9 +1354,9 @@ span {
 
     .img-depoimento {
         height: 100%; /* Tamanho da imagem de fundo */
-        width: 280px; /* Tamanho da imagem de fundo */
+        width: 35%; /* Tamanho da imagem de fundo */
     }
-    
+
     .conteudo-depoimento {
         display: flex;
         flex-direction: column;
@@ -1549,11 +1543,15 @@ span {
 
 @media(max-width: 700px){
     .inner-texto-depoimento {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .img-depoimento {
+        width: 55%; /* Tamanho da imagem de fundo */
     }
 
     .nome-depoimento {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     #carrossel-depoimentos {
@@ -1632,7 +1630,7 @@ span {
     }
 
     .inner-texto-depoimento {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
 
     #bar-flex {
@@ -1648,7 +1646,7 @@ span {
 
 @media(max-width: 520px){
     .inner-texto-depoimento {
-        font-size: 0.72rem;
+        font-size: 0.9rem;
     }
 
     textarea{
@@ -1682,15 +1680,19 @@ span {
 
     .img-depoimento {
         width: 100%; /* Tamanho da imagem de fundo */
-        height: 200px;
+        height: 49%;
     }
 
     .inner-texto-depoimento, .texto-depoimento, .conteudo-depoimento {
         width: 100%;
     }
 
+    .conteudo-depoimento {
+        height: 52%;
+    }
+
     .inner-texto-depoimento {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         max-width: 80%;
         min-width: 80%;
     }
@@ -1725,7 +1727,7 @@ span {
 
 @media(max-width: 400px){
     .inner-texto-depoimento {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
     }
 
     .card-depoimento {
@@ -1737,7 +1739,7 @@ span {
 @media(max-width: 350px){
 
     .inner-texto-depoimento {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
     }
 
     .card-flex:hover {
