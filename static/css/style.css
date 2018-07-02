@@ -359,7 +359,6 @@ body {
     height: 40px;
     background: url("/static/icons/Prev.svg"); /* Ícone da seta anterior */
     background-size: cover; /* Disposição do background igual o tamanho do botão */
-    margin-left: 10px; /* Deixar o botão mais próximo a margem */
     transition: all 0.3s linear;
 }
 
