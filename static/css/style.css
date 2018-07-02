@@ -890,9 +890,9 @@ span {
 
 .img-depoimento {
     background-size: cover;
-    margin-bottom: -5px;
     height: 100%; /* Tamanho da imagem de fundo */
     width: 40%; /* Tamanho da imagem de fundo */
+    background-position: center 0px;
 }
 
 .conteudo-depoimento {
@@ -1681,6 +1681,10 @@ span {
     .img-depoimento {
         width: 100%; /* Tamanho da imagem de fundo */
         height: 49%;
+    }
+
+    #depoimento-mariana, #depoimento-alessandro {
+        background-position: center, center;
     }
 
     .inner-texto-depoimento, .texto-depoimento, .conteudo-depoimento {
