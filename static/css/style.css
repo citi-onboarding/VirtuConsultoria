@@ -890,7 +890,7 @@ span {
 .img-depoimento {
     background-size: cover;
     height: 100%; /* Tamanho da imagem de fundo */
-    width: 40%; /* Tamanho da imagem de fundo */
+    width: 30%; /* Tamanho da imagem de fundo */
     background-position: center 0px;
 }
 
@@ -898,7 +898,7 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 70%;
     height: 100%;
 }
 
@@ -989,6 +989,10 @@ span {
     
     input#id_assunto{
         width: 50.2%;
+    }
+
+    .img-depoimento {
+        width: 35%; /* Tamanho da imagem de fundo */
     }
 }
 
