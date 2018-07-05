@@ -359,7 +359,6 @@ body {
     height: 40px;
     background: url("/static/icons/Prev.svg"); /* Ícone da seta anterior */
     background-size: cover; /* Disposição do background igual o tamanho do botão */
-    margin-left: 10px; /* Deixar o botão mais próximo a margem */
     transition: all 0.3s linear;
 }
 
@@ -517,6 +516,10 @@ body {
 #nossa-historia-img > img {
     height: 260px; 
     width: auto; /* Largura acompanha o tamanho */
+}
+
+#depoimento-gabriela {
+    background-position: center, center;
 }
 
 
@@ -890,16 +893,16 @@ span {
 
 .img-depoimento {
     background-size: cover;
-    margin-bottom: -5px;
     height: 100%; /* Tamanho da imagem de fundo */
-    width: 49.9%; /* Tamanho da imagem de fundo */
+    width: 30%; /* Tamanho da imagem de fundo */
+    background-position: center 0px;
 }
 
 .conteudo-depoimento {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 49.9%;
+    width: 70%;
     height: 100%;
 }
 
@@ -926,7 +929,7 @@ span {
     height: 20px;
     background: url("/static/icons/Prev.svg"); /* Ícone da seta anterior */
     background-size: 20px; /* Disposição do background igual o tamanho do botão */
-    margin-left: 47%; /* Deixar o botão mais próximo a margem */
+    margin-left: 45%; /* Deixar o botão mais próximo a margem */
     margin-top: 152px;
     z-index: 6;
 }
@@ -942,7 +945,7 @@ span {
     height: 20px;
     background: url("/static/icons/Next.svg"); /* Ícone da próxima seta */
     background-size: 20px; /* Disposição do background igual o tamanho do botão */
-    margin-right: 47%; /* Deixar o botão mais próximo a margem */
+    margin-right: 45%; /* Deixar o botão mais próximo a margem */
     margin-top: 152px;
     z-index: 6;
 }
@@ -991,19 +994,17 @@ span {
     input#id_assunto{
         width: 50.2%;
     }
+
+    .img-depoimento {
+        width: 35%; /* Tamanho da imagem de fundo */
+    }
 }
 
 @media(max-width:1400px){
 
     .inner-texto-depoimento{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-bottom: 5px;
-    }
-}
-
-@media(max-width:1330px){
-    .inner-texto-depoimento{
-        font-size: 0.75rem;
     }
 }
 
@@ -1046,12 +1047,12 @@ span {
     }
 
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 46%; /* Deixar o botão mais próximo a margem */
+        margin-left: 44%; /* Deixar o botão mais próximo a margem */
         margin-top: 160px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 46%; /* Deixar o botão mais próximo a margem */
+        margin-right: 44%; /* Deixar o botão mais próximo a margem */
         margin-top: 160px;
     }
 
@@ -1096,13 +1097,11 @@ span {
         height: 270px;
     }
 
-    #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 46%; /* Deixar o botão mais próximo a margem */
+    #carrossel-depoimentos .slick-prev.slick-arrow{ 
         margin-top: 155px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 46%; /* Deixar o botão mais próximo a margem */
         margin-top: 155px;
     }
 
@@ -1196,12 +1195,12 @@ span {
     }
 
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 45%; /* Deixar o botão mais próximo a margem */
+        margin-left: 43%; /* Deixar o botão mais próximo a margem */
         margin-top: 150px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 45%; /* Deixar o botão mais próximo a margem */
+        margin-right: 43%; /* Deixar o botão mais próximo a margem */
         margin-top: 150px;
     }
 
@@ -1233,13 +1232,13 @@ span {
     }
 
     .inner-texto-depoimento {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
 }
 
 @media(max-width: 970px) {
     .inner-texto-depoimento {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     }
 }
 
@@ -1249,12 +1248,10 @@ span {
     }
 
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 45%; /* Deixar o botão mais próximo a margem */
         margin-top: 142px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 45%; /* Deixar o botão mais próximo a margem */
         margin-top: 142px;
     }
 
@@ -1263,7 +1260,7 @@ span {
     }
     
     .img-depoimento {
-        height: 49.9%; /* Tamanho da imagem de fundo */
+        height: 100%; /* Tamanho da imagem de fundo */
         width: 49.9%;
         background-size: cover;
     }
@@ -1349,20 +1346,20 @@ span {
     }
     
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 45%; /* Deixar o botão mais próximo a margem */
+        margin-left: 42%; /* Deixar o botão mais próximo a margem */
         margin-top: 195px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 45%; /* Deixar o botão mais próximo a margem */
+        margin-right: 42%; /* Deixar o botão mais próximo a margem */
         margin-top: 195px;
     }
 
     .img-depoimento {
         height: 100%; /* Tamanho da imagem de fundo */
-        width: 280px; /* Tamanho da imagem de fundo */
+        width: 35%; /* Tamanho da imagem de fundo */
     }
-    
+
     .conteudo-depoimento {
         display: flex;
         flex-direction: column;
@@ -1549,11 +1546,15 @@ span {
 
 @media(max-width: 700px){
     .inner-texto-depoimento {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .img-depoimento {
+        width: 55%; /* Tamanho da imagem de fundo */
     }
 
     .nome-depoimento {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     #carrossel-depoimentos {
@@ -1561,12 +1562,12 @@ span {
     }
     
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 43%; /* Deixar o botão mais próximo a margem */
+        margin-left: 40%; /* Deixar o botão mais próximo a margem */
         margin-top: 217px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 43%; /* Deixar o botão mais próximo a margem */
+        margin-right: 40%; /* Deixar o botão mais próximo a margem */
         margin-top: 217px;
     }
 
@@ -1622,17 +1623,17 @@ span {
     }
 
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 42%; /* Deixar o botão mais próximo a margem */
+        margin-left: 35%; /* Deixar o botão mais próximo a margem */
         margin-top: 217px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 42%; /* Deixar o botão mais próximo a margem */
+        margin-right: 35%; /* Deixar o botão mais próximo a margem */
         margin-top: 217px;
     }
 
     .inner-texto-depoimento {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
 
     #bar-flex {
@@ -1648,7 +1649,7 @@ span {
 
 @media(max-width: 520px){
     .inner-texto-depoimento {
-        font-size: 0.72rem;
+        font-size: 0.9rem;
     }
 
     textarea{
@@ -1682,15 +1683,23 @@ span {
 
     .img-depoimento {
         width: 100%; /* Tamanho da imagem de fundo */
-        height: 200px;
+        height: 49%;
+    }
+
+    #depoimento-mariana, #depoimento-alessandro, #depoimento-gabriela {
+        background-position: center, center;
     }
 
     .inner-texto-depoimento, .texto-depoimento, .conteudo-depoimento {
         width: 100%;
     }
 
+    .conteudo-depoimento {
+        height: 52%;
+    }
+
     .inner-texto-depoimento {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         max-width: 80%;
         min-width: 80%;
     }
@@ -1700,21 +1709,25 @@ span {
     }
 
     #carrossel-depoimentos {
-        height: 420px;
+        height: 440px;
     }
     
     #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 38%; /* Deixar o botão mais próximo a margem */
-        margin-top: 230px;
+        margin-left: 33%; /* Deixar o botão mais próximo a margem */
+        margin-top: 290px;
     }
 
     #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 38%; /* Deixar o botão mais próximo a margem */
-        margin-top: 230px;
+        margin-right: 33%; /* Deixar o botão mais próximo a margem */
+        margin-top: 290px;
+    }
+
+    .slick-dots.dots-css{
+        bottom: -75px;
     }
 
     .card-depoimento {
-        height: 420px;
+        height: 480px;
         margin: 0 30px 20px 30px;
         display: flex !important;
         flex-direction: column;
@@ -1725,7 +1738,7 @@ span {
 
 @media(max-width: 400px){
     .inner-texto-depoimento {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
     }
 
     .card-depoimento {
@@ -1737,7 +1750,7 @@ span {
 @media(max-width: 350px){
 
     .inner-texto-depoimento {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
     }
 
     .card-flex:hover {
@@ -1754,17 +1767,6 @@ span {
     textarea{
         width: 78%;
     }
-
-    #carrossel-depoimentos .slick-prev.slick-arrow{
-        margin-left: 36%; /* Deixar o botão mais próximo a margem */
-        margin-top: 230px;
-    }
-
-    #carrossel-depoimentos .slick-next.slick-arrow{
-        margin-right: 36%; /* Deixar o botão mais próximo a margem */
-        margin-top: 230px;
-    }
-
 }
 
 @media(min-height: 800px){

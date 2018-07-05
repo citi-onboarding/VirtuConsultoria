@@ -143,37 +143,37 @@ function navbarResponsiva() {
 
     if (w > 850) {
         navbarHeight = 74;
+        scroll = parseInt(scroll) + navbarHeight + 2;
+        if (scroll < bannerHeight) {
+            navServico.removeAttr('style'); //Tira formatação do servico
+            navSobenos.removeAttr('style'); //Tira formatação do sobrenos
+            navDepoimento.removeAttr('style'); //Tira formatação do depoimento
+            navContatos.removeAttr('style'); //Tira formatação do contato
+        } else if (scroll >= bannerHeight && scroll < servicoHeight) {
+            navSobenos.removeAttr('style'); //Tira formatação do sobrenos
+            navDepoimento.removeAttr('style'); //Tira formatação do depoimento
+            navContatos.removeAttr('style'); //Tira formatação do contato
+            document.getElementById('navbar-a-servico').style.color = "#BF3B3A";
+        } else if (scroll >= servicoHeight && scroll < sobrenosHeight) {
+            navServico.removeAttr('style'); //Tira formatação do servico
+            navDepoimento.removeAttr('style'); //Tira formatação do depoimento
+            navContatos.removeAttr('style'); //Tira formatação do contato
+            document.getElementById('navbar-a-sobrenos').style.color = "#BF3B3A";
+        } else if (scroll >= sobrenosHeight && scroll < depoimentosHeight) {
+            navServico.removeAttr('style'); //Tira formatação do servico
+            navSobenos.removeAttr('style'); //Tira formatação do sobrenos
+            navContatos.removeAttr('style'); //Tira formatação do contato
+            document.getElementById('navbar-a-depoimentos').style.color = "#BF3B3A";
+        } else {
+            navServico.removeAttr('style'); //Tira formatação do servico
+            navSobenos.removeAttr('style'); //Tira formatação do sobrenos
+            navDepoimento.removeAttr('style'); //Tira formatação do depoimento
+            document.getElementById('navbar-a-contatos').style.color = "#BF3B3A";
+        }
     } else {
         navbarHeight = 63;
     }
 
-    scroll = parseInt(scroll) + navbarHeight + 2;
-    if (scroll < bannerHeight) {
-        navServico.removeAttr('style'); //Tira formatação do servico
-        navSobenos.removeAttr('style'); //Tira formatação do sobrenos
-        navDepoimento.removeAttr('style'); //Tira formatação do depoimento
-        navContatos.removeAttr('style'); //Tira formatação do contato
-    } else if (scroll >= bannerHeight && scroll < servicoHeight) {
-        navSobenos.removeAttr('style'); //Tira formatação do sobrenos
-        navDepoimento.removeAttr('style'); //Tira formatação do depoimento
-        navContatos.removeAttr('style'); //Tira formatação do contato
-        document.getElementById('navbar-a-servico').style.color = "#BF3B3A";
-    } else if (scroll >= servicoHeight && scroll < sobrenosHeight) {
-        navServico.removeAttr('style'); //Tira formatação do servico
-        navDepoimento.removeAttr('style'); //Tira formatação do depoimento
-        navContatos.removeAttr('style'); //Tira formatação do contato
-        document.getElementById('navbar-a-sobrenos').style.color = "#BF3B3A";
-    } else if (scroll >= sobrenosHeight && scroll < depoimentosHeight) {
-        navServico.removeAttr('style'); //Tira formatação do servico
-        navSobenos.removeAttr('style'); //Tira formatação do sobrenos
-        navContatos.removeAttr('style'); //Tira formatação do contato
-        document.getElementById('navbar-a-depoimentos').style.color = "#BF3B3A";
-    } else {
-        navServico.removeAttr('style'); //Tira formatação do servico
-        navSobenos.removeAttr('style'); //Tira formatação do sobrenos
-        navDepoimento.removeAttr('style'); //Tira formatação do depoimento
-        document.getElementById('navbar-a-contatos').style.color = "#BF3B3A";
-    }
 }
 
 $(window).resize(function () {
