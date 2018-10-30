@@ -1730,6 +1730,10 @@ span {
         align-items: center;
         box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
     }
+
+    #depoimentos .slick-dots {
+        bottom: -71px;
+    }
 }
 
 @media(max-width: 400px){
