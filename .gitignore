@@ -6,3 +6,4 @@ mysite/__pycache__/
 .vscode/
 *.pyc
 *.env
+venv/
