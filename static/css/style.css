@@ -1787,3 +1787,13 @@ span {
         background-size: cover;
     }
 }
+
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: rgb(185, 92, 92);
+}
+
+::selection {
+    color: white;
+    background: rgb(185, 92, 92); 
+}
