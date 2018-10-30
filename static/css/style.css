@@ -231,6 +231,10 @@ body {
     cursor:pointer;
 }
 
+.banner-botao:hover {
+    background-color: #912f2f;
+}
+
 .textobotao{
     font-size: 18px;
     display: flex;
