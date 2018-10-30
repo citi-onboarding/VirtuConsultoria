@@ -621,9 +621,12 @@ input[type=submit] { /* Ajusta as configuracoes do botao*/
     border: 0px;
     margin-bottom: 60px;
     border-radius: 3px;
+    transition: ease 300ms;
 }
     
-    
+input[type=submit]:hover { /* Ajusta as configuracoes do botao*/
+    background-color: #912f2f;
+}
     
 #contatos{ /* Define o tamanho da div contato*/
     width: 100vw;
