@@ -1722,10 +1722,6 @@ span {
         margin-top: 290px;
     }
 
-    .slick-dots.dots-css{
-        bottom: -75px;
-    }
-
     .card-depoimento {
         height: 480px;
         margin: 0 30px 20px 30px;
@@ -1733,6 +1729,10 @@ span {
         flex-direction: column;
         align-items: center;
         box-shadow: 0 1px 1px 0 #ECECEC, 0 2px 5px 0 rgba(0, 0, 0, 0.19); /* Sombra do card */
+    }
+
+    #depoimentos .slick-dots {
+        bottom: -71px;
     }
 }
 
